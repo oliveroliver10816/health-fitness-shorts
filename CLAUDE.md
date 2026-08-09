@@ -82,7 +82,8 @@ That takes a new video from 8 image prompts to ~4 and makes the series look bran
 Beats 1–7 are pure physiology; beat 8 only ever promises "healthy, energized, functioning at
 its best". Nothing measurable, nothing falsifiable. **Never let an outcome claim ("fixes your
 bloating") creep into the script** — that is the one line that would eventually cost the
-account. Contrast with the supplement properties, which carry real exposure.
+account. The pressure runs the other way — an outcome claim is a better hook — so hold the line
+**in the script prompt**, not in review.
 
 ## Open — needs Bob
 1. **Which topic first?** Shortlist on the page: water · egg · skipping breakfast (strongest
