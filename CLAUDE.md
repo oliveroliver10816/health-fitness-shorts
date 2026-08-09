@@ -15,11 +15,15 @@ health/fitness videos; we tear them down and rebuild the format with his own too
 ## Video 1 — "What happens when you eat Greek yogurt" (64 s)
 
 ### ⭐ The finding that decides the whole format
-**8 clips × exactly 8.000 s.** Scene detection puts hard cuts at 8/16/24/32/40/48/56 s — no
-dissolves, no transitions. And the VO is **exactly 8 sentences, one per clip**, each starting
-and ending inside its own block. **8.000 s is Veo 3/3.1's native max clip length**, so the
-format is built around the generator's constraint. (Consistent with Veo; not proof of model —
-Kling 5/10 s, Runway 5/10 s, Hailuo 6/10 s, Sora 5–20 s.)
+**8 clips × exactly 8.000 s.** Hard cuts at 8/16/24/32/40/48/56 s (frames 239→240 etc.) — no
+dissolves, no hidden cuts inside any block. An 8th cut at 64.000 s drops to **3 black frames**.
+The VO is **exactly 8 sentences, sentence N carrying clip N**. **8.000 s is Veo 3/3.1's native
+max clip length**, so the format is built around the generator's constraint. (Consistent with
+Veo; not proof of model — Kling 5/10 s, Runway 5/10 s, Hailuo 6/10 s, Sora 5–20 s.)
+
+⚠ **Do NOT say "every sentence begins and ends inside its own clip" — that is false and I
+published it once.** Six of the eight sentences begin **0.04–0.16 s before** their clip does.
+That overlap is the *point*: it's what proves the narration is one continuous track.
 
 ⇒ **Answer to Bob's question: 8 image prompts + 8 image-to-video prompts = 16 per 64 s video.**
 
@@ -31,19 +35,21 @@ locked with zero editing. That single number is what makes the format mechanical
 ### Measured facts
 - 1080×1920, 30 fps container, H.264, **19.1 Mbps / 146 MB** (≈3× what platforms keep).
 - **`encoder = clipchamp.com`** — assembled in Microsoft Clipchamp (free, browser).
-- **VO is a SEPARATE track, proven:** the word "After" spans **7.88–8.12 s across the 8 s cut**
-  (also at 32 s and 56 s); LRA **2.6 LU**; both channels within **0.006 dB** (mono in stereo).
-  Per-clip generated audio cannot straddle a cut.
-- ⚠ **No music bed at all** — inter-sentence gaps measure **−50 to −57 dB** vs −29.5 dB on
-  speech. Three gaps are over 1 s long.
+- **VO is a SEPARATE track, proven:** a word plays across **6 of the 7 cuts** ("After"
+  7.88–8.12 s; "Tiny" at 32 s; "stronger" at 56 s) — only the 40 s cut is clean. LRA **2.6 LU**;
+  channels within **0.0053 dB** RMS (mono in stereo). Per-clip audio cannot straddle a cut.
+- ⚠ **No music bed at all** — clean gap interiors measure **−51.4 / −55.5 / −59.9 dB** vs
+  −29 to −30 dB on speech; gap spectra carry no tonal content and gap level varies by 8 dB
+  (a bed would be steady). Three gaps are over 1 s long.
 - ⚠ **−26.7 LUFS integrated, −11.4 dBTP** — 12.7 LU under the ~−14 LUFS platform target.
   Platforms turn loud audio down; they don't reliably turn quiet audio up.
-- ⚠ **Picture is NOT natively 30 fps:** exactly **176 distinct frames per 8 s block**, a
-  perfectly periodic **11-unique-in-15** pattern identical in all 8 blocks ⇒ **22 fps content
-  in a 30 fps container**. Veo 3.1 outputs **24 fps**, so it was re-timed in the chain.
+- ⚠ **Picture is NOT natively 30 fps:** **177–181 distinct frames per 8 s block (mean 178.8 of
+  240)**, duplicates perfectly periodic at offsets **≡ 1, 5, 11, 14 (mod 15)** in all 8 blocks
+  ⇒ **≈22.3 fps content in a 30 fps container**. Veo 3.1 outputs **24 fps**, so it was re-timed.
   **Lesson: set the edit timeline to 24 fps and never speed-adjust a clip to make it fit.**
-- ~97 caption cards, 1–3 words each (typically 2), median 0.50 s, on screen 70% of runtime,
-  yellow heavy-italic + black outline at y = 76–80% of frame. Auto-generated ⇒ **zero prompts**.
+- ~97 caption cards, 1–3 words each (typically 2), median 0.50 s, **on screen 94.5% of runtime**
+  (1818/1923 frames; 5 blank runs totalling 3.5 s, all on audio pauses), yellow RGB(248,252,3)
+  heavy-italic + black outline, median y = 77.5%. Auto-generated ⇒ **zero prompts**.
 - ⚠ Watermark is a circular "HEALTH & FITNESS" logo **on an opaque white square**, not a
   transparent PNG — brightest object in frame on the dark shots.
 - Imagery is AI-generated (strong inference): HUD panels are **blurred pseudo-interface with

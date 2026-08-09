@@ -310,7 +310,8 @@ footer a{color:var(--cyan)}
     <div class="narrow">
       <div class="box find">
         <div class="bt">⭐ And the script matches it one-for-one</div>
-        <p>The voice-over contains <strong>exactly eight sentences</strong>. Sentence 1 runs 0.10–7.88 s. Sentence 2 runs 7.88–14.88 s. Sentence 8 runs 55.84–63.86 s. <strong>Every sentence begins and ends inside its own clip.</strong> One sentence, one clip, one 8-second block — all the way through.</p>
+        <p>The voice-over contains <strong>exactly eight sentences, and sentence N carries clip N</strong>. Sentence 1 runs 0.10–7.88 s, sentence 2 runs 7.88–14.88 s, sentence 8 runs 55.84–63.86 s. One sentence, one clip, one 8-second block — all the way through.</p>
+        <p>The audio was <em>not</em> chopped to the cuts, though. <strong>Six of the eight sentences begin fractionally before their clip does</strong> — by 0.04 to 0.16 s — because the narration is one continuous track laid underneath the picture. That small overlap is the proof of how it was built, and it is covered next.</p>
       </div>
 
       <p>That is not a coincidence and it is not editing skill. It is the signature of a pipeline where <strong>the generator’s clip length is the unit of composition</strong>. The writer did not write a script and then cut it up; they wrote eight sentences that each had to fit inside 8 seconds, because 8 seconds is all the tool gives you.</p>
@@ -323,7 +324,7 @@ footer a{color:var(--cyan)}
       <h3>The voice-over is a separate track — proven</h3>
       <p>Three independent measurements say the narration was <strong>not</strong> generated with the video:</p>
       <ul>
-        <li><strong>Words straddle the cuts.</strong> “After” starts at 7.88 s and ends at 8.12 s — it plays <em>across</em> the boundary between clip 1 and clip 2. Same at 32 s (“Tiny”) and 56 s (“From”). Per-clip audio physically cannot do that.</li>
+        <li><strong>Words straddle the cuts.</strong> “After” starts at 7.88 s and ends at 8.12 s — it plays <em>across</em> the boundary between clip 1 and clip 2. So does “Tiny” at 32 s and “stronger” at 56 s. <strong>Six of the seven cuts have a word playing over them;</strong> only the 40 s cut is clean. Per-clip generated audio physically cannot do that.</li>
         <li><strong>Loudness range is 2.6 LU.</strong> That is machine-flat. Generated audio carries room tone and ambience that widens the range considerably.</li>
         <li><strong>It is mono.</strong> Both channels measure within 0.006 dB of each other — a single centred voice duplicated into a stereo container.</li>
       </ul>
@@ -429,21 +430,21 @@ footer a{color:var(--cyan)}
         <table>
           <thead><tr><th>Property</th><th>Value</th><th>Read</th></tr></thead>
           <tbody>
-            <tr><td>Duration</td><td class="num">64.110 s</td><td>8 × 8.000 s + 3 frames</td></tr>
+            <tr><td>Duration</td><td class="num">64.110 s</td><td>8 × 8.000 s, then 3 black frames</td></tr>
             <tr><td>Resolution</td><td class="num">1080 × 1920</td><td>9:16, correct for every short-form platform</td></tr>
             <tr><td>Frame rate</td><td class="num">30 fps (1923 frames)</td><td>container rate — see the cadence note below</td></tr>
             <tr><td>Video codec</td><td class="num">H.264 Main, yuv420p, bt709</td><td>maximum compatibility</td></tr>
             <tr><td>Bitrate</td><td class="num">19.1 Mbps</td><td>very high; ~3× what platforms need. 146 MB for 64 s</td></tr>
             <tr><td>Audio</td><td class="num">AAC-LC 192 kbps, 48 kHz, stereo</td><td>stereo container, mono content</td></tr>
-            <tr><td>Encoder tag</td><td class="num">clipchamp.com</td><td><b>assembled in Microsoft Clipchamp</b> — free, browser-based</td></tr>
-            <tr><td>Cuts</td><td class="num">7 hard cuts</td><td>8, 16, 24, 32, 40, 48, 56 s — zero transitions</td></tr>
+            <tr><td>Encoder tag</td><td class="num">https://clipchamp.com</td><td><b>assembled in Microsoft Clipchamp</b> — free, browser-based</td></tr>
+            <tr><td>Cuts</td><td class="num">7 internal hard cuts</td><td>8, 16, 24, 32, 40, 48, 56 s — zero transitions. An 8th cut at 64.000 s drops to 3 black frames</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="box warn">
         <div class="bt">⚠ The picture is not natively 30 fps</div>
-        <p>Frame-difference analysis finds <strong>exactly 176 distinct frames in every 8-second block</strong> — a perfectly periodic pattern of 11 unique frames in every 15, repeated identically across all eight clips. That is a content cadence of <strong>22 fps inside a 30 fps container</strong>, so roughly one frame in four is a duplicate and the motion carries an uneven judder.</p>
+        <p>Frame-difference analysis finds <strong>about 179 distinct frames in every 8-second block</strong> (measured 177–181, mean 178.8 of 240) — and the duplicates sit at a <strong>perfectly periodic 4 in every 15 frames</strong>, at the same offsets in all eight clips. That is a content cadence of <strong>≈22.3 fps inside a 30 fps container</strong>, so roughly one frame in four is a duplicate and the motion carries an uneven judder.</p>
         <p>Veo 3.1 outputs <strong>24 fps</strong>, so the clips were re-timed somewhere in the chain — most likely a slight speed change or a non-integer frame-rate conversion on export. <strong>The lesson for us:</strong> set the editor timeline to match the generator (24 fps) and never speed-adjust a clip to make it fit. Stretching an 8-second clip is what produces this.</p>
       </div>
 
@@ -488,9 +489,10 @@ footer a{color:var(--cyan)}
           <tbody>
             <tr><td>Cards</td><td class="num">~97 (measured by mask change)</td></tr>
             <tr><td>Words per card</td><td class="num">1–3, typically 2</td></tr>
-            <tr><td>Time on screen</td><td class="num">median 0.50 s · 70% of runtime</td></tr>
-            <tr><td>Style</td><td class="num">heavy italic sans, yellow fill, black outline</td></tr>
-            <tr><td>Position</td><td class="num">centred, y = 76–80% of frame height</td></tr>
+            <tr><td>Time on screen</td><td class="num">median 0.50 s per card · <b>94.5% of runtime</b></td></tr>
+            <tr><td>Blank gaps</td><td class="num">5 runs, 3.5 s total — all on audio pauses</td></tr>
+            <tr><td>Style</td><td class="num">heavy italic sans, RGB(248,252,3) fill, black outline</td></tr>
+            <tr><td>Position</td><td class="num">centred, median y = 77.5% of frame height (73–83% for 2-line cards)</td></tr>
             <tr><td>Source</td><td class="num">auto-generated from the VO — zero prompts, zero typing</td></tr>
           </tbody>
         </table>
@@ -505,7 +507,7 @@ footer a{color:var(--cyan)}
             <tr><td>Integrated loudness</td><td class="num">−26.7 LUFS</td><td class="cross">12.7 LU below the ~−14 LUFS platform target</td></tr>
             <tr><td>True peak</td><td class="num">−11.4 dBFS</td><td class="cross">11 dB of headroom left unused</td></tr>
             <tr><td>Loudness range</td><td class="num">2.6 LU</td><td>flat — pure TTS</td></tr>
-            <tr><td>Level in speech gaps</td><td class="num">−50 to −57 dB</td><td class="cross">digital silence — <b>there is no music bed at all</b></td></tr>
+            <tr><td>Level in speech gaps</td><td class="num">−51 to −60 dB</td><td class="cross">digital silence — <b>there is no music bed at all</b></td></tr>
           </tbody>
         </table>
       </div>
@@ -890,11 +892,11 @@ Rules:
           <tbody>
             <tr><td class="num">1</td><td><b>−26.7 LUFS</b> — plays far quieter than the feed around it</td><td>normalise to −14 LUFS, true peak −1 dBTP</td></tr>
             <tr><td class="num">2</td><td><b>No music at all</b>; three silent gaps over a second</td><td>quiet bed 28–30 dB under the voice, ducked</td></tr>
-            <tr><td class="num">3</td><td><b>22 fps content in a 30 fps file</b> — visible judder</td><td>24 fps timeline, 24 fps export, never speed-adjust a clip</td></tr>
+            <tr><td class="num">3</td><td><b>≈22 fps content in a 30 fps file</b> — visible judder</td><td>24 fps timeline, 24 fps export, never speed-adjust a clip</td></tr>
             <tr><td class="num">4</td><td><b>Logo on an opaque white square</b>, brightest object on dark shots</td><td>transparent PNG at 60–70% opacity</td></tr>
             <tr><td class="num">5</td><td><b>No hook.</b> Clip 1 opens on a spoon and a full sentence of setup</td><td>put the payoff image in the first 1.5 s, then go back to the mouth</td></tr>
             <tr><td class="num">6</td><td><b>19.1 Mbps / 146 MB</b> for 64 seconds — 3× what any platform keeps</td><td>8–12 Mbps CRF-based export; identical on-screen result</td></tr>
-            <tr><td class="num">7</td><td><b>No end card</b> — it simply stops</td><td>hold the last frame 0.5 s with the channel mark; it lifts the loop</td></tr>
+            <tr><td class="num">7</td><td><b>No end card</b> — it cuts to 3 black frames and stops</td><td>hold the last frame 0.5 s with the channel mark; it lifts the loop</td></tr>
           </tbody>
         </table>
       </div>
@@ -918,15 +920,16 @@ Rules:
         <table>
           <thead><tr><th>Claim</th><th>Method</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td>8 clips × 8.000 s</td><td>ffmpeg scene detection at thresholds 0.35 and 0.5, then frames extracted either side of every boundary and inspected</td><td class="tick">measured</td></tr>
-            <tr><td>8 sentences, 1 per clip</td><td>Whisper large-v3 with word-level timestamps; each sentence’s first and last word mapped to its 8 s block</td><td class="tick">measured</td></tr>
-            <tr><td>VO is a separate track</td><td>“After” spans 7.88–8.12 s across the clip-1/clip-2 cut; LRA 2.6 LU; both channels within 0.006 dB</td><td class="tick">measured</td></tr>
+            <tr><td>8 clips × 8.000 s</td><td>ffmpeg scene detection at thresholds 0.35 and 0.5, then frames extracted either side of every boundary and inspected. Independently re-derived frame-by-frame: cuts fall on frames 239→240, 479→480 … 1679→1680, all hard, with no hidden cuts inside any block</td><td class="tick">measured</td></tr>
+            <tr><td>8 sentences, 1 per clip</td><td>Whisper large-v3 with word-level timestamps; each sentence’s first and last word mapped to its 8 s block. Sentence N carries clip N; six of the eight start 0.04–0.16 s before their clip</td><td class="tick">measured</td></tr>
+            <tr><td>VO is a separate track</td><td>a word plays across 6 of the 7 cuts (“After” 7.88–8.12 s); LRA 2.6 LU; channels within 0.0053 dB RMS</td><td class="tick">measured</td></tr>
             <tr><td>149 words, 18.6/sentence, 140 wpm</td><td>word timestamps from the same transcript</td><td class="tick">measured</td></tr>
-            <tr><td>No music bed</td><td>mean level in three inter-sentence gaps: −50.7 to −56.6 dB, against −29.5 dB during speech</td><td class="tick">measured</td></tr>
-            <tr><td>−26.7 LUFS, −11.4 dBTP</td><td>ffmpeg EBU R128</td><td class="tick">measured</td></tr>
-            <tr><td>22 fps content cadence</td><td>per-frame mean absolute difference on cropped greyscale frames; duplicate positions periodic at 4 in every 15, identical in all 8 blocks; mpdecimate agrees (177–181 kept of 240)</td><td class="tick">measured</td></tr>
+            <tr><td>No music bed</td><td>clean interiors of the three inter-sentence gaps: −51.4, −55.5, −59.9 dB against −29 to −30 dB during speech; gap spectra show no tonal content (2–8 kHz at −90 dB and below) and gap level varies by 8 dB, which a bed would not</td><td class="tick">measured</td></tr>
+            <tr><td>−26.7 LUFS, −11.4 dBTP</td><td>ffmpeg EBU R128, cross-checked with loudnorm</td><td class="tick">measured</td></tr>
+            <tr><td>≈22.3 fps content cadence</td><td>per-frame mean absolute difference on cropped greyscale frames; duplicates periodic at offsets ≡ 1, 5, 11, 14 (mod 15) in all 8 blocks; distinct frames per block 177–181, mean 178.8 of 240; mpdecimate agrees</td><td class="tick">measured</td></tr>
             <tr><td>Assembled in Clipchamp</td><td>container metadata: <code>encoder = clipchamp.com</code></td><td class="tick">measured</td></tr>
             <tr><td>~97 caption cards</td><td>yellow-pixel mask per frame, new card when overlap with the previous frame drops below 55%</td><td>approximate — animation can split a card</td></tr>
+            <tr><td>Captions on screen 94.5%</td><td>yellow-mask presence on all 1923 frames: 1818 carry a caption (60.60 s of 64.10 s), 5 blank runs totalling 3.5 s</td><td class="tick">measured</td></tr>
             <tr><td>Imagery is AI-generated</td><td>HUD panels are blurred pseudo-interface with unreadable pseudo-text — a generation tell, not a render choice; plus the exact 8 s block structure</td><td>strong inference, not proof</td></tr>
             <tr><td>Consistent with a Veo pipeline</td><td>8.000 s is Veo 3/3.1’s native maximum and is not a standard length for Kling, Runway, Hailuo or Sora</td><td>consistent — not proof of model</td></tr>
             <tr><td>Veo 3.1 specs and pricing</td><td>Google Gemini API docs and pricing page, read 9 Aug 2026</td><td class="tick">sourced</td></tr>
