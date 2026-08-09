@@ -1,0 +1,7 @@
+video/source.mp4
+video/audio.mp3
+video/frames/
+video/sheets/
+video/shots/
+video/*.png
+video/*.jpg

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Greek Yogurt short — full teardown + the Veo 3 rebuild system</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060c13; --bg2:#0b151f; --panel:#0f1c28; --panel2:#132433;
+  --line:#1e3345; --line2:#2a4257;
+  --ink:#eaf2f8; --ink2:#a9bdcd; --ink3:#7b93a7;
+  --yellow:#ffe23d; --cyan:#4fd8ff; --coral:#f0937f; --green:#5fe0a8; --red:#ff6b6b;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 18px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--cyan)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.narrow{max-width:860px;margin-left:auto;margin-right:auto}
+
+/* ---------- hero ---------- */
+header{
+  position:relative; overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(79,216,255,.16), transparent 60%),
+    linear-gradient(180deg,#0a1420,#060c13);
+}
+.heroimg{position:absolute;inset:0;opacity:.20;filter:saturate(.75) blur(1px);object-fit:cover;width:100%;height:100%}
+.heromask{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,19,.55),rgba(6,12,19,.97))}
+.heroinner{position:relative;padding:74px 0 60px}
+.kicker{
+  font:700 13px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase;
+  color:var(--cyan); margin-bottom:22px;
+}
+h1{
+  font:900 clamp(38px,6.4vw,74px)/1.02 Archivo,sans-serif;
+  letter-spacing:-.028em; margin:0 0 20px;
+}
+h1 em{font-style:italic;color:var(--yellow)}
+.sub{font-size:21px;line-height:1.55;color:var(--ink2);max-width:760px;margin:0 0 34px}
+.sub strong{color:var(--ink)}
+.metarow{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  font:600 13px/1 var(--mono); letter-spacing:.03em;
+  padding:10px 14px;border:1px solid var(--line2);border-radius:999px;
+  background:rgba(15,28,40,.75);color:var(--ink2);
+}
+.chip b{color:var(--ink)}
+
+/* ---------- answer band ---------- */
+.answer{
+  background:linear-gradient(135deg,#12253a,#0d1a27);
+  border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);
+  padding:52px 0;
+}
+.answer h2{
+  font:800 14px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cyan);margin:0 0 26px
+}
+.bignums{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.bignum{
+  background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:24px 22px;
+}
+.bignum .n{font:900 56px/1 Archivo,sans-serif;letter-spacing:-.03em;color:var(--yellow)}
+.bignum .n small{font-size:22px;color:var(--ink2);font-weight:700}
+.bignum .l{font-size:15px;color:var(--ink2);margin-top:10px;line-height:1.45}
+.bignum.alt .n{color:var(--cyan)}
+.bignum.mute .n{color:var(--ink)}
+
+/* ---------- sections ---------- */
+section{padding:66px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.snum{
+  font:700 12px/1 var(--mono);letter-spacing:.18em;color:var(--ink3);
+  text-transform:uppercase;margin-bottom:14px
+}
+h2.sec{font:800 clamp(28px,4vw,42px)/1.1 Archivo,sans-serif;letter-spacing:-.022em;margin:0 0 18px}
+h3{font:800 22px/1.25 Archivo,sans-serif;letter-spacing:-.01em;margin:36px 0 12px}
+h4{font:700 17px/1.3 Inter,sans-serif;margin:24px 0 8px;color:var(--ink)}
+p{margin:0 0 16px;color:var(--ink2)}
+p strong,li strong{color:var(--ink);font-weight:600}
+.lead{font-size:20px;color:var(--ink);max-width:800px}
+ul,ol{color:var(--ink2);padding-left:22px;margin:0 0 18px}
+li{margin-bottom:9px}
+
+/* ---------- callouts ---------- */
+.box{border-radius:14px;padding:22px 24px;margin:24px 0;border:1px solid var(--line2);background:var(--panel)}
+.box p:last-child{margin-bottom:0}
+.box .bt{font:800 13px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}
+.box.find{border-color:#3d5f2e;background:linear-gradient(135deg,#132a1c,#0e1d17)}
+.box.find .bt{color:var(--green)}
+.box.warn{border-color:#6b4a1e;background:linear-gradient(135deg,#2a2113,#1d160e)}
+.box.warn .bt{color:#ffc464}
+.box.stop{border-color:#6e2b2b;background:linear-gradient(135deg,#2b1414,#1d0f0f)}
+.box.stop .bt{color:var(--red)}
+.box.key{border-color:#1c4d63;background:linear-gradient(135deg,#0f2c3a,#0b1e29)}
+.box.key .bt{color:var(--cyan)}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--line2);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:16px}
+th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{
+  font:700 12px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink3);background:var(--panel2);white-space:nowrap
+}
+td{color:var(--ink2)}
+tr:last-child td{border-bottom:0}
+td b,td strong{color:var(--ink)}
+.num{font-family:var(--mono);font-size:15px;color:var(--ink);white-space:nowrap}
+.tick{color:var(--green);font-weight:700}
+.cross{color:var(--red);font-weight:700}
+
+/* ---------- shot strip ---------- */
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin:28px 0}
+.shot{background:var(--panel);border:1px solid var(--line2);border-radius:14px;overflow:hidden}
+.shot img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.shot .b{padding:16px 17px}
+.shot .t{font:700 12px/1 var(--mono);color:var(--cyan);letter-spacing:.08em;margin-bottom:9px}
+.shot .vo{font-size:14.5px;color:var(--ink);line-height:1.45;margin-bottom:10px}
+.shot .d{font-size:13.5px;color:var(--ink3);line-height:1.5}
+.shot .d b{color:var(--ink2);font-weight:600}
+
+/* ---------- timeline ---------- */
+.tl{margin:30px 0;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--panel)}
+.tlbar{display:flex;height:56px}
+.tlseg{
+  flex:1;border-right:1px solid var(--bg);position:relative;
+  display:flex;align-items:center;justify-content:center;
+  font:700 13px/1 var(--mono);color:#06121c;
+}
+.tlseg:last-child{border-right:0}
+.tlvo{display:flex;height:26px;border-top:1px solid var(--line)}
+.tlvo div{flex:1;border-right:1px solid var(--bg);background:#1d3446}
+.tlvo div:last-child{border-right:0}
+.tlcap{padding:12px 16px;font:600 12px/1.5 var(--mono);color:var(--ink3);border-top:1px solid var(--line)}
+
+/* ---------- prompt blocks ---------- */
+.pcard{border:1px solid var(--line2);border-radius:14px;background:var(--panel);margin:22px 0;overflow:hidden}
+.phead{
+  padding:15px 20px;background:var(--panel2);border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:12px;align-items:baseline
+}
+.phead .cn{font:800 15px/1 Archivo,sans-serif;color:var(--yellow)}
+.phead .ct{font:600 12px/1 var(--mono);color:var(--ink3)}
+.phead .cv{font-size:14px;color:var(--ink2);flex-basis:100%;font-style:italic}
+.pbody{padding:6px 20px 18px}
+.plabel{
+  font:700 11px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;
+  margin:18px 0 8px;color:var(--cyan)
+}
+.plabel.v{color:var(--coral)}
+pre{
+  margin:0;padding:16px 18px;background:#08131d;border:1px solid var(--line);
+  border-radius:10px;overflow-x:auto;
+  font:400 14.5px/1.62 var(--mono);color:#d5e6f2;white-space:pre-wrap;word-wrap:break-word
+}
+code{font-family:var(--mono);font-size:.92em;background:#0d1e2b;padding:2px 6px;border-radius:5px;color:var(--cyan)}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+
+/* ---------- misc ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.script{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:22px 0}
+.script p{margin:0 0 12px;color:var(--ink);font-size:17px}
+.script span{font:700 12px var(--mono);color:var(--ink3);margin-right:10px}
+.logo{width:76px;height:76px;border-radius:10px;border:1px solid var(--line2)}
+footer{padding:46px 0 70px;color:var(--ink3);font-size:15px}
+footer a{color:var(--cyan)}
+.ftgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-bottom:30px}
+.ftgrid h4{margin-top:0;color:var(--ink2);font:700 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.ftgrid li{font-size:14px;margin-bottom:6px}
+@media(max-width:760px){
+  body{font-size:17px}
+  .two{grid-template-columns:1fr;gap:8px}
+  .heroinner{padding:52px 0 44px}
+  section{padding:50px 0}
+  .tlseg{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img class="heroimg" src="img/hero.jpg" alt="">
+  <div class="heromask"></div>
+  <div class="heroinner">
+    <div class="wrap">
+      <div class="kicker">Health &amp; Fitness Shorts · Format teardown · 9 Aug 2026</div>
+      <h1>Eight clips.<br>Eight seconds each.<br><em>Sixteen prompts.</em></h1>
+      <p class="sub">A complete forensic teardown of the 64-second <strong>“What happens when you eat Greek yogurt”</strong> short — and the exact prompt system to rebuild it with <strong>Veo 3</strong>.</p>
+      <div class="metarow">
+        <span class="chip"><b>64.11 s</b> runtime</span>
+        <span class="chip"><b>1080×1920</b> · 30 fps</span>
+        <span class="chip"><b>8</b> clips × <b>8.000 s</b></span>
+        <span class="chip"><b>149</b> words VO</span>
+        <span class="chip"><b>~97</b> caption cards</span>
+        <span class="chip">Assembled in <b>Clipchamp</b></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE ANSWER ============ -->
+<div class="answer">
+  <div class="wrap">
+    <h2>Your question, answered first</h2>
+    <div class="bignums">
+      <div class="bignum">
+        <div class="n">8</div>
+        <div class="l"><b style="color:var(--ink)">image prompts</b> — one still keyframe per clip. Nothing more.</div>
+      </div>
+      <div class="bignum alt">
+        <div class="n">8</div>
+        <div class="l"><b style="color:var(--ink)">image-to-video prompts</b> — one motion prompt per keyframe.</div>
+      </div>
+      <div class="bignum mute">
+        <div class="n">16</div>
+        <div class="l">total prompts you write by hand for a 64-second video.</div>
+      </div>
+      <div class="bignum mute">
+        <div class="n">8<small> × 8 s</small></div>
+        <div class="l">Veo 3’s native clip length is <b style="color:var(--yellow)">exactly 8 s</b>. This format was built for it.</div>
+      </div>
+    </div>
+    <p style="margin:26px 0 0;max-width:820px;font-size:19px;color:var(--ink)">And yes — <strong>we can absolutely make these.</strong> The format is mechanical: one sentence of script → one image prompt → one image-to-video prompt → one 8-second clip. The whole build is in <a href="#system">section 05</a>, with all 16 prompts written out in <a href="#prompts">section 06</a>.</p>
+  </div>
+</div>
+
+<!-- ============ 01 WHAT IT IS ============ -->
+<section id="what">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">01 — What the video actually is</div>
+      <h2 class="sec">A guided tour of your digestive tract, sold as a health tip</h2>
+      <p class="lead">One spoonful of Greek yogurt is followed from the mouth to the bloodstream. There is no presenter, no hook line, no product and no call to action. The entire video is a single continuous camera journey through a semi-transparent human body, narrated by a synthetic voice, with karaoke captions burned into the picture.</p>
+
+      <p>It is an <strong>explainer</strong>, not an ad. Nothing is sold and nothing is claimed beyond textbook physiology — which is exactly why it can run on every platform without a compliance problem. The only branding is a small circular logo in the corner.</p>
+
+      <div class="two" style="align-items:center;margin:30px 0">
+        <div>
+          <img class="logo" src="img/logo.png" alt="Channel watermark: a circular blue and green Health &amp; Fitness logo">
+          <p style="margin-top:14px;font-size:15px">The watermark: a circular <strong>“HEALTH &amp; FITNESS”</strong> mark with a leaf-and-dumbbell monogram, bottom-right, on-screen for all 64 seconds.</p>
+        </div>
+        <div>
+          <div class="box warn" style="margin:0">
+            <div class="bt">⚠ It sits on a white square</div>
+            <p style="font-size:15px">The logo is not a transparent PNG — it is pasted on an opaque white tile that punches a bright hole in dark footage. On the near-black shots it is the brightest object in frame.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>The 8-beat story</h3>
+      <p>The script is a chain of anatomical locations, each one handing off to the next. That is the whole structural trick, and it is what makes the format infinitely repeatable:</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>#</th><th>Beat</th><th>Location</th><th>The hand-off</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Intake</td><td>Mouth</td><td>chewing &amp; saliva → swallowing</td></tr>
+            <tr><td class="num">2</td><td>Transit</td><td>Esophagus</td><td>muscle contractions → stomach</td></tr>
+            <tr><td class="num">3</td><td>Breakdown</td><td>Stomach</td><td>acid &amp; protein → nutrients released</td></tr>
+            <tr><td class="num">4</td><td>Arrival</td><td>Small intestine</td><td>probiotics → gut microbiome</td></tr>
+            <tr><td class="num">5</td><td>Absorption</td><td>Intestinal villi</td><td>nutrients → bloodstream</td></tr>
+            <tr><td class="num">6</td><td>Distribution</td><td>Bloodstream</td><td>blood → muscles, bones, organs</td></tr>
+            <tr><td class="num">7</td><td>Residency</td><td>Gut flora</td><td>bacteria settle → balance</td></tr>
+            <tr><td class="num">8</td><td>Payoff</td><td>Whole body</td><td>the benefit, stated plainly</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Beats 1–7 are physiology. <strong>Beat 8 is the only one that sells anything</strong> — and it only ever promises “healthy, energized, functioning at its best”. Nothing measurable, nothing falsifiable, nothing a platform can act on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 THE STRUCTURE ============ -->
+<section id="structure">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">02 — The finding that decides everything</div>
+      <h2 class="sec">Every cut lands on an exact multiple of 8 seconds</h2>
+      <p class="lead">Scene detection returns cuts at <strong>8, 16, 24, 32, 40, 48 and 56 seconds</strong>. Not 7.9. Not 8.2. Seven hard cuts, no dissolves, no transitions, dividing 64 seconds into eight identical 8.000-second blocks.</p>
+    </div>
+
+    <div class="tl">
+      <div class="tlbar">
+        <div class="tlseg" style="background:#ffe23d">1 · mouth</div>
+        <div class="tlseg" style="background:#f5cf46">2 · throat</div>
+        <div class="tlseg" style="background:#efbc4f">3 · stomach</div>
+        <div class="tlseg" style="background:#8fd6e8">4 · intestine</div>
+        <div class="tlseg" style="background:#f0937f">5 · villi</div>
+        <div class="tlseg" style="background:#e07a86">6 · blood</div>
+        <div class="tlseg" style="background:#d98f6e">7 · flora</div>
+        <div class="tlseg" style="background:#f7b757">8 · body</div>
+      </div>
+      <div class="tlvo"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div class="tlcap">0s ————— 8 ————— 16 ————— 24 ————— 32 ————— 40 ————— 48 ————— 56 ————— 64s &nbsp;·&nbsp; each block = 1 generated clip = 1 sentence of voice-over</div>
+    </div>
+
+    <div class="narrow">
+      <div class="box find">
+        <div class="bt">⭐ And the script matches it one-for-one</div>
+        <p>The voice-over contains <strong>exactly eight sentences</strong>. Sentence 1 runs 0.10–7.88 s. Sentence 2 runs 7.88–14.88 s. Sentence 8 runs 55.84–63.86 s. <strong>Every sentence begins and ends inside its own clip.</strong> One sentence, one clip, one 8-second block — all the way through.</p>
+      </div>
+
+      <p>That is not a coincidence and it is not editing skill. It is the signature of a pipeline where <strong>the generator’s clip length is the unit of composition</strong>. The writer did not write a script and then cut it up; they wrote eight sentences that each had to fit inside 8 seconds, because 8 seconds is all the tool gives you.</p>
+
+      <div class="box key">
+        <div class="bt">Why 8 seconds specifically</div>
+        <p>8.000 s is <strong>Veo 3 / Veo 3.1’s maximum single-generation length</strong>. It is unusual among the competition — Kling gives 5 or 10 s, Runway 5 or 10 s, Hailuo 6 or 10 s, Sora 5–20 s. A video built in exact 8-second bricks is consistent with a Veo pipeline, though clip length alone is not proof of the model.</p>
+      </div>
+
+      <h3>The voice-over is a separate track — proven</h3>
+      <p>Three independent measurements say the narration was <strong>not</strong> generated with the video:</p>
+      <ul>
+        <li><strong>Words straddle the cuts.</strong> “After” starts at 7.88 s and ends at 8.12 s — it plays <em>across</em> the boundary between clip 1 and clip 2. Same at 32 s (“Tiny”) and 56 s (“From”). Per-clip audio physically cannot do that.</li>
+        <li><strong>Loudness range is 2.6 LU.</strong> That is machine-flat. Generated audio carries room tone and ambience that widens the range considerably.</li>
+        <li><strong>It is mono.</strong> Both channels measure within 0.006 dB of each other — a single centred voice duplicated into a stereo container.</li>
+      </ul>
+      <p>So the build order was: write eight sentences → render one continuous TTS track → generate eight silent 8-second clips → lay them under the voice → auto-caption → export.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 SHOT BY SHOT ============ -->
+<section id="shots">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">03 — Shot by shot</div>
+      <h2 class="sec">All eight clips</h2>
+      <p class="lead">Each card is one generated clip: the exact voice-over line it carries, what is on screen, and the camera move inside it. Note how the camera scale escalates — wide body → organ → macro → microscopic → back to whole body for the payoff.</p>
+    </div>
+
+    <div class="shots">
+      <div class="shot">
+        <img src="img/clip1.jpg" alt="Semi-transparent head in profile, spoon of yogurt entering the mouth, skull and jaw muscles visible">
+        <div class="b">
+          <div class="t">CLIP 1 · 0–8 s</div>
+          <div class="vo">“One spoonful of Greek yogurt begins an incredible journey, entering your mouth where chewing and saliva prepare it for healthy digestion.”</div>
+          <div class="d"><b>Frame:</b> ¾ profile head, skin semi-transparent over skull, jaw muscles, teeth, tongue. Steel spoon of thick white yogurt.<br><b>Camera:</b> slow push in, then tilt down the throat.<br><b>Graphics:</b> glowing cyan arrows trace the swallow path.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip2.jpg" alt="Transparent torso showing the esophagus carrying a white bolus down toward the stomach">
+        <div class="b">
+          <div class="t">CLIP 2 · 8–16 s</div>
+          <div class="vo">“After swallowing, the yogurt smoothly travels down your esophagus, moving safely toward the stomach through gentle muscle contractions.”</div>
+          <div class="d"><b>Frame:</b> chest-up, transparent musculature, lungs and heart visible, white bolus at the top of the esophagus.<br><b>Camera:</b> slow dolly in, following the bolus down.<br><b>Graphics:</b> none — the anatomy carries it.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip3.jpg" alt="Cutaway stomach with white yogurt swirling in amber gastric juice">
+        <div class="b">
+          <div class="t">CLIP 3 · 16–24 s</div>
+          <div class="vo">“Inside your stomach, digestive juices break down the yogurt’s protein, preparing valuable nutrients for absorption throughout your body.”</div>
+          <div class="d"><b>Frame:</b> stomach cutaway, white yogurt folding into amber gastric fluid.<br><b>Camera:</b> the biggest move in the video — a hard push from torso scale into a macro of swirling protein.<br><b>Graphics:</b> pearl-like protein clusters.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip4.jpg" alt="Blue x-ray style body with glowing green probiotic bacteria in the intestines">
+        <div class="b">
+          <div class="t">CLIP 4 · 24–32 s</div>
+          <div class="vo">“The probiotics reach your small intestine, where they interact with your gut microbiome and help support a healthy digestive environment.”</div>
+          <div class="d"><b>Frame:</b> the one palette break — a cold blue x-ray full body, green and cyan bacteria glowing in the gut.<br><b>Camera:</b> full body → intestinal wall macro in one continuous push.<br><b>Graphics:</b> HUD panels, numeric readouts.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip5.jpg" alt="Macro view of intestinal villi with gold and white nutrient particles floating">
+        <div class="b">
+          <div class="t">CLIP 5 · 32–40 s</div>
+          <div class="vo">“Tiny intestinal villi absorb protein, calcium, and vitamins, sending these essential nutrients directly into your bloodstream.”</div>
+          <div class="d"><b>Frame:</b> villi field in macro, gold discs and white spheres drifting as nutrients.<br><b>Camera:</b> slow orbit, then reveal of a villus cross-section with its capillary loop.<br><b>Graphics:</b> particles pulled into the tissue.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip6.jpg" alt="Inside a blood vessel network with nutrient clusters and red blood cells">
+        <div class="b">
+          <div class="t">CLIP 6 · 40–48 s</div>
+          <div class="vo">“Your bloodstream delivers these nutrients to muscles, bones, and organs, helping fuel normal body functions every single day.”</div>
+          <div class="d"><b>Frame:</b> inside a capillary bed — blue vessels, yellow/green nutrient clusters, red blood cells.<br><b>Camera:</b> forward travel through the vessels, then a pull back to the whole body with the brain lit.<br><b>Graphics:</b> nutrient clusters as coloured geometry.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip7.jpg" alt="Intestinal villi covered in multicoloured bacteria above a layer of white yogurt">
+        <div class="b">
+          <div class="t">CLIP 7 · 48–56 s</div>
+          <div class="vo">“Beneficial bacteria thrive inside your gut, helping maintain microbial balance and supporting healthy digestion from within.”</div>
+          <div class="d"><b>Frame:</b> the most colour-saturated shot — villi forest, red/blue/green/yellow bacteria, white yogurt pooled below.<br><b>Camera:</b> gentle lateral drift, almost still.<br><b>Graphics:</b> bacteria drift and multiply.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="img/clip8.jpg" alt="Full body anatomical figure with warm golden glow and lit digestive tract">
+        <div class="b">
+          <div class="t">CLIP 8 · 56–64 s</div>
+          <div class="vo">“From stronger bones to better digestion, Greek yogurt provides nutrients that help keep your body healthy, energized, and functioning at its best.”</div>
+          <div class="d"><b>Frame:</b> hero shot — full standing figure, skeleton and muscle, digestive tract glowing, warm gold background.<br><b>Camera:</b> almost static, very slow push.<br><b>Graphics:</b> a golden light pulse radiating from the gut.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrow">
+      <div class="box key">
+        <div class="bt">The escalation is the retention device</div>
+        <p>There is no hook, no question and no cliffhanger anywhere in this video. What holds attention is <strong>scale change</strong> — each clip is visually a different world from the last, and the two boldest palette breaks (the cold blue x-ray at 24 s and the warm gold hero at 56 s) land exactly where a viewer would otherwise drop off. Copy that placement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 THE SPEC ============ -->
+<section id="spec">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">04 — Everything measurable</div>
+      <h2 class="sec">The full technical read-out</h2>
+
+      <h3>Container &amp; picture</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Property</th><th>Value</th><th>Read</th></tr></thead>
+          <tbody>
+            <tr><td>Duration</td><td class="num">64.110 s</td><td>8 × 8.000 s + 3 frames</td></tr>
+            <tr><td>Resolution</td><td class="num">1080 × 1920</td><td>9:16, correct for every short-form platform</td></tr>
+            <tr><td>Frame rate</td><td class="num">30 fps (1923 frames)</td><td>container rate — see the cadence note below</td></tr>
+            <tr><td>Video codec</td><td class="num">H.264 Main, yuv420p, bt709</td><td>maximum compatibility</td></tr>
+            <tr><td>Bitrate</td><td class="num">19.1 Mbps</td><td>very high; ~3× what platforms need. 146 MB for 64 s</td></tr>
+            <tr><td>Audio</td><td class="num">AAC-LC 192 kbps, 48 kHz, stereo</td><td>stereo container, mono content</td></tr>
+            <tr><td>Encoder tag</td><td class="num">clipchamp.com</td><td><b>assembled in Microsoft Clipchamp</b> — free, browser-based</td></tr>
+            <tr><td>Cuts</td><td class="num">7 hard cuts</td><td>8, 16, 24, 32, 40, 48, 56 s — zero transitions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box warn">
+        <div class="bt">⚠ The picture is not natively 30 fps</div>
+        <p>Frame-difference analysis finds <strong>exactly 176 distinct frames in every 8-second block</strong> — a perfectly periodic pattern of 11 unique frames in every 15, repeated identically across all eight clips. That is a content cadence of <strong>22 fps inside a 30 fps container</strong>, so roughly one frame in four is a duplicate and the motion carries an uneven judder.</p>
+        <p>Veo 3.1 outputs <strong>24 fps</strong>, so the clips were re-timed somewhere in the chain — most likely a slight speed change or a non-integer frame-rate conversion on export. <strong>The lesson for us:</strong> set the editor timeline to match the generator (24 fps) and never speed-adjust a clip to make it fit. Stretching an 8-second clip is what produces this.</p>
+      </div>
+
+      <h3>Voice-over</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Property</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Words</td><td class="num">149</td></tr>
+            <tr><td>Sentences</td><td class="num">8 — one per clip</td></tr>
+            <tr><td>Words per sentence</td><td class="num">16–22 (mean 18.6)</td></tr>
+            <tr><td>Pace</td><td class="num">140 wpm overall (123–165 per line)</td></tr>
+            <tr><td>Spoken time per clip</td><td class="num">6.84–8.02 s (mean 7.57 s)</td></tr>
+            <tr><td>Headroom per clip</td><td class="num">0.43 s average</td></tr>
+            <tr><td>Loudness range</td><td class="num">2.6 LU — synthetic, no dynamics</td></tr>
+            <tr><td>Channels</td><td class="num">mono content in a stereo file</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box find">
+        <div class="bt">⭐ The single most useful number in this teardown</div>
+        <p><strong>18.6 words per sentence at 140 wpm fills an 8-second clip with ~0.4 s to spare.</strong> That is the rule that makes the whole format work. Write every line to 16–20 words and the picture and the voice stay locked together forever, with no editing.</p>
+      </div>
+
+      <h3>The script, in full</h3>
+      <div class="script">
+        <p><span>1 · 0–8s</span>One spoonful of Greek yogurt begins an incredible journey, entering your mouth where chewing and saliva prepare it for healthy digestion.</p>
+        <p><span>2 · 8–16s</span>After swallowing, the yogurt smoothly travels down your esophagus, moving safely toward the stomach through gentle muscle contractions.</p>
+        <p><span>3 · 16–24s</span>Inside your stomach, digestive juices break down the yogurt’s protein, preparing valuable nutrients for absorption throughout your body.</p>
+        <p><span>4 · 24–32s</span>The probiotics reach your small intestine, where they interact with your gut microbiome and help support a healthy digestive environment.</p>
+        <p><span>5 · 32–40s</span>Tiny intestinal villi absorb protein, calcium, and vitamins, sending these essential nutrients directly into your bloodstream.</p>
+        <p><span>6 · 40–48s</span>Your bloodstream delivers these nutrients to muscles, bones, and organs, helping fuel normal body functions every single day.</p>
+        <p><span>7 · 48–56s</span>Beneficial bacteria thrive inside your gut, helping maintain microbial balance and supporting healthy digestion from within.</p>
+        <p><span>8 · 56–64s</span>From stronger bones to better digestion, Greek yogurt provides nutrients that help keep your body healthy, energized, and functioning at its best.</p>
+      </div>
+
+      <h3>Captions</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Property</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Cards</td><td class="num">~97 (measured by mask change)</td></tr>
+            <tr><td>Words per card</td><td class="num">1–3, typically 2</td></tr>
+            <tr><td>Time on screen</td><td class="num">median 0.50 s · 70% of runtime</td></tr>
+            <tr><td>Style</td><td class="num">heavy italic sans, yellow fill, black outline</td></tr>
+            <tr><td>Position</td><td class="num">centred, y = 76–80% of frame height</td></tr>
+            <tr><td>Source</td><td class="num">auto-generated from the VO — zero prompts, zero typing</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:15px;color:var(--ink3)">Card count is approximate: the captions animate as they appear, so the boundary detector can over- or under-split a card by one. The 2-words-per-card cadence and the 0.5 s median are solid.</p>
+
+      <h3>Audio levels</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Measurement</th><th>Value</th><th>Verdict</th></tr></thead>
+          <tbody>
+            <tr><td>Integrated loudness</td><td class="num">−26.7 LUFS</td><td class="cross">12.7 LU below the ~−14 LUFS platform target</td></tr>
+            <tr><td>True peak</td><td class="num">−11.4 dBFS</td><td class="cross">11 dB of headroom left unused</td></tr>
+            <tr><td>Loudness range</td><td class="num">2.6 LU</td><td>flat — pure TTS</td></tr>
+            <tr><td>Level in speech gaps</td><td class="num">−50 to −57 dB</td><td class="cross">digital silence — <b>there is no music bed at all</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box stop">
+        <div class="bt">The two audio defects worth fixing on ours</div>
+        <p><strong>1. It is far too quiet.</strong> At −26.7 LUFS this plays noticeably quieter than everything around it in a feed. Platforms turn loud audio down; they do not reliably turn quiet audio up. Normalise to about −14 LUFS.</p>
+        <p><strong>2. There is no music.</strong> The gaps between sentences are true silence, and there are three of them over a second long. Silence in a vertical feed is a scroll cue. A quiet bed at −28 to −30 dB under the voice costs nothing and removes the dead air.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 THE SYSTEM ============ -->
+<section id="system">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">05 — Can we build these with Veo 3?</div>
+      <h2 class="sec">Yes — and the format was practically designed for it</h2>
+      <p class="lead">The constraint that shapes this whole video — 8-second maximum clips — is Veo 3’s constraint. Every other tool in the pipeline is free or already ours. Here is the production system.</p>
+
+      <h3>What Veo 3.1 gives you</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Capability</th><th>Value</th><th>What it means for this format</th></tr></thead>
+          <tbody>
+            <tr><td>Clip length</td><td class="num">4, 6 or 8 s</td><td class="tick">8 s is the atomic unit. Write to it.</td></tr>
+            <tr><td>Frame rate</td><td class="num">24 fps</td><td>set the edit timeline to 24 fps to match</td></tr>
+            <tr><td>Aspect ratio</td><td class="num">16:9 and 9:16 native</td><td class="tick">generate vertical — never crop later</td></tr>
+            <tr><td>Resolution</td><td class="num">720p / 1080p (4K upscale)</td><td>1080p is plenty for 9:16</td></tr>
+            <tr><td>Image-to-video</td><td class="num">yes — first frame, optional last frame</td><td class="tick">this is the mode we want</td></tr>
+            <tr><td>Reference images</td><td class="num">yes — “ingredients”</td><td class="tick">how you keep one body across 8 clips</td></tr>
+            <tr><td>Native audio</td><td class="num">on by default</td><td class="cross"><b>turn it off</b> — it fights the voice-over</td></tr>
+            <tr><td>Extend</td><td class="num">+7 s per extension, up to ~148 s</td><td>not needed — hard cuts are better here</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box stop">
+        <div class="bt">🛑 Three settings that will ruin the video if you get them wrong</div>
+        <p><strong>1. Audio off.</strong> Veo generates its own sound. Layered under a TTS narration you get two competing ambiences and phantom voices. Set <code>generateAudio: false</code> on the API, or mute every clip in the editor if you are working in Flow.</p>
+        <p><strong>2. Never ask for text.</strong> Veo renders on-screen writing as garbled pseudo-letters. Every prompt must end with <em>“no text, no captions, no on-screen writing, no logos”</em>. All type comes from the editor afterwards.</p>
+        <p><strong>3. Generate 9:16 natively.</strong> Do not make 16:9 and crop — you lose the vertical composition that makes an anatomy shot read on a phone.</p>
+      </div>
+
+      <h3>Why image-first, and not straight text-to-video</h3>
+      <p>Bob, this is the part that matters most. Going <strong>text → image → video</strong> instead of <strong>text → video</strong> buys three things that this format lives or dies on:</p>
+      <ul>
+        <li><strong>You approve the frame before you pay for motion.</strong> A still costs a fraction of a second of video. Reject and regenerate stills until the anatomy is right, <em>then</em> animate. This is where most of the money is saved.</li>
+        <li><strong>Continuity.</strong> Feeding the same body render as the start frame — plus reusing it as a reference image — is the only reliable way to keep one consistent anatomical model across eight separate generations. Text-to-video re-rolls the body every time.</li>
+        <li><strong>Composition control.</strong> The pull-back at the end of clip 6 and the hero pose in clip 8 are framing decisions. You cannot reliably prompt framing into a text-to-video generation; you can simply draw it in the still.</li>
+      </ul>
+
+      <h3>What each video actually costs</h3>
+      <p>64 seconds of output at Google’s published Gemini API rates:</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Tier</th><th>Per second</th><th>64 s of video</th><th>With a 1.5× retry budget</th></tr></thead>
+          <tbody>
+            <tr><td>Veo 3.1 <b>Lite</b> 1080p</td><td class="num">$0.08</td><td class="num">$5.12</td><td class="num">~$7.70</td></tr>
+            <tr><td>Veo 3.1 <b>Fast</b> 1080p</td><td class="num">$0.12</td><td class="num">$7.68</td><td class="num">~$11.50</td></tr>
+            <tr><td>Veo 3.1 <b>Standard</b> 1080p</td><td class="num">$0.40</td><td class="num">$25.60</td><td class="num">~$38.40</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:15px;color:var(--ink3)">Rates read from Google’s own Gemini API pricing page on 9 Aug 2026 and they move — confirm against your console before committing to volume. If you are driving Flow on a Google AI Pro/Ultra subscription instead, it bills in credits, not per second, and the per-video cost is effectively fixed by your plan.</p>
+
+      <div class="box find">
+        <div class="bt">⭐ Start on Fast, not Standard</div>
+        <p>Anatomical renders are smooth, slow and low-detail-motion — the easiest possible case for a fast tier. Generate the whole first video on Fast, and only escalate a clip to Standard if it visibly fails. On a 5-video test that is the difference between roughly $38 and $128.</p>
+      </div>
+
+      <h3>The full pipeline</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>#</th><th>Step</th><th>Tool</th><th>Output</th><th>Prompts</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Write 8 sentences, 16–20 words each</td><td>LLM</td><td>the script</td><td class="num">1</td></tr>
+            <tr><td class="num">2</td><td>Render one continuous narration</td><td>TTS</td><td>one ~64 s voice track</td><td class="num">0</td></tr>
+            <tr><td class="num">3</td><td>Generate 8 keyframes</td><td>image model</td><td>8 stills, 9:16</td><td class="num"><b>8</b></td></tr>
+            <tr><td class="num">4</td><td>Animate each keyframe</td><td><b>Veo 3.1, audio off</b></td><td>8 × 8 s silent clips</td><td class="num"><b>8</b></td></tr>
+            <tr><td class="num">5</td><td>Lay clips under the voice, butt-joined</td><td>editor</td><td>64 s timeline</td><td class="num">0</td></tr>
+            <tr><td class="num">6</td><td>Auto-caption, add music bed, watermark</td><td>editor</td><td>finished short</td><td class="num">0</td></tr>
+            <tr><td class="num">7</td><td>Normalise to −14 LUFS, export 24 fps</td><td>editor</td><td>upload file</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>16 prompts written by hand.</strong> Everything else is a render, a drag or a checkbox.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 THE PROMPTS ============ -->
+<section id="prompts">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">06 — The 16 prompts</div>
+      <h2 class="sec">Reconstructed, clip by clip</h2>
+      <p class="lead">These are written to rebuild the video you sent, so you can hold each one against its frame in section 03 and see the mapping. Swap the subject and the anatomy and the same 16 slots produce any “what happens when you eat X” short.</p>
+
+      <div class="box key">
+        <div class="bt">How to read these</div>
+        <p>The <b style="color:var(--cyan)">IMAGE PROMPT</b> describes a <em>still</em> — the first frame, frozen. It contains no motion words at all. The <b style="color:var(--coral)">IMAGE-TO-VIDEO PROMPT</b> describes only <em>what changes</em> over the 8 seconds — subject motion first, then camera, then pace. Keeping those two jobs separate is what stops Veo re-inventing your frame.</p>
+      </div>
+    </div>
+
+    <div class="narrow">
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 1</span><span class="ct">0–8 s · MOUTH</span>
+          <span class="cv">“One spoonful of Greek yogurt begins an incredible journey, entering your mouth where chewing and saliva prepare it for healthy digestion.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Three-quarter profile of a human head and neck, skin rendered
+semi-transparent to reveal the skull, jaw muscles, teeth and tongue
+beneath. A stainless steel spoon holding a thick dollop of white Greek
+yogurt is at the open lips. Clinically accurate anatomy, subsurface
+scattering, wet specular highlights on the tongue. Background is a dark
+navy-teal medical interface, far out of focus, with faint glowing cyan
+panels. Soft rim light from upper left, shallow depth of field,
+cinematic, highly detailed. No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The spoon slides into the mouth and withdraws empty, leaving the white
+yogurt on the tongue. The jaw closes and chews twice. The tongue pushes
+the yogurt back toward the throat and it begins to descend. Glowing cyan
+arrows fade in along the throat, pointing downward.
+Camera pushes in slowly and tilts down to follow the throat.
+Smooth continuous motion, documentary pace, no camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 2</span><span class="ct">8–16 s · ESOPHAGUS</span>
+          <span class="cv">“After swallowing, the yogurt smoothly travels down your esophagus, moving safely toward the stomach through gentle muscle contractions.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Front view of a human head and upper torso with the skin removed and the
+musculature semi-transparent, revealing lungs, heart, the full esophagus
+and the stomach below. A rounded white bolus of yogurt sits at the top of
+the esophagus, just below the throat. Same anatomical model and lighting
+as the previous shot. Dark navy-teal medical interface background, far out
+of focus, faint cyan ECG trace. Soft key light from upper left, shallow
+depth of field, cinematic, highly detailed. No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The white bolus travels smoothly down the esophagus toward the stomach.
+The esophageal walls contract in a travelling wave behind it, squeezing
+it downward. It reaches the stomach and drops in.
+Camera dollies in slowly, following the bolus down the chest.
+Slow, smooth, weighty motion. No camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 3</span><span class="ct">16–24 s · STOMACH</span>
+          <span class="cv">“Inside your stomach, digestive juices break down the yogurt’s protein, preparing valuable nutrients for absorption throughout your body.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Cutaway of a human stomach seen from inside the abdomen, the pink ridged
+gastric wall in the round, holding a pool of amber digestive fluid with
+thick white yogurt folded into it. Small pearl-like white protein clusters
+suspended in the liquid. Wet glossy surfaces, warm amber bounce light,
+dark navy-teal medical interface far out of focus behind. Shallow depth
+of field, cinematic, highly detailed. No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The stomach wall contracts rhythmically and churns. The white yogurt
+swirls and folds into the amber digestive fluid, breaking apart into
+smaller strands. Pearl-like protein clusters separate out and drift
+through the liquid. Small bubbles rise.
+Camera pushes in hard and steadily, from the whole stomach to a macro
+view of the swirling fluid.
+Continuous fluid motion, no camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 4</span><span class="ct">24–32 s · SMALL INTESTINE</span>
+          <span class="cv">“The probiotics reach your small intestine, where they interact with your gut microbiome and help support a healthy digestive environment.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Full standing human body rendered as a cold blue translucent x-ray, arms
+at the sides, the skeleton and organs faintly visible inside. The small
+intestine is picked out in brighter blue and is filled with small glowing
+green and cyan rod-shaped bacteria. Deep navy background with faint
+holographic data panels and small numeric readouts at the edges of frame.
+Clean clinical lighting, cinematic, highly detailed.
+No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The green and cyan bacteria drift and multiply inside the intestine,
+glowing brighter.
+Camera pushes forward continuously, from the full body into the abdomen
+and through into a macro view of the intestinal wall, where the rod-shaped
+bacteria are now large and clearly separated against pink tissue.
+One single smooth accelerating push. No cuts, no camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 5</span><span class="ct">32–40 s · VILLI</span>
+          <span class="cv">“Tiny intestinal villi absorb protein, calcium, and vitamins, sending these essential nutrients directly into your bloodstream.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Extreme macro of the inner lining of the small intestine — a field of
+finger-shaped pink villi rising toward the top of frame, textured with
+fine microvilli. Floating between them are gold lens-shaped particles,
+small white spheres and a few blue spheres representing absorbed
+nutrients. Warm subsurface glow inside the tissue, soft depth haze,
+shallow depth of field, cinematic, highly detailed.
+No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The villi sway gently. The gold and white nutrient particles drift toward
+the villi and are drawn into the tissue surface, disappearing inside.
+A network of red and blue capillaries inside the villi lights up warmly
+as the nutrients enter.
+Camera orbits slowly to the right and cranes down, revealing a cut-open
+villus with its capillary loop running through the centre.
+Slow, calm, continuous. No camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 6</span><span class="ct">40–48 s · BLOODSTREAM</span>
+          <span class="cv">“Your bloodstream delivers these nutrients to muscles, bones, and organs, helping fuel normal body functions every single day.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Inside the body among a dense network of blood vessels — deep blue veins
+crossing red muscle tissue, running from the bottom of frame into the
+distance. Floating in the foreground are small clustered nutrient
+molecules rendered as yellow, green and blue geometric shapes, with a few
+red blood cells. Warm red ambient light, volumetric depth haze, shallow
+depth of field, cinematic, highly detailed.
+No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The nutrient clusters and red blood cells stream past the camera as it
+travels forward through the vessel network.
+Halfway through, the camera pulls back smoothly and continuously, the
+vessels receding until the whole body is visible as a pale blue x-ray
+figure with the brain and heart glowing warmly, nutrients arriving
+throughout.
+One continuous move, forward then back. No cuts, no camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 7</span><span class="ct">48–56 s · GUT FLORA</span>
+          <span class="cv">“Beneficial bacteria thrive inside your gut, helping maintain microbial balance and supporting healthy digestion from within.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Macro view inside the gut — tall pink villi like a forest filling the
+frame, and a smooth layer of white yogurt pooled across the floor between
+them. Hundreds of small rod-shaped and spherical bacteria in saturated
+blue, green, red, orange and yellow are scattered over the tissue and
+through the air. Warm bounce light from the white layer below, soft depth
+haze, shallow depth of field, cinematic, highly detailed.
+No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>The coloured bacteria drift slowly through the space between the villi and
+settle onto the tissue surface. A few divide and multiply. The villi sway
+very gently. The white yogurt layer below shifts slowly.
+Camera drifts laterally to the right, extremely slowly, almost still.
+Calm, unhurried, continuous. No camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="phead"><span class="cn">CLIP 8</span><span class="ct">56–64 s · WHOLE BODY PAYOFF</span>
+          <span class="cv">“From stronger bones to better digestion, Greek yogurt provides nutrients that help keep your body healthy, energized, and functioning at its best.”</span></div>
+        <div class="pbody">
+          <div class="plabel">Image prompt</div>
+<pre>Photorealistic 3D medical visualisation, vertical 9:16 composition.
+Full standing human figure facing forward, arms slightly away from the
+body, rendered as translucent skin over visible skeleton and red
+musculature, with the stomach and intestines clearly picked out and
+glowing warm orange. Warm golden amber background with soft radial light
+behind the figure and faint floating particles. Heroic centred symmetrical
+composition, full body in frame head to feet, cinematic, highly detailed.
+No text, no captions, no logos.</pre>
+          <div class="plabel v">Image-to-video prompt</div>
+<pre>A warm golden light pulses outward from the digestive tract and spreads
+through the whole body, the bones and muscles brightening as it passes.
+Small particles drift upward in the background.
+Camera pushes in very slowly, almost imperceptibly.
+Calm, confident, resolving. No camera shake.
+No text, no captions, no on-screen writing.</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 TEMPLATE ============ -->
+<section id="template">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">07 — Making it repeatable</div>
+      <h2 class="sec">The same 8 slots, any topic</h2>
+      <p class="lead">Nothing above is specific to yogurt. The format is a fixed 8-beat skeleton with a swappable subject — which is what makes it a channel rather than a video.</p>
+
+      <h3>The skeleton</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Clip</th><th>Job</th><th>Camera scale</th><th>Palette</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>The subject enters the body</td><td>close-up</td><td>teal + flesh</td></tr>
+            <tr><td class="num">2</td><td>It travels to the first organ</td><td>medium / torso</td><td>teal + flesh</td></tr>
+            <tr><td class="num">3</td><td>It is broken down</td><td>torso → macro</td><td>warm amber</td></tr>
+            <tr><td class="num">4</td><td>Its active component arrives</td><td>full body → micro</td><td class="num" style="color:var(--cyan)">cold blue — break #1</td></tr>
+            <tr><td class="num">5</td><td>It is absorbed</td><td>macro</td><td>pink + gold</td></tr>
+            <tr><td class="num">6</td><td>It reaches the rest of the body</td><td>micro → full body</td><td>red + blue</td></tr>
+            <tr><td class="num">7</td><td>The lasting effect</td><td>macro, near-still</td><td>saturated multicolour</td></tr>
+            <tr><td class="num">8</td><td>The benefit, stated plainly</td><td>full body hero</td><td class="num" style="color:var(--yellow)">warm gold — break #2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Topics that drop straight into it</h4>
+      <ul>
+        <li><strong>What happens when you drink a glass of water</strong> — mouth → stomach → intestine → bloodstream → kidneys → cells → brain → whole body</li>
+        <li><strong>What happens when you eat an egg</strong> — same skeleton, protein and choline instead of probiotics, liver and brain as the payoff organs</li>
+        <li><strong>What happens when you skip breakfast</strong> — a negative-framed version; the strongest hook of the three</li>
+        <li><strong>What happens when you drink coffee</strong> — adenosine receptors give you a genuinely different clip 5 and 6</li>
+        <li><strong>What happens when you walk 10,000 steps</strong> — muscle, heart, lungs, bone, brain; no ingestion beat, so clip 1 becomes the first step</li>
+      </ul>
+
+      <div class="box find">
+        <div class="bt">⭐ The keyframes are reusable across videos</div>
+        <p>Clips 2, 5, 6 and 8 — esophagus transit, villi absorption, bloodstream delivery, whole-body hero — are <strong>anatomically identical whatever the subject is</strong>. Generate a strong still for each of those once and reuse it as the start frame across the whole series. That takes a new video from 8 image prompts down to about 4, and it makes the series look deliberately branded instead of accidentally inconsistent.</p>
+      </div>
+
+      <h3>The script prompt</h3>
+      <p>This is the one LLM prompt that produces the whole script. The word count is the load-bearing part:</p>
+<pre>Write the narration for a 64-second vertical explainer video titled
+"What happens when you eat [SUBJECT]".
+
+Rules:
+- Exactly 8 sentences.
+- Each sentence must be 16 to 20 words. This is a hard constraint: each
+  one has to be spoken in under 8 seconds at 140 words per minute.
+- Each sentence covers exactly one location in the body, in this order:
+  1) entering the mouth   2) travelling to the stomach
+  3) broken down          4) the active component arrives in the gut
+  5) absorbed             6) distributed by the blood
+  7) the lasting effect   8) the overall benefit
+- Plain, calm, factual. Textbook physiology only.
+- No health claims, no cures, no numbers, no dosages, no comparisons
+  to other foods, no second person commands.
+- No hook line, no "did you know", no call to action.
+- Output the 8 sentences only, numbered.</pre>
+
+      <div class="box warn">
+        <div class="bt">⚠ Keep it physiology, keep it boring</div>
+        <p>The reason this format is safe on every platform is that it never claims a health <em>outcome</em>. “Supports a healthy digestive environment” is describing what a body does. “Fixes your bloating” is a health claim, and on a channel this is the one line that would eventually cost you the account. Our other supplement work has run into exactly this; here, we get the reach without the exposure — so do not let a stronger hook creep in through the script.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 FIXES ============ -->
+<section id="fixes">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">08 — Beating the reference</div>
+      <h2 class="sec">Seven things ours should do better</h2>
+      <p class="lead">The video you sent is a competent execution of a strong format. It also leaves a lot on the table, and every gap is cheap to close.</p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>#</th><th>Problem in the reference</th><th>Fix on ours</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><b>−26.7 LUFS</b> — plays far quieter than the feed around it</td><td>normalise to −14 LUFS, true peak −1 dBTP</td></tr>
+            <tr><td class="num">2</td><td><b>No music at all</b>; three silent gaps over a second</td><td>quiet bed 28–30 dB under the voice, ducked</td></tr>
+            <tr><td class="num">3</td><td><b>22 fps content in a 30 fps file</b> — visible judder</td><td>24 fps timeline, 24 fps export, never speed-adjust a clip</td></tr>
+            <tr><td class="num">4</td><td><b>Logo on an opaque white square</b>, brightest object on dark shots</td><td>transparent PNG at 60–70% opacity</td></tr>
+            <tr><td class="num">5</td><td><b>No hook.</b> Clip 1 opens on a spoon and a full sentence of setup</td><td>put the payoff image in the first 1.5 s, then go back to the mouth</td></tr>
+            <tr><td class="num">6</td><td><b>19.1 Mbps / 146 MB</b> for 64 seconds — 3× what any platform keeps</td><td>8–12 Mbps CRF-based export; identical on-screen result</td></tr>
+            <tr><td class="num">7</td><td><b>No end card</b> — it simply stops</td><td>hold the last frame 0.5 s with the channel mark; it lifts the loop</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box key">
+        <div class="bt">The one structural upgrade</div>
+        <p>Everything above is polish. The real gap is <strong>the first 1.5 seconds</strong>. This video spends its entire opening clip on setup — “One spoonful of Greek yogurt begins an incredible journey” — before anything visually interesting happens. In a vertical feed that is where the audience is decided.</p>
+        <p>The cheapest fix costs nothing to generate: <strong>open on the clip 8 hero frame</strong> (the glowing full body) for about a second, then cut to the mouth. You already have the asset. The script does not change, the VO does not change, and the video now starts on its most striking image instead of its least.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 METHOD ============ -->
+<section id="method">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">09 — Method</div>
+      <h2 class="sec">How each number was measured</h2>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Claim</th><th>Method</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>8 clips × 8.000 s</td><td>ffmpeg scene detection at thresholds 0.35 and 0.5, then frames extracted either side of every boundary and inspected</td><td class="tick">measured</td></tr>
+            <tr><td>8 sentences, 1 per clip</td><td>Whisper large-v3 with word-level timestamps; each sentence’s first and last word mapped to its 8 s block</td><td class="tick">measured</td></tr>
+            <tr><td>VO is a separate track</td><td>“After” spans 7.88–8.12 s across the clip-1/clip-2 cut; LRA 2.6 LU; both channels within 0.006 dB</td><td class="tick">measured</td></tr>
+            <tr><td>149 words, 18.6/sentence, 140 wpm</td><td>word timestamps from the same transcript</td><td class="tick">measured</td></tr>
+            <tr><td>No music bed</td><td>mean level in three inter-sentence gaps: −50.7 to −56.6 dB, against −29.5 dB during speech</td><td class="tick">measured</td></tr>
+            <tr><td>−26.7 LUFS, −11.4 dBTP</td><td>ffmpeg EBU R128</td><td class="tick">measured</td></tr>
+            <tr><td>22 fps content cadence</td><td>per-frame mean absolute difference on cropped greyscale frames; duplicate positions periodic at 4 in every 15, identical in all 8 blocks; mpdecimate agrees (177–181 kept of 240)</td><td class="tick">measured</td></tr>
+            <tr><td>Assembled in Clipchamp</td><td>container metadata: <code>encoder = clipchamp.com</code></td><td class="tick">measured</td></tr>
+            <tr><td>~97 caption cards</td><td>yellow-pixel mask per frame, new card when overlap with the previous frame drops below 55%</td><td>approximate — animation can split a card</td></tr>
+            <tr><td>Imagery is AI-generated</td><td>HUD panels are blurred pseudo-interface with unreadable pseudo-text — a generation tell, not a render choice; plus the exact 8 s block structure</td><td>strong inference, not proof</td></tr>
+            <tr><td>Consistent with a Veo pipeline</td><td>8.000 s is Veo 3/3.1’s native maximum and is not a standard length for Kling, Runway, Hailuo or Sora</td><td>consistent — not proof of model</td></tr>
+            <tr><td>Veo 3.1 specs and pricing</td><td>Google Gemini API docs and pricing page, read 9 Aug 2026</td><td class="tick">sourced</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Source file: 152,981,905 bytes, downloaded whole from the Drive link and analysed locally. Nothing was published, no account was created, nothing was generated and nothing was spent.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="narrow">
+      <div class="ftgrid">
+        <div>
+          <h4>The answer, once more</h4>
+          <ul style="padding-left:18px">
+            <li><b style="color:var(--yellow)">8</b> image prompts</li>
+            <li><b style="color:var(--cyan)">8</b> image-to-video prompts</li>
+            <li><b>16</b> total, per 64-second video</li>
+            <li>Veo 3.1, audio <b>off</b>, 9:16, 8 s, 24 fps</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sources</h4>
+          <ul style="padding-left:18px">
+            <li><a href="https://ai.google.dev/gemini-api/docs/veo">Gemini API — Veo 3.1</a></li>
+            <li><a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a></li>
+            <li><a href="https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-veo-3-1">Veo 3.1 prompting guide</a></li>
+            <li><a href="https://deepmind.google/models/veo/">DeepMind — Veo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Status</h4>
+          <ul style="padding-left:18px">
+            <li>Nothing built</li>
+            <li>Nothing generated</li>
+            <li>$0 spent</li>
+            <li>Awaiting your call on the first topic</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin:0">Health &amp; Fitness Shorts · format teardown · 9 August 2026 · <span style="color:var(--ink3)">measured from the source file, not from the description of it</span></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
