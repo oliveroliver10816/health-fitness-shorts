@@ -3,7 +3,8 @@
 **What this is:** the "health and fitness chat for shorts" project. Bob sends short-form
 health/fitness videos; we tear them down and rebuild the format with his own tools (Veo 3).
 
-**Status 2026-08-09:** first teardown DELIVERED. Nothing built, nothing generated, $0 spent.
+**Status 2026-08-10:** teardown DELIVERED + **5 topics chosen and mapped beat-by-beat (section 08)**.
+Nothing built, nothing generated, $0 spent.
 
 - **LIVE deliverable:** https://oliveroliver10816.github.io/health-fitness-shorts/
 - **Repo:** `oliveroliver10816/health-fitness-shorts` (public, Pages from `/docs`, page is `noindex`)
@@ -85,9 +86,36 @@ bloating") creep into the script** — that is the one line that would eventuall
 account. The pressure runs the other way — an outcome claim is a better hook — so hold the line
 **in the script prompt**, not in review.
 
+## The five topics (added 2026-08-10, section 08 of the page)
+
+Chosen on **format fit + distinct destination**, not on measured demand (no search-volume check
+was run — that is stated on the page). Each decomposes into exactly 8 beats and reuses the four
+anatomy keyframes ⇒ **4 new image prompts + 4 reused, every time.**
+
+| # | Video | Ends at | Money shot | The claim that must never appear |
+|---|-------|---------|-----------|----------------------------------|
+| 1 | eat an **egg** | muscle fibre | acid unwinding the coiled protein | "builds muscle" / "burns fat" |
+| 2 | drink **coffee** | the brain | molecule crossing the blood–brain barrier | "boosts metabolism", mg doses |
+| 3 | drink **water** | the kidney | the kidney filtering | **"flushes toxins" / "detox"** |
+| 4 | eat **oats** | blood sugar | dry flakes swelling into gel | **"lowers cholesterol"** |
+| 5 | eat **spinach** | a blood vessel | the vessel wall opening | **"lowers blood pressure"** |
+
+⭐ **Build the EGG first** — not the biggest topic (coffee is), but the only one that uses all
+eight slots at full strength, so it forces keyframes **A esophagus · B villi · C bloodstream ·
+D hero body** to be generated properly. Every later video inherits them. Coffee second.
+
+⭐ **Reuse the keyframe, RE-RENDER the motion.** The four shared stills are start frames, not
+finished clips — never paste the same rendered 8 s clip into two uploads (that is the
+repetitive-content pattern). So the saving is **4 fewer image prompts per video, not 4 fewer
+clips**; render cost per video is unchanged.
+
+⚠ **"Skipping breakfast" and "10,000 steps" were CUT and the reason matters:** nothing enters the
+body, so clips 1/2/3/5 lose their subject and all four reusable keyframes die. They need a second
+skeleton (fasted-state / exertion), which is a separate build — park as series 2.
+
 ## Open — needs Bob
-1. **Which topic first?** Shortlist on the page: water · egg · skipping breakfast (strongest
-   hook) · coffee · 10,000 steps.
+1. **Confirm the topic + order** (recommended: egg → coffee → water/oats/spinach). Optional
+   half-hour: re-rank the five on real search volume + short-form saturation instead of judgement.
 2. Veo route: **Flow subscription (credits)** or **Gemini API (per second)**? Changes the cost
    model entirely.
 3. Confirm the 7 fixes are wanted (loudness −14 LUFS · music bed · 24 fps · transparent logo ·
