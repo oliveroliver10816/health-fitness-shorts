@@ -170,6 +170,24 @@ pre{
 code{font-family:var(--mono);font-size:.92em;background:#0d1e2b;padding:2px 6px;border-radius:5px;color:var(--cyan)}
 pre code{background:none;padding:0;color:inherit;font-size:inherit}
 
+/* ---------- topic cards ---------- */
+.topic{border:1px solid var(--line2);border-radius:16px;background:var(--panel);margin:26px 0;overflow:hidden}
+.thead{padding:20px 24px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.thead .tn{font:700 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.thead h4{margin:0 0 9px;font:800 clamp(21px,3vw,26px)/1.18 Archivo,sans-serif;letter-spacing:-.015em;color:var(--ink)}
+.thead p{margin:0;font-size:15.5px;color:var(--ink2)}
+.tbody{padding:2px 24px 22px}
+.tbody .tw{margin:20px 0 0}
+.tchips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.tchips .chip{font-size:12px;padding:8px 12px;background:rgba(8,19,29,.8)}
+.kf{font:700 11px/1 var(--mono);letter-spacing:.07em;padding:5px 8px;border-radius:6px;white-space:nowrap;display:inline-block}
+.kf.n{background:#33280d;color:var(--yellow);border:1px solid #6b4a1e}
+.kf.r{background:#0f2c3a;color:var(--cyan);border:1px solid #1c4d63}
+.hook{border-left:3px solid var(--cyan);padding:2px 0 2px 18px;margin:18px 0 0;font-size:16px;color:var(--ink);font-style:italic}
+.nono{margin:16px 0 0;padding:13px 16px;border:1px solid #6e2b2b;background:#1d0f0f;border-radius:10px;font-size:15px;color:var(--ink2)}
+.nono b{color:var(--red);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px}
+@media(max-width:760px){.thead,.tbody{padding-left:17px;padding-right:17px}}
+
 /* ---------- misc ---------- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .script{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:22px 0}
@@ -234,7 +252,7 @@ footer a{color:var(--cyan)}
         <div class="l">Veo 3’s native clip length is <b style="color:var(--yellow)">exactly 8 s</b>. This format was built for it.</div>
       </div>
     </div>
-    <p style="margin:26px 0 0;max-width:820px;font-size:19px;color:var(--ink)">And yes — <strong>we can absolutely make these.</strong> The format is mechanical: one sentence of script → one image prompt → one image-to-video prompt → one 8-second clip. The whole build is in <a href="#system">section 05</a>, with all 16 prompts written out in <a href="#prompts">section 06</a>.</p>
+    <p style="margin:26px 0 0;max-width:820px;font-size:19px;color:var(--ink)">And yes — <strong>we can absolutely make these.</strong> The format is mechanical: one sentence of script → one image prompt → one image-to-video prompt → one 8-second clip. The whole build is in <a href="#system">section 05</a>, with all 16 prompts written out in <a href="#prompts">section 06</a> — and <a href="#topics">five topics ready to drop into it</a> in section 08.</p>
   </div>
 </div>
 
@@ -837,13 +855,7 @@ No text, no captions, no on-screen writing.</pre>
       </div>
 
       <h4>Topics that drop straight into it</h4>
-      <ul>
-        <li><strong>What happens when you drink a glass of water</strong> — mouth → stomach → intestine → bloodstream → kidneys → cells → brain → whole body</li>
-        <li><strong>What happens when you eat an egg</strong> — same skeleton, protein and choline instead of probiotics, liver and brain as the payoff organs</li>
-        <li><strong>What happens when you skip breakfast</strong> — a negative-framed version; the strongest hook of the three</li>
-        <li><strong>What happens when you drink coffee</strong> — adenosine receptors give you a genuinely different clip 5 and 6</li>
-        <li><strong>What happens when you walk 10,000 steps</strong> — muscle, heart, lungs, bone, brain; no ingestion beat, so clip 1 becomes the first step</li>
-      </ul>
+      <p>Five of them are worked out beat by beat in <a href="#topics">section 08</a> — each one mapped onto the eight slots above, with the keyframes that get reused and the one sentence that must never appear in the script.</p>
 
       <div class="box find">
         <div class="bt">⭐ The keyframes are reusable across videos</div>
@@ -879,11 +891,234 @@ Rules:
   </div>
 </section>
 
-<!-- ============ 08 FIXES ============ -->
+<!-- ============ 08 THE NEXT FIVE ============ -->
+<section id="topics">
+  <div class="wrap">
+    <div class="narrow">
+      <div class="snum">08 — The next five videos</div>
+      <h2 class="sec">Five topics that fit this skeleton exactly</h2>
+      <p class="lead">Not five ideas — five subjects that decompose into <strong>exactly eight beats</strong>, in the same order, with the same four reusable keyframes. Each one is a drop-in: swap the subject, keep the machine.</p>
+
+      <div class="box key">
+        <div class="bt">The test each topic had to pass</div>
+        <p>A topic only belongs in this series if <strong>something enters the mouth and travels</strong>. That single requirement is what preserves clip 2 (esophagus), clip 5 (villi), clip 6 (bloodstream) and clip 8 (the whole-body hero) — the four stills that get generated once and reused forever. Break the journey and you break the reuse, and every new video costs eight fresh image prompts instead of four.</p>
+        <p style="margin-top:12px">Second test: <strong>each subject must end somewhere different</strong>. Muscle, brain, kidney, blood sugar, blood vessel. If two videos land in the same place they look like the same video, and a series that repeats itself is the one thing every platform's recommender is built to spot.</p>
+      </div>
+
+      <h3>The five, side by side</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>#</th><th>Video</th><th>Ends at</th><th>New stills</th><th>The hook</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><b>…when you eat an egg</b></td><td>muscle fibre</td><td class="num">4 of 8</td><td>acid unwinding a coiled protein</td></tr>
+            <tr><td class="num">2</td><td><b>…when you drink coffee</b></td><td>the brain</td><td class="num">4 of 8</td><td>a molecule slipping past the brain's wall</td></tr>
+            <tr><td class="num">3</td><td><b>…when you drink water</b></td><td>the kidney</td><td class="num">4 of 8</td><td>the only one that needs no digesting at all</td></tr>
+            <tr><td class="num">4</td><td><b>…when you eat oats</b></td><td>blood sugar</td><td class="num">4 of 8</td><td>fibre turning to gel inside the stomach</td></tr>
+            <tr><td class="num">5</td><td><b>…when you eat spinach</b></td><td>a blood vessel</td><td class="num">4 of 8</td><td>bacteria on your tongue start before you swallow</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><b>Reusable keyframes, named once and used throughout:</b> <span class="kf r">A · esophagus</span> <span class="kf r">B · villi</span> <span class="kf r">C · bloodstream</span> <span class="kf r">D · hero body</span> — generated properly on the first video, then dropped in as the start frame on every one after it.</p>
+
+      <!-- ---- 1 EGG ---- -->
+      <div class="topic">
+        <div class="thead">
+          <div class="tn">Topic 01 · protein lane</div>
+          <h4>What happens when you eat an egg</h4>
+          <p>The most complete use of the skeleton — it fills all eight slots without a single stretch, which is exactly why it should be built first.</p>
+        </div>
+        <div class="tbody">
+          <div class="tw">
+            <table>
+              <thead><tr><th>Clip</th><th>Beat</th><th>Keyframe</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>A bite of a cooked egg; the teeth break the white apart and saliva coats it</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">2</td><td>The swallow — the esophagus squeezes it down toward the stomach</td><td><span class="kf r">reuse A</span></td></tr>
+                <tr><td class="num">3</td><td>Stomach acid unwinds the tightly coiled protein and enzymes cut the strands</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">4</td><td>In the small intestine the strands are cut again, down to single amino acids</td><td><span class="kf n">new</span><div style="color:var(--cyan);font-size:12.5px;font-family:var(--mono);margin-top:7px">cold-blue break</div></td></tr>
+                <tr><td class="num">5</td><td>The amino acids pass through the intestinal wall</td><td><span class="kf r">reuse B</span></td></tr>
+                <tr><td class="num">6</td><td>The blood carries them through the liver and out to the whole body</td><td><span class="kf r">reuse C</span></td></tr>
+                <tr><td class="num">7</td><td>A muscle fibre takes them up and uses them as building material</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">8</td><td>The body has what it needs to repair itself</td><td><span class="kf r">reuse D</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hook">Opening frame: the glowing hero body from clip 8 for one second — then hard cut to the teeth. The payoff before the setup.</p>
+          <div class="tchips">
+            <span class="chip"><b>4</b> new image prompts</span>
+            <span class="chip"><b>4</b> reused keyframes</span>
+            <span class="chip">Money shot: <b>the unwinding coil</b></span>
+            <span class="chip">Mints all four <b>A–D</b> assets</span>
+          </div>
+          <div class="nono"><b>Never say</b>Never “builds muscle”, “burns fat”, or any number of grams. The line is: amino acids are <em>the material the body rebuilds with</em>. Describing supply is physiology; promising a result is a claim.</div>
+        </div>
+      </div>
+
+      <!-- ---- 2 COFFEE ---- -->
+      <div class="topic">
+        <div class="thead">
+          <div class="tn">Topic 02 · neuro lane</div>
+          <h4>What happens when you drink coffee</h4>
+          <p>The widest audience of the five, and the only one whose journey ends above the neck. Clip 7 — a molecule crossing into the brain — is the single most striking image in the series.</p>
+        </div>
+        <div class="tbody">
+          <div class="tw">
+            <table>
+              <thead><tr><th>Clip</th><th>Beat</th><th>Keyframe</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>The first mouthful of hot coffee; steam, warmth, the tongue</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">2</td><td>It runs down the esophagus into the stomach</td><td><span class="kf r">reuse A</span></td></tr>
+                <tr><td class="num">3</td><td>The liquid spreads across the stomach lining and begins to pass through it</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">4</td><td>The caffeine molecule itself, adrift in the fluid, small enough to go anywhere</td><td><span class="kf n">new</span><div style="color:var(--cyan);font-size:12.5px;font-family:var(--mono);margin-top:7px">cold-blue break</div></td></tr>
+                <tr><td class="num">5</td><td>The rest of it is absorbed through the intestinal wall</td><td><span class="kf r">reuse B</span></td></tr>
+                <tr><td class="num">6</td><td>The blood carries it everywhere, including up to the head</td><td><span class="kf r">reuse C</span></td></tr>
+                <tr><td class="num">7</td><td>It slips past the brain's protective wall and sits in the receptor that tiredness normally uses</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">8</td><td>The signal to feel tired never arrives, and the body reads that as awake</td><td><span class="kf r">reuse D</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hook">Opening frame: the receptor from clip 7, glowing, held for a beat — then back to the mug. The image nobody has seen goes first.</p>
+          <div class="tchips">
+            <span class="chip"><b>4</b> new image prompts</span>
+            <span class="chip"><b>4</b> reused keyframes</span>
+            <span class="chip">Money shot: <b>the blood–brain barrier</b></span>
+            <span class="chip">Widest audience of the five</span>
+          </div>
+          <div class="nono"><b>Never say</b>No “boosts your metabolism”, no “burns fat”, no cups-per-day, no milligrams, and nothing about sleep as advice. Adenosine is <em>the signal that builds up and tells you you are tired</em> — describe the block, never prescribe the drink.</div>
+        </div>
+      </div>
+
+      <!-- ---- 3 WATER ---- -->
+      <div class="topic">
+        <div class="thead">
+          <div class="tn">Topic 03 · fluid lane</div>
+          <h4>What happens when you drink a glass of water</h4>
+          <p>The safest topic in the series and the widest possible audience — nothing to sell, nothing to argue with. Its clip 3 is unique for a reason: it is the only subject the stomach does not have to break down.</p>
+        </div>
+        <div class="tbody">
+          <div class="tw">
+            <table>
+              <thead><tr><th>Clip</th><th>Beat</th><th>Keyframe</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>A glass tips, and the first mouthful crosses the lips</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">2</td><td>The esophagus carries it down in a single wave</td><td><span class="kf r">reuse A</span></td></tr>
+                <tr><td class="num">3</td><td>It passes straight through the stomach — there is nothing here to break apart</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">4</td><td>In the small intestine it moves across the wall alongside salt</td><td><span class="kf n">new</span><div style="color:var(--cyan);font-size:12.5px;font-family:var(--mono);margin-top:7px">cold-blue break</div></td></tr>
+                <tr><td class="num">5</td><td>It crosses the intestinal lining into the vessels underneath</td><td><span class="kf r">reuse B</span></td></tr>
+                <tr><td class="num">6</td><td>The blood thins slightly and carries it to every tissue at once</td><td><span class="kf r">reuse C</span></td></tr>
+                <tr><td class="num">7</td><td>The kidney measures what arrived and decides how much to keep</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">8</td><td>Every cell in the body is working in the fluid it needs</td><td><span class="kf r">reuse D</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hook">Opening frame: the kidney filtering, gold-lit, one second — then the glass. Nobody expects a water video to open inside an organ.</p>
+          <div class="tchips">
+            <span class="chip"><b>4</b> new image prompts</span>
+            <span class="chip"><b>4</b> reused keyframes</span>
+            <span class="chip">Money shot: <b>the kidney filter</b></span>
+            <span class="chip">Lowest compliance risk</span>
+          </div>
+          <div class="nono"><b>Never say</b>No “flushes out toxins”, no “detox”, no glasses-per-day target, no weight-loss angle. Toxin language is the single most common way a water video turns into a health claim, and it is the easiest one to write by accident.</div>
+        </div>
+      </div>
+
+      <!-- ---- 4 OATS ---- -->
+      <div class="topic">
+        <div class="thead">
+          <div class="tn">Topic 04 · carbohydrate lane</div>
+          <h4>What happens when you eat oats</h4>
+          <p>The most visually distinctive of the five. Its subject physically changes state inside the body — dry flakes become a thick gel — and that transformation is a better piece of motion than anything in the reference video.</p>
+        </div>
+        <div class="tbody">
+          <div class="tw">
+            <table>
+              <thead><tr><th>Clip</th><th>Beat</th><th>Keyframe</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>A spoon of cooked oats; the flakes break apart between the teeth</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">2</td><td>The esophagus moves it down to the stomach</td><td><span class="kf r">reuse A</span></td></tr>
+                <tr><td class="num">3</td><td>The fibre soaks up water and the whole mass thickens into a slow gel</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">4</td><td>The gel coats the intestinal wall and everything moving through slows down</td><td><span class="kf n">new</span><div style="color:var(--cyan);font-size:12.5px;font-family:var(--mono);margin-top:7px">cold-blue break</div></td></tr>
+                <tr><td class="num">5</td><td>Sugars cross the wall gradually instead of all at once</td><td><span class="kf r">reuse B</span></td></tr>
+                <tr><td class="num">6</td><td>The blood receives them as a slow rise rather than a surge</td><td><span class="kf r">reuse C</span></td></tr>
+                <tr><td class="num">7</td><td>Further down, the fibre that survived becomes food for the bacteria living there</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">8</td><td>The body is running on a steady supply instead of a spike</td><td><span class="kf r">reuse D</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hook">Opening frame: dry flakes swelling into gel in fast motion, one second — the state change is the hook, so lead with it.</p>
+          <div class="tchips">
+            <span class="chip"><b>4</b> new image prompts</span>
+            <span class="chip"><b>4</b> reused keyframes</span>
+            <span class="chip">Money shot: <b>flakes turning to gel</b></span>
+            <span class="chip">Best pure motion of the five</span>
+          </div>
+          <div class="nono"><b>Never say</b>No “lowers cholesterol”, no “prevents diabetes”, no “blood sugar crash”. Even where a cholesterol line is legally permitted somewhere in the world, it is still an outcome claim and it does not belong in this format. Describe the gel; let the viewer draw the conclusion.</div>
+        </div>
+      </div>
+
+      <!-- ---- 5 SPINACH ---- -->
+      <div class="topic">
+        <div class="thead">
+          <div class="tn">Topic 05 · circulation lane</div>
+          <h4>What happens when you eat spinach</h4>
+          <p>The strongest cold open in the series, because the journey starts before the swallow: the bacteria living on your tongue do the first step of the work. Clip 1 is a brand-new kind of shot for this format.</p>
+        </div>
+        <div class="tbody">
+          <div class="tw">
+            <table>
+              <thead><tr><th>Clip</th><th>Beat</th><th>Keyframe</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>Leaves in the mouth — and the bacteria living on the tongue begin changing them immediately</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">2</td><td>The swallow carries the changed compound down</td><td><span class="kf r">reuse A</span></td></tr>
+                <tr><td class="num">3</td><td>Stomach acid finishes the conversion the tongue started</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">4</td><td>A tiny gas molecule forms — one of the smallest signals the body uses</td><td><span class="kf n">new</span><div style="color:var(--cyan);font-size:12.5px;font-family:var(--mono);margin-top:7px">cold-blue break</div></td></tr>
+                <tr><td class="num">5</td><td>It crosses the intestinal wall into the vessels below</td><td><span class="kf r">reuse B</span></td></tr>
+                <tr><td class="num">6</td><td>The blood carries it out through the network</td><td><span class="kf r">reuse C</span></td></tr>
+                <tr><td class="num">7</td><td>The muscle in the vessel wall relaxes and the passage opens wider</td><td><span class="kf n">new</span></td></tr>
+                <tr><td class="num">8</td><td>Blood moves through a body that is holding itself open</td><td><span class="kf r">reuse D</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hook">Opening frame: the tongue surface at extreme macro, bacteria alive on it, one second — “this starts before you swallow” is the whole hook.</p>
+          <div class="tchips">
+            <span class="chip"><b>4</b> new image prompts</span>
+            <span class="chip"><b>4</b> reused keyframes</span>
+            <span class="chip">Money shot: <b>the vessel opening</b></span>
+            <span class="chip">Best cold open of the five</span>
+          </div>
+          <div class="nono"><b>Never say</b>No “lowers blood pressure” — that is a drug claim, not a nutrition one, and it is the hardest line to resist on this subject because it is the obvious payoff. No athletic-performance angle either. The vessel wall <em>relaxes</em>; stop the sentence there.</div>
+        </div>
+      </div>
+
+      <h3>Why these five and not the obvious two</h3>
+      <p>Two topics that look like they belong here do not, and it is worth being precise about why. <strong>“What happens when you skip breakfast”</strong> has the strongest hook of anything on the list — and nothing enters the body, so clips 1, 2, 3 and 5 all lose their subject. <strong>“What happens when you walk 10,000 steps”</strong> has the same problem: no mouth, no esophagus, no villi.</p>
+      <p>Both are good videos. Neither is <em>this</em> video. They need a second skeleton — a fasted-state or an exertion journey — with its own eight slots and its own four reusable keyframes, and that is a separate build, not a swap. Park them as a second series once the first one has assets.</p>
+
+      <div class="box find">
+        <div class="bt">⭐ Build the egg first</div>
+        <p>Not because it is the biggest topic — coffee is — but because it is the <strong>only one of the five that uses all eight slots at full strength</strong>. Building it first forces you to generate keyframes A, B, C and D properly, under pressure, for a video that genuinely needs each of them. Every video after it inherits those four stills.</p>
+        <p style="margin-top:12px">Do coffee second, once the asset library exists, and put the biggest topic behind the best-looking execution rather than in front of it.</p>
+      </div>
+
+      <div class="box warn">
+        <div class="bt">⚠ Reuse the keyframe, re-render the motion</div>
+        <p>The four shared stills are the start frames, not the finished clips. <strong>Never paste the same rendered 8-second clip into two different videos.</strong> Re-run the image-to-video step on the same still with a slightly different motion prompt — it costs the same video seconds either way, and it keeps the series visually consistent without making two uploads that are partly identical files. Identical footage across uploads is the pattern that gets a channel labelled repetitive, and that label is very hard to undo.</p>
+        <p style="margin-top:12px">So the saving is real but specific: <strong>four fewer image prompts per video, not four fewer clips</strong>. Render cost per video stays as costed in <a href="#system">section 05</a>.</p>
+      </div>
+
+      <div class="box key">
+        <div class="bt">What I have not checked</div>
+        <p>These five were chosen on <strong>format fit and visual distinctness</strong> — that each one decomposes cleanly into the eight beats, reuses the four keyframes, and lands somewhere the others do not. I have <strong>not</strong> run a search-demand check on any of them, so “widest audience” for coffee is a judgement, not a measurement. If you want the order set by real numbers instead, that is a separate half-hour: pull search volume and short-form saturation for all five and re-rank.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 FIXES ============ -->
 <section id="fixes">
   <div class="wrap">
     <div class="narrow">
-      <div class="snum">08 — Beating the reference</div>
+      <div class="snum">09 — Beating the reference</div>
       <h2 class="sec">Seven things ours should do better</h2>
       <p class="lead">The video you sent is a competent execution of a strong format. It also leaves a lot on the table, and every gap is cheap to close.</p>
 
@@ -911,11 +1146,11 @@ Rules:
   </div>
 </section>
 
-<!-- ============ 09 METHOD ============ -->
+<!-- ============ 10 METHOD ============ -->
 <section id="method">
   <div class="wrap">
     <div class="narrow">
-      <div class="snum">09 — Method</div>
+      <div class="snum">10 — Method</div>
       <h2 class="sec">How each number was measured</h2>
       <div class="tw">
         <table>
@@ -970,7 +1205,7 @@ Rules:
             <li>Nothing built</li>
             <li>Nothing generated</li>
             <li>$0 spent</li>
-            <li>Awaiting your call on the first topic</li>
+            <li><a href="#topics">5 topics proposed</a> — recommended first: <b style="color:var(--yellow)">the egg</b></li>
           </ul>
         </div>
       </div>
