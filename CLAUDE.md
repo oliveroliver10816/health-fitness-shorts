@@ -113,11 +113,46 @@ clips**; render cost per video is unchanged.
 body, so clips 1/2/3/5 lose their subject and all four reusable keyframes die. They need a second
 skeleton (fasted-state / exertion), which is a separate build — park as series 2.
 
+## ⭐ VIDEO 1 — the egg — FULL BLUEPRINT BUILT 2026-08-10
+
+**LIVE: https://oliveroliver10816.github.io/health-fitness-shorts/egg/** (`docs/egg/`, linked from
+section 08 of the main page). Build order · 8-sentence script · voice-over **rendered, measured and
+downloadable** · all 16 prompts paste-ready · the 8.000 s timeline · assembly · captions · music ·
+export · pre-upload checklist.
+
+**The VO is a real asset, not a spec:** `docs/egg/vo-egg-64s.mp3` — 64.03 s, −14.9 LUFS, TP −1.7,
+en-US-AriaNeural at `--rate=-18%`. Every sentence verified audible at exactly **8×(N−1) − 0.10 s**
+(7.90 / 15.90 / 23.90 / 31.90 / 39.90 / 47.90 / 55.90). `docs/egg/build-vo.sh` reproduces it from
+scratch (free, no account) and prints per-clip headroom; it flags `OVERRUNS ITS CLIP`.
+
+⭐ **Word count does NOT predict duration — measured.** Clip 6 = **20 words in 6.42 s**; clip 3 =
+**16 words in 7.07 s**. Syllables + commas drive it. Write 16–20 words as a *first draft*, then
+render and **measure**; rewrite anything over 7.5 s. **The longest sentence sets the pace ceiling
+for the whole video** — at −25% clip 3 hits 7.73 s and there is only 0.37 s left.
+
+⚠ **The trap that bit me here: measure the SPEECH, not the FILE.** edge-tts pads ~**0.20 s at the
+front and ~0.90 s at the back** of every render. Placing by file length put every sentence ~0.1 s
+**late** — the exact opposite of the intended head-start — and my first "over 8 s" readings were
+padding, not speech. `build-vo.sh` strips lead/tail with `silencedetect` before placing.
+See memory [[verify-the-artifact-not-the-wrapper]], [[tts-duration-is-pauses-not-words]].
+
+⚠ **−14.0 LUFS is unreachable on an uncompressed voice track** — true-peak headroom runs out first,
+so it lands at −14.9 (still **11.8 LU louder than the reference**). Light compression before
+normalising closes the last 0.9 LU.
+
+**Prompts:** each of the 8 cards carries a full paste-ready image prompt + its image-to-video prompt,
+with the shared look and the no-text ban written into every one (nothing to append). Clips 2/5/6/8
+**mint keyframes A/B/C/D**. Notes flag: clip 3 = the money shot (must read as *unwinding*), clip 4 =
+the deliberate cold-blue break at the 24 s retention dip, clip 7 = the stillest shot on purpose,
+clip 8 = **no facial features** (and it doubles as the 1 s hook at the front).
+
 ## Open — needs Bob
 1. **Confirm the topic + order** (recommended: egg → coffee → water/oats/spinach). Optional
    half-hour: re-rank the five on real search volume + short-form saturation instead of judgement.
 2. Veo route: **Flow subscription (credits)** or **Gemini API (per second)**? Changes the cost
-   model entirely.
+   model entirely. **This is the only thing blocking a finished video.**
+3. **Which still-image generator** — Veo's own reference-image route (one place) or a separate image
+   model (approve stills before paying for motion, the cheaper order).
 3. Confirm the 7 fixes are wanted (loudness −14 LUFS · music bed · 24 fps · transparent logo ·
    **hook in the first 1.5 s** · lower bitrate · end card). The hook is the only structural one.
 
