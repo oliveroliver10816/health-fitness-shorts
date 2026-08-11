@@ -19,14 +19,14 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
 S=(
-"A single bite of egg meets the teeth, and chewing breaks the firm white into smaller and smaller pieces."
-"You swallow, and the walls of the esophagus squeeze in waves, pushing the mouthful down toward the stomach."
-"In the stomach, acid unwinds each folded protein and enzymes cut the strands into shorter pieces."
-"In the small intestine, more enzymes arrive and cut those strands into single amino acids."
-"The lining is covered in countless tiny folds, and the amino acids pass through them into the vessels beneath."
-"Blood carries them first through the liver, and then out along the vessels to reach every tissue in the body."
-"A muscle fibre draws them in, and uses them as the raw material for rebuilding its own structure."
-"From a single bite, the body now holds everything it needs to keep repairing and rebuilding itself."
+"Every day when you eat an egg, the journey starts in your mouth, where your teeth break the white apart."
+"You swallow, and your esophagus squeezes in slow waves, pushing the mouthful down toward your stomach."
+"Inside your stomach, acid unwinds each folded protein and enzymes cut the strands apart."
+"In your small intestine, more enzymes arrive and cut those strands down into single amino acids."
+"Your intestinal wall is covered in tiny folds, and the amino acids pass through them into your blood."
+"Your blood carries them through your liver, then out along your vessels toward every tissue in your body."
+"Your muscle fibres pull them in, and use them as the raw material to rebuild their own structure."
+"From one egg, your body now holds everything it needs to keep repairing and rebuilding itself."
 )
 
 echo "voice=$VOICE  rate=$RATE"
