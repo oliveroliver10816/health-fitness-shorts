@@ -113,7 +113,64 @@ clips**; render cost per video is unchanged.
 body, so clips 1/2/3/5 lose their subject and all four reusable keyframes die. They need a second
 skeleton (fasted-state / exertion), which is a separate build — park as series 2.
 
-## ⭐ VIDEO 1 — the egg — FULL BLUEPRINT BUILT 2026-08-10
+## 🔴 VIDEO 1 — the egg — PROMPTS REBUILT 2026-08-11 on Bob's feedback
+
+**Bob rejected the first prompt set.** His three complaints, all correct, and what each one
+actually was:
+
+1. **"no continuity between the image prompts"** — the eight images shared no body, no light and
+   no object. A golden helix in a void, crystalline shapes in blue space, villi with no gut around
+   them. Eight art pieces, not one video.
+2. **"there is no looks like realistic term"** — the prompts said *"photorealistic 3D medical
+   visualisation"* once as a genre label and never once told the model the result had to **look
+   real**.
+3. **"it doesn't look like we are explaining how it affects the human body"** — shots 3–7 were
+   abstract macro in black voids, and the script was third-person and clinical (*"a muscle fibre
+   draws them in"*). No **you** anywhere.
+
+⭐ **What the reference actually does, measured off its own frames (`video/source.mp4`):** it never
+stays inside for long. **close → wide → close → wide**, and every wide shot is the whole human
+figure — head with the skull and jaw muscles showing through the skin, then the whole torso with
+the esophagus and stomach visible, then a full blue X-ray body, then the gold hero body. **That
+rhythm is what stops a macro shot from reading as abstract**: two seconds ago you saw where in the
+body you were. It is not a decorative choice, it is the thing that makes it legible.
+
+**The rebuild (all four asks delivered):**
+- ⭐ **Continuity is a MECHANISM, not wording.** Every clip declares an **END FRAME**; the next
+  clip's image prompt **quotes that sentence back verbatim**. Both are emitted from one source
+  (`build-egg-page.py`) so they cannot drift, and the chain is **verified against the rendered
+  HTML**, not the source data. Plus the generation-time chain: export clip N's last frame → attach
+  as reference image for still N+1.
+- ⚠ **Two of the seven cuts are deliberately scale jumps, not handoffs** (into shot 4 and shot 8) —
+  both are in the reference at the same points. They are still **match cuts** (shot 4 on the
+  glowing point in the abdomen, shot 8 on the warm gold). Stated on the page, not hidden.
+- **Realism line in all 8:** *"It must look real — like actual footage captured inside a living
+  human body."*
+- **Shots 2, 4, 6, 8 are whole-body**, and 4 and 6 travel between scales inside one take.
+- **Script rewritten second-person + everyday opener** (*"Every day when you eat an egg…"*), every
+  sentence naming a part of **your** body. **VO re-rendered:** −14.8 LUFS, onsets exact at
+  7.90/15.90/…/55.90, ≥1.20 s headroom on all 8, 52.03 s of speech.
+- **Video prompts are shot orders:** camera move with amplitude + speed, **four timed beats**
+  (0–2/2–4/4–6/6–8 s), the lighting change, and the exact end frame.
+- **Copy button on all 16 prompts** + 3 bulk (all image / all video / style block).
+
+⭐ **New measured finding — a comma costs more than two words.** Cutting clip 3 to fit:
+*"…each folded protein, and enzymes cut the strands into shorter pieces"* = 16 words, **7.78 s**.
+Remove the comma and two words → **6.40 s**. **1.38 s saved and most of it was the comma.**
+
+⚠ **Image prompts run 461–559 words.** Deliberate, but dilution is real — the page states the cut
+order if a generation ignores something (SUBJECT → CONTINUITY once a reference image is attached →
+the STYLE background sentence) and that **the realism line and the NO TEXT line are never cut.**
+
+⚠ **Keyframe A changed meaning:** it was "esophagus tunnel", it is now **"torso with the esophagus
+and stomach visible"** — the wide anchor shot. B villi, C bloodstream, D hero body unchanged.
+Main page label updated to match.
+
+**QA (browser, Playwright):** 19/19 copy buttons, **clipboard content read back and compared to
+each `<pre>`**, 0 WCAG contrast failures (alpha-composited), 0 console errors, no horizontal
+overflow desktop or mobile.
+
+## Original entry — FULL BLUEPRINT BUILT 2026-08-10
 
 **LIVE: https://oliveroliver10816.github.io/health-fitness-shorts/egg/** (`docs/egg/`, linked from
 section 08 of the main page). Build order · 8-sentence script · voice-over **rendered, measured and

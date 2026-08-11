@@ -630,9 +630,21 @@ footer a{{color:var(--cyan)}}
     </div>
 
     <div class="box find">
-      <div class="bt">⭐ Word count does not predict duration — and a comma costs more than two words</div>
-      <p>Clip 1 speaks <strong>20 words in 6.26 s</strong>. Clip 2 speaks <strong>16 words in 6.80 s</strong>. Four fewer words, half a second longer.</p>
-      <p style="margin-top:12px">Measured while cutting clip 3 to fit: <em>“…each folded protein, and enzymes cut the strands into shorter pieces”</em> at 16 words ran <strong>7.78 s</strong>. Removing the comma and two words gave <strong>6.40 s</strong> — <strong>1.38 s saved, and most of it was the comma.</strong> Syllables and punctuation drive the clock, not the word count.</p>
+      <div class="bt">⭐ Word count does not predict duration</div>
+      <p>Clip 1 speaks <strong>20 words in 6.26 s</strong>. Clip 2 speaks <strong>16 words in 6.80 s</strong>. Four fewer words, half a second longer. Syllables drive the clock — clip 2 is carrying <em>esophagus</em> and <em>squeezes</em>; clip 1 is almost all one-syllable words.</p>
+      <p style="margin-top:12px">Clip 3 came in over the ceiling and had to be cut, so it was worth finding out what actually buys time. Same sentence, one change at a time:</p>
+      <div class="tw" style="margin:14px 0">
+        <table>
+          <thead><tr><th>Version of clip 3</th><th>Words</th><th>Spoken</th><th>Saved</th></tr></thead>
+          <tbody>
+            <tr><td>“…each folded protein<b>,</b> and enzymes cut the strands into shorter pieces”</td><td class="num">16</td><td class="num">7.78 s</td><td class="num">—</td></tr>
+            <tr><td>the same, <b>comma removed</b></td><td class="num">16</td><td class="num">7.43 s</td><td class="num">0.35 s</td></tr>
+            <tr><td>comma kept, <b>ending cut to “apart”</b></td><td class="num">14</td><td class="num">6.62 s</td><td class="num">1.16 s</td></tr>
+            <tr><td class="tick">both — the version used</td><td class="num">14</td><td class="num">6.40 s</td><td class="num">1.38 s</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>A comma is worth about a third of a second. Words are worth far more.</strong> The first draft of this box claimed the comma did most of the work; running the two changes separately showed it did about a quarter of it. Both runs of this test returned identical figures to the hundredth of a second, so it is stable — but <strong>the reason to run it at all is that the plausible answer was the wrong one.</strong></p>
       <p style="margin-top:12px"><strong>So: write to 16–20 words as a first draft, then render and measure, and rewrite anything over 7.5 s.</strong> Never accept a word count as proof it fits.</p>
     </div>
 
