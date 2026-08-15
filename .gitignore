@@ -5,3 +5,4 @@ video/sheets/
 video/shots/
 video/*.png
 video/*.jpg
+__pycache__/

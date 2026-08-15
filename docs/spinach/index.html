@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>What happens when you eat spinach — complete build blueprint</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060c13; --bg2:#0b151f; --panel:#0f1c28; --panel2:#132433;
+  --line:#1e3345; --line2:#2a4257;
+  --ink:#eaf2f8; --ink2:#a9bdcd; --ink3:#7b93a7;
+  --yellow:#ffe23d; --cyan:#4fd8ff; --coral:#f0937f; --green:#5fe0a8; --red:#ff6b6b;
+  --accent:#7fd66a;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.narrow{max-width:880px;margin-left:auto;margin-right:auto}
+
+header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% -10%, rgba(127,214,106,.13), transparent 60%),linear-gradient(180deg,#0a1420,#060c13)}
+.heroinner{position:relative;padding:64px 0 54px}
+.back{font:600 13px/1 var(--mono);color:var(--ink3);text-decoration:none;display:inline-block;margin-bottom:22px}
+.back:hover{color:var(--cyan)}
+.kicker{font:700 13px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h1{font:900 clamp(36px,6vw,68px)/1.03 Archivo,sans-serif;letter-spacing:-.028em;margin:0 0 20px}
+h1 em{font-style:italic;color:var(--accent)}
+.sub{font-size:21px;line-height:1.55;color:var(--ink2);max-width:780px;margin:0 0 32px}
+.sub strong{color:var(--ink)}
+.metarow{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:600 13px/1 var(--mono);letter-spacing:.03em;padding:10px 14px;border:1px solid var(--line2);border-radius:999px;background:rgba(15,28,40,.75);color:var(--ink2)}
+.chip b{color:var(--ink)}
+
+section{padding:62px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.snum{font:700 12px/1 var(--mono);letter-spacing:.18em;color:var(--ink3);text-transform:uppercase;margin-bottom:14px}
+h2.sec{font:800 clamp(27px,4vw,40px)/1.1 Archivo,sans-serif;letter-spacing:-.022em;margin:0 0 18px}
+h3{font:800 22px/1.25 Archivo,sans-serif;letter-spacing:-.01em;margin:36px 0 12px}
+h4{font:700 17px/1.3 Inter,sans-serif;margin:24px 0 8px;color:var(--ink)}
+p{margin:0 0 16px;color:var(--ink2)}
+p strong,li strong{color:var(--ink);font-weight:600}
+.lead{font-size:20px;color:var(--ink);max-width:820px}
+ul,ol{color:var(--ink2);padding-left:22px;margin:0 0 18px}
+li{margin-bottom:9px}
+.dim{color:var(--ink3);font-size:14px}
+
+.box{border-radius:14px;padding:22px 24px;margin:24px 0;border:1px solid var(--line2);background:var(--panel)}
+.box p:last-child{margin-bottom:0}
+.box .bt{font:800 13px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}
+.box.find{border-color:#3d5f2e;background:linear-gradient(135deg,#132a1c,#0e1d17)}.box.find .bt{color:var(--green)}
+.box.warn{border-color:#6b4a1e;background:linear-gradient(135deg,#2a2113,#1d160e)}.box.warn .bt{color:#ffc464}
+.box.stop{border-color:#6e2b2b;background:linear-gradient(135deg,#2b1414,#1d0f0f)}.box.stop .bt{color:var(--red)}
+.box.key{border-color:#1c4d63;background:linear-gradient(135deg,#0f2c3a,#0b1e29)}.box.key .bt{color:var(--cyan)}
+
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--line2);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:16px}
+th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);background:var(--panel2);white-space:nowrap}
+td{color:var(--ink2)}
+tr:last-child td{border-bottom:0}
+td b,td strong{color:var(--ink)}
+.num{font-family:var(--mono);font-size:15px;color:var(--ink);white-space:nowrap}
+.tick{color:var(--green);font-weight:700}
+
+pre{margin:0;padding:18px 18px;background:#08131d;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;overflow-x:auto;
+  font:400 14.5px/1.7 var(--mono);color:#d5e6f2;white-space:pre-wrap;word-wrap:break-word}
+code{font-family:var(--mono);font-size:.92em;background:#0d1e2b;padding:2px 6px;border-radius:5px;color:var(--cyan)}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+
+/* prompt block + copy button */
+.pblock{margin:22px 0}
+.phead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px 11px 18px;
+  background:#0d1c28;border:1px solid var(--line);border-radius:10px 10px 0 0}
+.phead .plabel{margin:0}
+.cbtn{font:700 12px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--cyan);
+  background:#12303f;border:1px solid #1c4d63;border-radius:8px;padding:10px 14px;cursor:pointer;min-height:38px;
+  transition:background .12s,color .12s,border-color .12s;white-space:nowrap}
+.cbtn:hover{background:#17415a}
+.cbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.cbtn.done{background:#14361f;border-color:#3d5f2e;color:var(--green)}
+.cbtn.fail{background:#3a1a1a;border-color:#6e2b2b;color:var(--red)}
+.copyall{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+.copyall .cbtn{padding:13px 18px;font-size:12.5px}
+
+/* clip cards */
+.clip{border:1px solid var(--line2);border-radius:16px;background:var(--panel);margin:28px 0;overflow:hidden}
+.chead{padding:20px 24px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.chead .cmeta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.chead .cn{font:800 15px/1 var(--mono);color:var(--accent)}
+.chead .tc{font:600 13px/1 var(--mono);color:var(--ink3)}
+.chead h4{margin:0 0 10px;font:800 22px/1.2 Archivo,sans-serif;color:var(--ink)}
+.chead h4 .where{font:600 13px/1 var(--mono);color:var(--ink3);margin-left:10px;white-space:nowrap}
+.chead .vo{font-size:16.5px;color:var(--ink);font-style:italic;border-left:3px solid var(--accent);padding-left:16px;margin:0}
+.cbody{padding:6px 24px 22px}
+.cnote{font-size:15.5px}
+.plabel{font:700 11px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;margin:22px 0 9px;color:var(--cyan)}
+.plabel.v{color:var(--coral)}
+.plabel.n{color:#ffc464}
+.kf{font:700 11px/1 var(--mono);letter-spacing:.07em;padding:5px 8px;border-radius:6px;white-space:nowrap;display:inline-block}
+.kf.n{background:#33280d;color:var(--yellow);border:1px solid #6b4a1e}
+.kf.r{background:#0f2c3a;color:var(--cyan);border:1px solid #1c4d63}
+.sw{width:14px;height:14px;border-radius:4px;display:inline-block;vertical-align:-2px;margin-right:7px;border:1px solid rgba(255,255,255,.18)}
+
+/* timeline */
+.tl{margin:30px 0;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--panel)}
+.tlbar{display:flex;height:58px}
+.tlseg{flex:1;border-right:1px solid var(--bg);display:flex;align-items:center;justify-content:center;font:700 13px/1 var(--mono);color:#06121c}
+.tlseg:last-child{border-right:0}
+.tlvo{display:flex;height:30px;border-top:1px solid var(--line);position:relative;background:#0b1a25}
+.tlvo div{position:absolute;top:5px;height:20px;background:#2b556e;border-radius:3px;border-left:2px solid var(--accent)}
+.tlcap{padding:12px 16px;font:600 12px/1.5 var(--mono);color:var(--ink3);border-top:1px solid var(--line)}
+
+.audio{margin:22px 0;padding:20px 22px;border:1px solid var(--line2);border-radius:14px;background:var(--panel)}
+.audio audio{width:100%;margin-top:12px}
+.dl{display:inline-block;margin-top:14px;margin-right:10px;font:700 13px/1 var(--mono);letter-spacing:.06em;padding:13px 16px;border-radius:9px;
+  background:#12303f;border:1px solid #1c4d63;color:var(--cyan);text-decoration:none}
+.dl:hover{background:#17415a}
+
+ol.steps{counter-reset:s;list-style:none;padding-left:0}
+ol.steps>li{counter-increment:s;position:relative;padding-left:50px;margin-bottom:20px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:9px;
+  background:var(--panel2);border:1px solid var(--line2);color:var(--accent);font:800 15px/34px var(--mono);text-align:center}
+ol.steps>li b{color:var(--ink)}
+
+.pagenav{display:flex;flex-wrap:wrap;gap:14px;font:600 14px/1 var(--mono);margin:0 0 10px}
+footer{padding:46px 0 70px;color:var(--ink3);font-size:15px}
+footer a{color:var(--cyan)}
+@media(max-width:760px){
+  body{font-size:17px}
+  section{padding:48px 0}
+  .heroinner{padding:46px 0 40px}
+  .chead,.cbody{padding-left:16px;padding-right:16px}
+  .tlseg{font-size:10px}
+  .phead{padding-left:14px}
+  pre{font-size:13.5px;padding:15px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="heroinner">
+    <div class="wrap">
+      <a class="back" href="../">← back to the format teardown</a>
+      <div class="kicker">Build blueprint · Video 5 of the series · circulation lane</div>
+      <h1>What happens<br>when you eat<br><em>spinach.</em></h1>
+      <p class="sub">The strongest cold open in the series, because this journey starts before the swallow — the bacteria living on your tongue do the first step of the work. Full script, <strong>voice-over already rendered and measured</strong>, and all 16 prompts written out, every shot handing its last frame to the next one.</p>
+      <div class="metarow">
+        <span class="chip"><b>8</b> clips × <b>8.000 s</b></span>
+        <span class="chip"><b>8</b> image prompts</span>
+        <span class="chip"><b>8</b> image-to-video prompts</span>
+        <span class="chip">VO <b>rendered</b> · 64.03 s · −14.9 LUFS</span>
+        <span class="chip">Reuses keyframes <b>A–D</b></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 00 THE FULL SCRIPT ============ -->
+<section id="fullscript">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">00 — The full script, first</div>
+    <h2 class="sec">Take this and make the audio anywhere</h2>
+    <p class="lead">The whole narration in one block, so it can go straight into any voice tool — ElevenLabs, your phone, a hired voice, or the free script further down this page. Nothing else on this page is needed to record it.</p>
+
+    <div class="copyall">
+      <button class="cbtn" type="button" data-target="scriptplain">⧉ Copy the full script</button>
+      <button class="cbtn" type="button" data-target="scripttimed">⧉ Copy it with the timings</button>
+    </div>
+
+    <div class="pblock">
+      <div class="phead"><span class="plabel">The script · 114 words · 8 sentences</span><button class="cbtn" type="button" data-target="scriptplain">Copy</button></div>
+<pre id="scriptplain">When you eat spinach, the bacteria living on your tongue start changing the leaves immediately.
+
+You swallow, and your esophagus carries that changed compound down toward your stomach.
+
+Your stomach acid finishes the conversion your tongue started, in the warm fluid there.
+
+A tiny gas molecule forms, one of the smallest signals your body uses.
+
+It crosses the wall of your small intestine, through the folds, into the vessels below.
+
+Your blood carries it out through the whole network, all the way to your vessel walls.
+
+The muscle in that vessel wall relaxes, and the passage through it opens wider.
+
+Now blood moves easily through a body that is holding its own vessels open.</pre>
+    </div>
+
+    <div class="box key">
+      <div class="bt">If you record it somewhere else, these four rules keep it in sync</div>
+      <p><b>1. One sentence per clip, in order.</b> Sentence 1 belongs to seconds 0–8, sentence 2 to 8–16, and so on to sentence 8 at 56–64.<br>
+      <b>2. Every sentence must be spoken in under 8 seconds.</b> Read at roughly <b>158 words per minute</b> — unhurried, not rushed. The measured timings for this script are in <a href="#script">section 04</a>.<br>
+      <b>3. Record it as one continuous take</b>, or export it as one file. Never eight separate files dropped at the cuts — a single track is what makes a word carry across a cut.<br>
+      <b>4. Each sentence starts 0.10 s <em>before</em> its cut.</b> If your tool cannot place them that precisely, land them on the cut instead; do not land them late.</p>
+    </div>
+
+    <div class="pblock">
+      <div class="phead"><span class="plabel v">The same script with the exact timings</span><button class="cbtn" type="button" data-target="scripttimed">Copy</button></div>
+<pre id="scripttimed">WHAT HAPPENS WHEN YOU EAT SPINACH
+8 clips x 8.000 s = 64.000 s  ·  read at about 158 words per minute  ·  every sentence must be spoken in under 8 seconds
+
+[1] audible at   0.00 s   (clip 1: 0-8 s)   spoken 5.83 s
+When you eat spinach, the bacteria living on your tongue start changing the leaves immediately.
+
+[2] audible at   7.90 s   (clip 2: 8-16 s)   spoken 5.74 s
+You swallow, and your esophagus carries that changed compound down toward your stomach.
+
+[3] audible at  15.90 s   (clip 3: 16-24 s)   spoken 5.49 s
+Your stomach acid finishes the conversion your tongue started, in the warm fluid there.
+
+[4] audible at  23.90 s   (clip 4: 24-32 s)   spoken 5.46 s
+A tiny gas molecule forms, one of the smallest signals your body uses.
+
+[5] audible at  31.90 s   (clip 5: 32-40 s)   spoken 5.49 s
+It crosses the wall of your small intestine, through the folds, into the vessels below.
+
+[6] audible at  39.90 s   (clip 6: 40-48 s)   spoken 4.99 s
+Your blood carries it out through the whole network, all the way to your vessel walls.
+
+[7] audible at  47.90 s   (clip 7: 48-56 s)   spoken 5.14 s
+The muscle in that vessel wall relaxes, and the passage through it opens wider.
+
+[8] audible at  55.90 s   (clip 8: 56-64 s)   spoken 4.70 s
+Now blood moves easily through a body that is holding its own vessels open.
+</pre>
+    </div>
+
+    <p style="font-size:15.5px;color:var(--ink3)">Or skip all of it: <a href="#voice">the finished voice-over is already rendered in section 05</a> and can be downloaded as an MP3.</p>
+  </div></div>
+</section>
+
+<!-- ============ 01 RULES ============ -->
+<section id="rules">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">01 — The five rules this video is built on</div>
+    <h2 class="sec">Eight shots inside one body, not eight separate pictures</h2>
+    <p class="lead">These five rules were bought with a rejected first version of the egg video. Eight good-looking images that had nothing to do with each other read as eight art pieces; the reference video reads as <em>one journey through one person</em>, and that difference is structural, not decorative. Every prompt on this page is written to these five.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>The rule</th><th>What breaks without it</th><th>How it is enforced here</th></tr></thead>
+        <tbody>
+          <tr><td><b>1 · Continuity is a mechanism</b></td><td>Eight shots with no shared body, no shared light, no shared object.</td><td>Every shot ends on a stated <b>end frame</b>, and the next shot's prompt opens by quoting that exact frame back. <a href="#chain">The chain is in section 02.</a></td></tr>
+          <tr><td><b>2 · Say it must look real</b></td><td>“Photorealistic 3D medical visualisation” is a genre label. It never tells the model the result has to look <em>real</em>.</td><td>A dedicated <b>REALISM</b> block in all eight prompts — real endoscope, wet uneven tissue, capillaries under the membrane, and an explicit list of what it must <em>not</em> look like.</td></tr>
+          <tr><td><b>3 · Name the real anatomy</b></td><td>The model invents plausible-looking tissue that no anatomist would recognise.</td><td>Every image prompt carries a <b>REAL ANATOMY</b> line naming the structures that must be correct in that specific shot.</td></tr>
+          <tr><td><b>4 · Keep the body on screen</b></td><td>Abstract macro in a black void. The viewer loses the thread — this could be anything, anywhere.</td><td><b>Four of the eight shots are whole-body</b>, in the same close → wide → close → wide rhythm the reference uses.</td></tr>
+          <tr><td><b>5 · Write it to the viewer</b></td><td>“A muscle fibre draws them in.” Clinical, third person, about nobody.</td><td>Every sentence names a part of <b>your</b> body, and it opens on the everyday moment. <a href="#fullscript">Section 00.</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box find">
+      <div class="bt">⭐ The rhythm that makes it read as a body</div>
+      <p>The reference video never stays inside for long. It goes <strong>close → wide → close → wide</strong>, and every wide shot is the whole human figure. That is what stops a macro shot from becoming abstract: two seconds earlier you saw where in the body you were.</p>
+      <p style="margin-top:12px">This build copies that rhythm exactly — <strong>shots 2, 4, 6 and 8 all show the whole figure</strong>, and shots 4 and 6 travel between the two scales inside a single take, so the connection is shown rather than assumed.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 02 THE CHAIN ============ -->
+<section id="chain">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">02 — The continuity chain</div>
+    <h2 class="sec">Every shot hands its last frame to the next one</h2>
+    <p class="lead">This is the mechanism that makes eight separate generations look like one video. Each clip's prompt states the exact frame it ends on. The next clip's image prompt opens by quoting that same sentence back. Nothing is left for the model to invent between shots.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Clip</th><th>Shot</th><th>Ends on exactly this frame</th><th>Which</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><b>It starts on the tongue</b><br><span class="dim">Mouth → tongue surface · close-up → macro</span></td><td>Extreme macro on the surface of the tongue: papillae standing up like a dense soft forest, dark green leaf fragments pressed among them, and colonies of bacteria packed into the crevices between, already working on the leaf.</td><td class="num">opens clip 2</td></tr>
+          <tr><td class="num">2</td><td><b>The swallow</b><br><span class="dim">Throat → stomach · torso wide</span></td><td>The whole upper body is in frame. The dark green mass has arrived at the lower end of the esophagus and the ring of muscle at the stomach entrance is opening in front of it. The stomach below is pink and empty.</td><td class="num">opens clip 3</td></tr>
+          <tr><td class="num">3</td><td><b>The acid finishes it</b><br><span class="dim">Stomach · cutaway → macro</span></td><td>A drift of tiny pale blue-white points rising out of the dark green mass into the amber fluid above it, spreading slowly apart from one another.</td><td class="num">opens clip 4</td></tr>
+          <tr><td class="num">4</td><td><b>Where we are now → the molecule</b><br><span class="dim">Whole body → macro</span></td><td>One tiny pale blue-white gas molecule alone at the centre of frame, far smaller than anything else drifting in the fluid around it, turning very slowly.</td><td class="num">opens clip 5</td></tr>
+          <tr><td class="num">5</td><td><b>Through the wall</b><br><span class="dim">Intestinal villi · macro</span></td><td>Inside the capillary within a single villus: red blood cells and tiny pale blue-white points flowing along together, the vessel wall arcing around the frame.</td><td class="num">opens clip 6</td></tr>
+          <tr><td class="num">6</td><td><b>Into the blood</b><br><span class="dim">Capillary → whole body</span></td><td>The whole body seen at full length, its entire arterial and venous tree visible as a fine red-and-blue network, with pale points spread out along it and gathering at the vessel walls themselves.</td><td class="num">opens clip 7</td></tr>
+          <tr><td class="num">7</td><td><b>The vessel opens</b><br><span class="dim">Artery wall · macro, near-still</span></td><td>The vessel seen from inside with its muscular wall relaxed, the passage through it visibly wider than at the start of the shot, and blood moving through it more freely and evenly. Everything is still.</td><td class="num">opens clip 8</td></tr>
+          <tr><td class="num">8</td><td><b>A body holding itself open</b><br><span class="dim">Whole body · hero</span></td><td>The whole figure standing still, its vessel network lit an even pale green-gold and visibly open along its whole length, the camera stopped — a clean frame to hold under the end card.</td><td class="num">end of video</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>How to actually chain them when you generate</h3>
+    <ol class="steps">
+      <li><b>Generate still 1 and approve it.</b> It sets the figure, the skin translucency, the deep green leaf material, the light and the background for everything that follows.</li>
+      <li><b>Render clip 1 from that still</b>, then <b>export its last frame as a PNG.</b></li>
+      <li><b>Generate still 2 with that PNG attached as a reference image</b>, alongside image prompt 2. The prompt already describes the same figure and the same end state, so the reference locks the render to it rather than fighting it.</li>
+      <li><b>Repeat for all eight.</b> Approve the still, render the clip, export the last frame, feed it forward.</li>
+    </ol>
+
+    <div class="box key">
+      <div class="bt">Why the still still matters, even with a last frame in hand</div>
+      <p>It is tempting to skip the still and feed clip 1's last frame straight in as clip 2's first frame. Do not — you lose the approval step, and any drift compounds silently down the chain.</p>
+      <p style="margin-top:12px">Generating a fresh still and <em>then</em> animating it means <strong>you see and approve every one of the eight frames the video is built on before paying for any motion</strong>. The last-frame PNG is there to lock the look, not to replace the still.</p>
+    </div>
+
+    <div class="box warn">
+      <div class="bt">⚠ Where the chain is deliberately broken, and why</div>
+      <p>Two of the seven cuts are scale jumps rather than continuous handoffs: <strong>into shot 4</strong> (the stomach fluid, out to the whole body) and <strong>into shot 8</strong> (one vessel, out to the whole body). Both sit where the egg video puts them, and both are doing a job — shot 4 re-anchors the viewer at the 24-second retention dip, shot 8 is the payoff. They are still matched: shot 4 opens on the glow in the abdomen, exactly where shot 3 just was, and shot 8 matches on the pale light coming out of shot 7.</p>
+      <p style="margin-top:12px"><strong>A match cut is continuity; a random new picture is not.</strong></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 03 ORDER ============ -->
+<section id="order">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">03 — The order of operations</div>
+    <h2 class="sec">Script first, voice second, pictures last</h2>
+    <p class="lead">The order matters more than any single step. The voice-over is what decides where every cut lands, so it has to exist before a single image is generated — otherwise you end up speeding clips up to fit, which is exactly the defect measured in the reference video.</p>
+
+    <ol class="steps">
+      <li><b>Write 8 sentences.</b> One per clip, in body order. <a href="#fullscript">Section 00</a> — already written.</li>
+      <li><b>Render the voice-over and measure it.</b> Every sentence must be spoken in under 8 seconds. If one overruns, cut words — never speed anything up later. <a href="#voice">Section 05</a> — already rendered.</li>
+      <li><b>Generate 8 still images, in order, chaining each one to the last frame before it.</b> Approve each still before spending anything on motion. <a href="#prompts">Section 07</a>.</li>
+      <li><b>Generate 8 videos</b>, each using its approved still as the first frame, 8 seconds, 9:16, <b>audio off</b>.</li>
+      <li><b>Lay them on a 24 fps timeline</b> at 0, 8, 16, 24, 32, 40, 48, 56 s and drop the single voice-over file across the whole thing. <a href="#assembly">Section 08</a>.</li>
+      <li><b>Auto-generate captions, add a music bed, export.</b> <a href="#captions">Sections 09–11</a>.</li>
+    </ol>
+
+    <div class="box key">
+      <div class="bt">Why the voice comes before the pictures</div>
+      <p>The reference video runs <strong>≈22.3 fps of content inside a 30 fps file</strong> — the signature of clips that were stretched or squeezed to fit the narration after the fact. It produces visible judder for no benefit.</p>
+      <p style="margin-top:12px">Doing it in this order removes the problem entirely: the clips are always exactly 8.000 s, and the script was cut to fit them rather than the other way round. <strong>The grid is fixed. The words bend.</strong></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 04 SCRIPT ============ -->
+<section id="script">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">04 — The script, measured</div>
+    <h2 class="sec">Eight sentences, in the second person, each one timed</h2>
+    <p class="lead">The same script as section 00, with the numbers that came out of the rendered audio. These are measurements, not estimates — headroom is the time left in the clip after the sentence finishes.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Clip</th><th>Sentence</th><th>Words</th><th>Spoken</th><th>Headroom</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>When you eat spinach, the bacteria living on your tongue start changing the leaves immediately.</td><td class="num">15</td><td class="num">5.83 s</td><td class="num tick">2.17 s</td></tr>
+          <tr><td class="num">2</td><td>You swallow, and your esophagus carries that changed compound down toward your stomach.</td><td class="num">13</td><td class="num">5.74 s</td><td class="num tick">2.36 s</td></tr>
+          <tr><td class="num">3</td><td>Your stomach acid finishes the conversion your tongue started, in the warm fluid there.</td><td class="num">14</td><td class="num">5.49 s</td><td class="num tick">2.61 s</td></tr>
+          <tr><td class="num">4</td><td>A tiny gas molecule forms, one of the smallest signals your body uses.</td><td class="num">13</td><td class="num">5.46 s</td><td class="num tick">2.64 s</td></tr>
+          <tr><td class="num">5</td><td>It crosses the wall of your small intestine, through the folds, into the vessels below.</td><td class="num">15</td><td class="num">5.49 s</td><td class="num tick">2.61 s</td></tr>
+          <tr><td class="num">6</td><td>Your blood carries it out through the whole network, all the way to your vessel walls.</td><td class="num">16</td><td class="num">4.99 s</td><td class="num tick">3.11 s</td></tr>
+          <tr><td class="num">7</td><td>The muscle in that vessel wall relaxes, and the passage through it opens wider.</td><td class="num">14</td><td class="num">5.14 s</td><td class="num tick">2.96 s</td></tr>
+          <tr><td class="num">8</td><td>Now blood moves easily through a body that is holding its own vessels open.</td><td class="num">14</td><td class="num">4.70 s</td><td class="num tick">3.40 s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:15.5px;color:var(--ink3)">114 words · 42.84 s of speech in a 64 s video · en-US-AriaNeural at rate <code>−18%</code> · the shortest headroom on this script is 2.17 s.</p>
+
+    <div class="box find">
+      <div class="bt">⭐ Word count does not predict duration</div>
+      <p>Clip 6 speaks <strong>16 words in 4.99 s</strong>. Clip 2 speaks <strong>13 words in 5.74 s</strong> — fewer words, more time on the clock. Syllables and commas drive it, not word count.</p>
+      <p style="margin-top:12px"><strong>Write to 16–20 words as a first draft, then render and measure, and rewrite anything over 7.5 s.</strong> Every number in the table above came out of the actual audio file, not an estimate. A comma is worth about a third of a second; a word is worth far more.</p>
+    </div>
+    <div class="box stop">
+      <div class="bt">The line that must not move</div>
+      <p>Sentences 1–7 describe only what happens. Sentence 8 says blood moves easily through a body that is holding its own vessels open — a description of a mechanism, and it stops there. <strong>Never write “lowers blood pressure”. That is a drug claim, not a nutrition one</strong>, and on this subject it is the hardest line in the whole series to resist, because it is the obvious payoff of everything the video just showed. No athletic-performance angle either, and no numbers. The vessel wall <em>relaxes</em>; end the sentence.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 05 VOICE ============ -->
+<section id="voice">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">05 — The voice-over</div>
+    <h2 class="sec">One continuous track, not eight clips</h2>
+    <p class="lead">This is the step that decides whether the finished video sounds like a video or like eight videos glued together — and it is already done. Listen to it, download it, or rebuild it from the script with the shell script beside it.</p>
+
+    <div class="audio">
+      <div style="font:700 12px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px">The finished voice-over · drop this straight into the editor</div>
+      <p style="margin:10px 0 0;font-size:15.5px">64.03 s · 48 kHz · −14.9 LUFS integrated · true peak −1.7 dBFS · every sentence verified in the finished file to start exactly 0.10 s before its cut.</p>
+      <audio controls preload="none" src="vo-spinach-64s.mp3"></audio>
+      <a class="dl" href="vo-spinach-64s.mp3" download>↓ download vo-spinach-64s.mp3</a>
+      <a class="dl" href="build-vo.sh" download>↓ build-vo.sh (rebuild it yourself, free)</a>
+    </div>
+
+    <h3>Where each sentence has to land</h3>
+    <p>Every sentence begins <strong>0.10 seconds before its clip does</strong>. That is not sloppiness — it is the whole trick. The reference video does exactly this on six of its eight sentences, and it is what makes a word carry across a cut, which is what tells the ear that the narration is one continuous thing running underneath the pictures.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sentence</th><th>Audible at</th><th>Clip it narrates</th><th>Ends at</th><th>Headroom</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="num">0.00 s</td><td class="num">clip 1 · 0–8 s</td><td class="num">5.83 s</td><td class="num tick">2.17 s</td></tr>
+          <tr><td class="num">2</td><td class="num">7.90 s</td><td class="num">clip 2 · 8–16 s</td><td class="num">13.64 s</td><td class="num tick">2.36 s</td></tr>
+          <tr><td class="num">3</td><td class="num">15.90 s</td><td class="num">clip 3 · 16–24 s</td><td class="num">21.39 s</td><td class="num tick">2.61 s</td></tr>
+          <tr><td class="num">4</td><td class="num">23.90 s</td><td class="num">clip 4 · 24–32 s</td><td class="num">29.36 s</td><td class="num tick">2.64 s</td></tr>
+          <tr><td class="num">5</td><td class="num">31.90 s</td><td class="num">clip 5 · 32–40 s</td><td class="num">37.39 s</td><td class="num tick">2.61 s</td></tr>
+          <tr><td class="num">6</td><td class="num">39.90 s</td><td class="num">clip 6 · 40–48 s</td><td class="num">44.89 s</td><td class="num tick">3.11 s</td></tr>
+          <tr><td class="num">7</td><td class="num">47.90 s</td><td class="num">clip 7 · 48–56 s</td><td class="num">53.04 s</td><td class="num tick">2.96 s</td></tr>
+          <tr><td class="num">8</td><td class="num">55.90 s</td><td class="num">clip 8 · 56–64 s</td><td class="num">60.60 s</td><td class="num tick">3.40 s</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Which voice, and the rate</h3>
+    <p>Two routes, and neither needs an account or a payment: <b>your own voice</b>, recorded as one continuous take with a beat of silence between sentences — or <b>Microsoft neural TTS</b>, which is what made the file above (<code>pip install edge-tts</code>, free, no key). Voice used here is <code>en-US-AriaNeural</code> at rate <code>−18%</code>, which is about 158 wpm. A slower read sounds better, but <strong>the longest sentence sets the ceiling for the whole video</strong> — shorten the longest sentence before slowing the voice.</p>
+
+    <div class="box warn">
+      <div class="bt">⚠ Measure the speech, not the file</div>
+      <p>Synthesised sentences arrive padded with roughly <strong>0.2 s of silence at the front and 0.9 s at the back</strong>. If you place the files by their reported length, every sentence lands about a tenth of a second <em>late</em> — the exact opposite of what you want, and it happened on the first build in this series before it was caught.</p>
+      <p style="margin-top:12px">Strip the padding first, then place by the audible start. <code>build-vo.sh</code> does this automatically and prints the onsets so you can check them: they must read <strong>7.90 / 15.90 / 23.90 / 31.90 / 39.90 / 47.90 / 55.90</strong>. <strong>If any row prints “OVERRUNS ITS CLIP”, cut words from that sentence and run it again.</strong></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 06 TIMELINE ============ -->
+<section id="timeline">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">06 — Where the image changes</div>
+    <h2 class="sec">The grid: a new image every 8.000 seconds</h2>
+    <p class="lead">There is nothing to judge by eye here. The picture changes on an exact multiple of eight seconds, eight times, and the voice runs straight underneath all of it.</p>
+
+    <div class="tl">
+      <div class="tlbar">
+        <div class="tlseg" style="background:#6f9e5a">1</div>
+        <div class="tlseg" style="background:#b9846f">2</div>
+        <div class="tlseg" style="background:#c08f4a">3</div>
+        <div class="tlseg" style="background:#5fc4e8">4</div>
+        <div class="tlseg" style="background:#e8899d">5</div>
+        <div class="tlseg" style="background:#cf6f70">6</div>
+        <div class="tlseg" style="background:#d06a7a">7</div>
+        <div class="tlseg" style="background:#86e0b0">8</div>
+      </div>
+      <div class="tlvo">
+        <div style="left:0.00%;width:9.11%"></div>
+        <div style="left:12.34%;width:8.97%"></div>
+        <div style="left:24.84%;width:8.58%"></div>
+        <div style="left:37.34%;width:8.53%"></div>
+        <div style="left:49.84%;width:8.58%"></div>
+        <div style="left:62.34%;width:7.80%"></div>
+        <div style="left:74.84%;width:8.03%"></div>
+        <div style="left:87.34%;width:7.34%"></div>
+      </div>
+      <div class="tlcap">top: the eight clips, each exactly 8.000 s, colour = that clip's palette · bottom: the eight spoken sentences on one continuous track, each starting 0.10 s before its cut (coloured edge)</div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Clip</th><th>In → out</th><th>Shot</th><th>Camera move</th><th>Keyframe</th><th>Palette</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="num">0:00.000 → 0:08.000</td><td><a href="#c1">It starts on the tongue</a><br><span class="dim">Mouth → tongue surface · close-up → macro</span></td><td>Push in, very large amplitude, accelerating from slow to moderate and easing off at the end</td><td><span class="kf n">new still</span></td><td><span class="sw" style="background:#6f9e5a"></span>warm flesh + deep green</td></tr>
+          <tr><td class="num">2</td><td class="num">0:08.000 → 0:16.000</td><td><a href="#c2">The swallow</a><br><span class="dim">Throat → stomach · torso wide</span></td><td>Pull out, large amplitude, slow constant speed</td><td><span class="kf r">reuse keyframe A</span></td><td><span class="sw" style="background:#b9846f"></span>warm flesh + cyan rim</td></tr>
+          <tr><td class="num">3</td><td class="num">0:16.000 → 0:24.000</td><td><a href="#c3">The acid finishes it</a><br><span class="dim">Stomach · cutaway → macro</span></td><td>Push in, large amplitude, slow steady speed</td><td><span class="kf n">new still</span></td><td><span class="sw" style="background:#c08f4a"></span>warm amber + green</td></tr>
+          <tr><td class="num">4</td><td class="num">0:24.000 → 0:32.000</td><td><a href="#c4">Where we are now → the molecule</a><br><span class="dim">Whole body → macro</span></td><td>Hold, then push in, very large amplitude, accelerating from slow to moderate and easing off at the end</td><td><span class="kf n">new still</span></td><td><span class="sw" style="background:#5fc4e8"></span>cold blue — colour break</td></tr>
+          <tr><td class="num">5</td><td class="num">0:32.000 → 0:40.000</td><td><a href="#c5">Through the wall</a><br><span class="dim">Intestinal villi · macro</span></td><td>Truck right, small amplitude, slow speed for the first six seconds, then push in, small amplitude, slow speed on one villus for the last two. Two linked moves in one continuous take</td><td><span class="kf r">reuse keyframe B</span></td><td><span class="sw" style="background:#e8899d"></span>pink + pale blue</td></tr>
+          <tr><td class="num">6</td><td class="num">0:40.000 → 0:48.000</td><td><a href="#c6">Into the blood</a><br><span class="dim">Capillary → whole body</span></td><td>Pull out, very large amplitude, one constant slow speed all the way</td><td><span class="kf r">reuse keyframe C</span></td><td><span class="sw" style="background:#cf6f70"></span>red + blue → whole body</td></tr>
+          <tr><td class="num">7</td><td class="num">0:48.000 → 0:56.000</td><td><a href="#c7">The vessel opens</a><br><span class="dim">Artery wall · macro, near-still</span></td><td>Static shot, with the faintest push in</td><td><span class="kf n">new still</span></td><td><span class="sw" style="background:#d06a7a"></span>deep red + pale blue</td></tr>
+          <tr><td class="num">8</td><td class="num">0:56.000 → 1:04.000</td><td><a href="#c8">A body holding itself open</a><br><span class="dim">Whole body · hero</span></td><td>Push in, very small amplitude</td><td><span class="kf r">reuse keyframe D</span></td><td><span class="sw" style="background:#86e0b0"></span>pale green-gold — colour break 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box find">
+      <div class="bt">⭐ Four of these eight stills are already made</div>
+      <p>Clips 2, 5, 6 and 8 are anatomy, not spinach — the torso with the esophagus and stomach, the field of villi, the vessel network, the whole body. They are <strong>keyframes A, B, C and D</strong> from the egg video and they drop straight in as the start frames here. This video needs four new stills: the leaf on the tongue, the stomach, the gas molecule forming and the vessel wall opening.</p>
+    </div>
+
+    <div class="box warn">
+      <div class="bt">⚠ Reuse the still, re-render the motion</div>
+      <p>Feed the shared keyframe back in as the first frame — then write a <em>different</em> motion prompt for it, which is what the video prompts on this page already are. Never drop the identical rendered clip into two uploads. It costs the same either way, and repeated footage across uploads is what gets a channel labelled repetitive.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 07 PROMPTS ============ -->
+<section id="prompts">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">07 — The 16 prompts</div>
+    <h2 class="sec">Eight stills, eight motions, paste-ready</h2>
+    <p class="lead">Each card below is one clip: the sentence it carries, the image prompt that makes the still, and the image-to-video prompt that moves it. Every prompt is complete on its own — the shared style block, the realism block, the real-anatomy line, the continuity handoff and the ban on text are already written into each one, so there is nothing to remember and nothing to append.</p>
+
+    <div class="copyall">
+      <button class="cbtn" type="button" data-target="allimg">⧉ Copy all 8 image prompts</button>
+      <button class="cbtn" type="button" data-target="allvid">⧉ Copy all 8 video prompts</button>
+      <button class="cbtn" type="button" data-target="styleblock">⧉ Copy the shared style + realism block</button>
+    </div>
+    <pre id="allimg" hidden>===== IMAGE PROMPT 1 =====
+
+SHOT 1 OF 8 — IT STARTS ON THE TONGUE. A hyper-realistic anatomical human head in three-quarter profile with spinach leaves in the mouth.
+
+SCENE — An adult human head and shoulders turned three-quarters toward camera against a dark navy background. The skin is semi-transparent, so the skull, the jaw and cheek muscles, the tongue and the whole row of teeth read clearly through it — the look of a high-end medical visualisation figure. The face is calm and neutral, eyes open, no expression. The mouth is open and dark green spinach leaves are on the tongue, torn and folded, their surfaces wet and glossy, the pale ribs of the leaves catching the light. Below the jaw, through the neck, the throat and the top of the esophagus are visible as a pale ribbed tube running down behind the windpipe.
+
+CAMERA — Medium close-up: the frame runs from the top of the skull down to the collarbones. Camera at mouth height, level with the face, 50 mm equivalent lens, shallow depth of field with the lips, tongue and leaves razor sharp and the back of the head falling soft.
+
+SUBJECT — the spinach, stage 1 of 8 — Fresh spinach leaves: deep saturated green, slightly translucent where the light passes through them, with visible pale veins and a wet glossy surface. They must read instantly and unmistakably as leaves, not as any other green material.
+
+REAL ANATOMY — the papillae covering the surface of the tongue — the fine pointed ones over most of the surface and the larger round ones toward the back — the pink gum margin around each tooth, the wet mucosa of the inner cheek, the masseter and temporalis muscles under the skin, and the deep crevices between papillae where the tongue's own bacterial colonies live.
+
+LIGHT — One warm key light from the upper left catching every wet highlight on the teeth, the tongue and the leaf surfaces. A cool cyan rim light along the jawline and cheekbone separating the head from the background. Deep shadow behind the head.
+
+CONTINUITY — This is the opening shot and it locks the look for the whole video: this exact figure, this exact skin translucency, this exact deep green leaf material, this warm-key-plus-cyan-rim lighting and this dark navy background appear in all eight shots. Nothing about the look changes after this frame.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 2 =====
+
+SHOT 2 OF 8 — THE SWALLOW. The same figure, one step wider: head, neck and upper chest, with the esophagus visible running down inside the body.
+
+SCENE — The same adult anatomical figure as shot 1, at the same three-quarter angle, now framed wider so the head, the whole neck and the upper chest are in view. Through the semi-transparent skin and the pale ribcage, the esophagus runs from the back of the throat down the centre of the chest, behind the heart, as a soft ribbed muscular tube. A dark green chewed mass sits at the very top of that tube, just entering it, with a faint pale glow spread through it where the tongue's bacteria have already changed it. The ring muscles of the esophagus read as evenly spaced bands along its length. A faint cool cyan glow runs down inside the tube ahead of the mass, showing the direction of travel as a soft travelling light.
+
+CAMERA — Medium wide: the frame runs from just above the head down to the bottom of the ribcage. Camera level, 35 mm equivalent lens, moderate depth of field with the esophagus and the mass sharp and the shoulders falling slightly soft.
+
+SUBJECT — the spinach, stage 2 of 8 — No longer whole leaves: a soft dark green bolus roughly the size of a walnut, wet and folded, carrying a faint pale glow through it — the same green material as shot 1 in a new shape, plus the first sign of the change that started in the mouth.
+
+REAL ANATOMY — the esophagus as a muscular tube lying behind the trachea and in front of the spine, its wall built from an inner circular and an outer longitudinal muscle layer, the aortic arch and the left main bronchus crossing in front of it, the diaphragm it passes through, and the lower esophageal sphincter where it opens into the stomach.
+
+LIGHT — Warm key from the upper left across the chest. Cool cyan rim down the left edge of the neck and shoulder. The esophagus glowing very faintly from within along its length, and the pale glow inside the bolus reading clearly against the dark green.
+
+CONTINUITY — PREVIOUS SHOT ENDED: Extreme macro on the surface of the tongue: papillae standing up like a dense soft forest, dark green leaf fragments pressed among them, and colonies of bacteria packed into the crevices between, already working on the leaf. This frame is that same figure, pulled back out to the body, with that same leaf material — and the change those bacteria started — now formed into a bolus at the top of the esophagus. Same skin, same light, same background, same green.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 3 =====
+
+SHOT 3 OF 8 — THE ACID FINISHES IT. The stomach, seen close inside the body, its near wall cut away so the inside is visible.
+
+SCENE — The same figure, now framed on the abdomen. The stomach fills most of the frame, sitting under the ribs, with the lower ribcage and the outline of the torso still visible around the edges of frame so it stays obvious that we are inside a human body. The near wall of the stomach is opened in a clean medical cutaway, revealing the interior: deep folded ridges of stomach lining in wet red-brown, a churning pool of warm amber gastric fluid, and the dark green spinach mass lying in it, softening and fraying at its edges. The pale glow the mass carried in is brightening, and the first tiny pale blue-white points are lifting off it into the fluid.
+
+CAMERA — Medium close-up on the stomach, slightly high angle looking down into the cutaway, 40 mm equivalent lens, shallow depth of field with the green mass sharp in the foreground and the folded stomach lining soft behind it.
+
+SUBJECT — the spinach, stage 3 of 8 — The green mass giving up what it was carrying: dark green and fraying, with pale blue-white points separating out of it and rising. The green stays green — it is not dissolving away, it is releasing something.
+
+REAL ANATOMY — the gastric rugae as thick irregular folds of pink-red mucosa, a glistening mucus layer lying over them, gastric pits reading as fine dark openings across the surface, the submucosal capillary network faintly visible through the lining, and the greater curvature of the stomach holding the pool.
+
+LIGHT — Strong warm amber light coming up through the gastric fluid from below, turning it to glowing honey. The green mass lit hard from the upper left so its wet folds catch a highlight and read clearly against the amber. Cyan rim light along the cut edge of the stomach wall, tying this shot to the two before it.
+
+CONTINUITY — PREVIOUS SHOT ENDED: The whole upper body is in frame. The dark green mass has arrived at the lower end of the esophagus and the ring of muscle at the stomach entrance is opening in front of it. The stomach below is pink and empty. This frame picks up from there: the same body, the camera now settled on the stomach the bolus was entering, with that same green mass lying in the acid. Same figure, same cyan rim, same background.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 4 =====
+
+SHOT 4 OF 8 — WHERE WE ARE NOW. The whole body seen at full length in cool blue, with the stomach and upper abdomen lit up inside it.
+
+SCENE — The same figure, now standing at full length facing camera in a dark navy void, rendered in cool blue X-ray tones: the skeleton, the organs and the outline of the muscles all visible through translucent blue skin. The stomach and the upper abdomen glow clear cyan-white and are the brightest part of the body. Everything else is cool and dim. The figure stands still, arms slightly away from the sides, feet together.
+
+CAMERA — Wide: the whole figure from above the head to below the feet, filling about four-fifths of the frame height. Camera level at chest height, 50 mm equivalent lens, the whole figure in focus, the void behind it clean and empty.
+
+SUBJECT — the spinach, stage 4 of 8 — Not visible as a leaf any more. Its position in the body is what is visible: the cyan-white glow in the abdomen is where it has reached.
+
+REAL ANATOMY — a correct skeleton — twelve pairs of ribs, the lumbar spine, the pelvis and the femoral heads — with the stomach high on the left under the diaphragm, the liver filling the space under the right ribs, and the coiled small intestine below them, all in true adult human proportion.
+
+LIGHT — Cold: a cyan key from the front left and a deeper blue rim on both edges of the body. The abdomen self-illuminated from within. No warm light anywhere in this frame.
+
+CONTINUITY — PREVIOUS SHOT ENDED: A drift of tiny pale blue-white points rising out of the dark green mass into the amber fluid above it, spreading slowly apart from one another. This is the one deliberate step back in the video — the same figure seen whole, so the viewer re-anchors and remembers this is happening inside a body. The glowing point in the abdomen is exactly where the previous shot just was, and the camera dives straight back into it.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 5 =====
+
+SHOT 5 OF 8 — THROUGH THE WALL. Extreme macro on the lining of the small intestine, so close that individual villi fill the frame.
+
+SCENE — The inner surface of the small intestine at extreme magnification: hundreds of soft finger-shaped villi rising toward camera, wet coral and rose pink, each faintly translucent with a fine red capillary network glowing just beneath its surface. Tiny pale blue-white points drift down between them from the fluid above, reach the villus surfaces and pass straight through into the capillaries underneath, where they can be seen travelling away inside the vessel. They are small enough to cross without effort and the picture should show that — no gathering, no queueing, no pushing through.
+
+CAMERA — Macro, camera low among the villi looking very slightly up, 85 mm macro equivalent, very shallow depth of field: one band of villi razor sharp, the field in front of and behind it melting into soft pink bokeh.
+
+SUBJECT — the spinach, stage 5 of 8 — The same tiny pale blue-white points, crossing a living surface as if it were not there. Their smallness is the whole characteristic — they are the smallest thing in every frame they appear in.
+
+REAL ANATOMY — villi as finger-shaped projections of mucosa, each with a brush border of microvilli at its tip, a central lacteal running up its core, a capillary loop wrapped around that lacteal, goblet cells spaced between the absorptive cells, and the crypts sitting in the valleys at the base of each villus.
+
+LIGHT — Warm pink light raking across from the right, catching every wet villus tip. Cool cyan fill from the left keeping the shadow side from going flat. The capillaries inside the villi glowing faintly red from within, and the points carrying a cold pale light of their own.
+
+CONTINUITY — PREVIOUS SHOT ENDED: One tiny pale blue-white gas molecule alone at the centre of frame, far smaller than anything else drifting in the fluid around it, turning very slowly. This frame is that same molecule among many more like it, arriving at the lining. Same fluid, same pale blue light, same scale — the camera has simply arrived at the surface.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 6 =====
+
+SHOT 6 OF 8 — INTO THE BLOOD. Inside a blood vessel, with the branching vessel tree visible far beyond it.
+
+SCENE — Macro inside a blood vessel: glossy dark red biconcave red blood cells tumbling toward camera through translucent straw-coloured plasma, with tiny pale blue-white points travelling among them — much smaller than the cells and standing out cold against the red. The vessel wall arcs around the edges of frame in translucent pink, lit with a cold rim so the shape of the tube is readable. Some of the points are drifting toward that wall rather than staying in the middle of the flow. Far beyond the cells, out of focus, the vessel branches away into a fine network.
+
+CAMERA — Macro inside the vessel, camera in the centre of the flow facing along it, 50 mm equivalent lens, sharp focal plane through the middle of frame with the cells at the frame edges softened by motion blur.
+
+SUBJECT — the spinach, stage 6 of 8 — The same tiny pale points, now travelling in blood — and beginning to move outward toward the wall of the vessel, which is where the next shot happens.
+
+REAL ANATOMY — red blood cells with their true biconcave dimpled shape and no nucleus, an endothelial lining one cell thick with the cell junctions faintly visible, vessels branching by real bifurcation into narrower ones — and at the wide end, an arterial tree in red and a venous tree in blue following real vascular anatomy out to the hands and feet.
+
+LIGHT — Deep red ambient from the blood itself, a cold blue rim along the vessel wall, and the points carrying their own pale light. Strong red-and-blue contrast, warm centre and cool edges.
+
+CONTINUITY — PREVIOUS SHOT ENDED: Inside the capillary within a single villus: red blood cells and tiny pale blue-white points flowing along together, the vessel wall arcing around the frame. This frame is that same capillary, one moment later, with the camera now inside the flow. Same points, same pale blue light, same blood.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 7 =====
+
+SHOT 7 OF 8 — THE VESSEL OPENS. Extreme macro at the wall of an artery, cut so the layers of the wall are visible, with blood flowing through the passage inside.
+
+SCENE — Extreme macro inside the body at a small artery, cut open along its length so both the inside of the tube and the thickness of its wall are visible in one frame. The inner surface is a smooth glistening lining of flat cells, and behind it lies a thick band of muscle wrapped in rings around the tube, deep red and fibrous, with a looser outer sheath of pale connective tissue and fine nerves and vessels running through it. Blood moves through the passage — dark red cells in straw-coloured plasma — and tiny pale blue-white points are gathered at the inner lining, passing through it into the muscle layer behind. The muscle is tight at the start, and the passage through the tube is narrow. The outline of the limb it sits in is faintly visible at the very edge of frame.
+
+CAMERA — Extreme macro, camera close and level with the cut wall, 100 mm macro equivalent, very shallow depth of field: the lining, the muscle band and the pale points razor sharp, the far side of the vessel and the tissue beyond falling away soft.
+
+SUBJECT — the spinach, stage 7 of 8 — The last of the pale points, arriving at the tissue that responds to them. This is where everything the video has followed for fifty seconds actually does something.
+
+REAL ANATOMY — an artery wall in its three true layers: the intima, a single smooth layer of endothelial cells over an internal elastic lamina; the media, a thick band of smooth muscle wound circumferentially around the vessel with elastic fibres between the cells; and the adventitia outside it, loose connective tissue carrying fine nerves and its own tiny vessels — with red blood cells moving through the lumen inside.
+
+LIGHT — Deep red ambient from the blood, a warm key raking across the cut face of the wall from the upper left so the muscle fibres read as fibres, and a cool blue rim along the outer sheath. The pale points carrying their own cold light against all of it.
+
+CONTINUITY — PREVIOUS SHOT ENDED: The whole body seen at full length, its entire arterial and venous tree visible as a fine red-and-blue network, with pale points spread out along it and gathering at the vessel walls themselves. This frame is one of those walls, close up — the camera has followed the pale points out of the flow and to the wall they were gathering at. Same points, same pale blue light, same blood.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.
+
+
+===== IMAGE PROMPT 8 =====
+
+SHOT 8 OF 8 — A BODY HOLDING ITSELF OPEN. The same figure at full length, its vessel network glowing an even pale green-gold from within.
+
+SCENE — The same adult anatomical figure standing at full length facing camera in a dark void, seen from the front. The body is translucent and smooth, the head without facial features and without hair. Its internal vessel network glows a soft pale green-gold from within, even from the torso out to the fingers and toes, and the vessels themselves read as open and full rather than thin and tight. A faint warm haze surrounds the figure. The background is the same dark navy falling to black as every other shot.
+
+CAMERA — Wide: the whole figure from above the head to below the feet, filling about two-thirds of the frame height, centred, camera level at chest height, 50 mm equivalent lens, the whole figure in sharp focus.
+
+SUBJECT — the spinach, stage 8 of 8 — No longer a separate object at all. It is the pale green-gold light in the vessel network — one plate of leaves, now readable only as the state of the whole system.
+
+REAL ANATOMY — a correct arterial and venous tree — the aorta arching out of the heart, the carotids up the neck, the subclavians into the arms, the femorals down the legs — branching to fine peripheral vessels over a correct skeleton, with true adult human proportion.
+
+LIGHT — Soft pale green-gold from inside the body, even throughout, with a faint warm ambient haze around it and a cool blue rim on both edges. Calm and open rather than bright and hot — this is the gentlest hero frame in the series.
+
+CONTINUITY — PREVIOUS SHOT ENDED: The vessel seen from inside with its muscular wall relaxed, the passage through it visibly wider than at the start of the shot, and blood moving through it more freely and evenly. Everything is still. This frame matches on that light and on that openness: the same pale glow and the same relaxed vessels, at the scale of the whole body. It reads as the camera stepping all the way back at the end of the journey. Same figure, same rim light, same background as shot 1.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+    <pre id="allvid" hidden>===== VIDEO PROMPT 1 =====
+
+CLIP 1 OF 8 — IT STARTS ON THE TONGUE · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 1, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Push in, very large amplitude, accelerating from slow to moderate and easing off at the end — the camera travels straight in from the medium close-up on the head, past the lips, and down onto the surface of the tongue, ending in extreme macro among the papillae. One continuous move on a single axis, no cut, no stop, no rotation, no shake.
+
+0.0 – 2.0 s — The jaw closes once on the leaves and the leaves fold and tear between the teeth. The camera begins to travel forward.
+
+2.0 – 4.0 s — The camera passes the lips and the mouth fills the frame. The tongue surface resolves as texture rather than as a shape.
+
+4.0 – 6.0 s — Extreme macro: papillae stand up like a dense soft forest, with torn green leaf fragments pressed down among them.
+
+6.0 – 8.0 s — Colonies of bacteria come into focus in the crevices between the papillae, dense and alive, moving very slightly, already crowded onto the leaf fragments nearest them.
+
+LIGHTING — The warm key holds all the way in. As the camera reaches macro the light becomes softer and more enclosed, with a faint green bounce coming off the leaf fragments onto the papillae around them.
+
+END FRAME — Extreme macro on the surface of the tongue: papillae standing up like a dense soft forest, dark green leaf fragments pressed among them, and colonies of bacteria packed into the crevices between, already working on the leaf. Clip 2 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a single continuous travel in from the whole head to the surface of the tongue. No cut, no dissolve, no jump in scale. The head does not turn, nod, tilt or speak. The bacteria move very slightly — they never swarm, boil or stream.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 2 =====
+
+CLIP 2 OF 8 — THE SWALLOW · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 2, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Pull out, large amplitude, slow constant speed — the camera retreats and cranes down very slightly, so that by 8.0 s the frame holds the whole upper body from the top of the head to just below the stomach. One continuous move, never stopping, never speeding up. No shake, no rotation.
+
+0.0 – 2.0 s — The throat contracts once and drives the bolus into the top of the esophagus. The camera begins its pull-out.
+
+2.0 – 4.0 s — Rings of muscle contract in sequence from the top downward, squeezing the tube shut behind the bolus and pushing it about a third of the way down. The pull-out reveals the collarbones and the top of the ribcage.
+
+4.0 – 6.0 s — The wave continues down the tube. The bolus passes behind the heart, which beats steadily twice in this window. The pull-out reveals the whole ribcage and the lungs.
+
+6.0 – 8.0 s — The stomach comes into frame below the ribs, pink and empty. The bolus reaches the lower end of the esophagus and the ring of muscle at the stomach entrance opens in front of it.
+
+LIGHTING — The faint cyan glow inside the esophagus travels down the tube just ahead of the bolus, and fades out as the shot ends. The pale glow inside the bolus strengthens very slightly across the eight seconds. Key and rim unchanged.
+
+END FRAME — The whole upper body is in frame. The dark green mass has arrived at the lower end of the esophagus and the ring of muscle at the stomach entrance is opening in front of it. The stomach below is pink and empty. Clip 3 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the swallow, as a single continuous travelling squeeze that never stops or restarts. The figure does not move, turn or gesture; the only other movement in frame is the heartbeat.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 3 =====
+
+CLIP 3 OF 8 — THE ACID FINISHES IT · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 3, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Push in, large amplitude, slow steady speed — the camera moves from the medium shot of the stomach forward through the cutaway opening and into the fluid, ending in macro just above the surface of the green mass with the rising points filling the centre of frame. One straight continuous move on a single axis, constant speed, no shake, no rotation, no stopping.
+
+0.0 – 2.0 s — The stomach wall contracts once and the amber fluid swirls around the green mass, which rolls slightly and frays further at its edges. The camera begins pushing in.
+
+2.0 – 4.0 s — The push-in continues until the mass fills the lower half of frame. The pale glow inside it strengthens along the torn edges.
+
+4.0 – 6.0 s — The first tiny pale blue-white points lift off the surface and rise slowly into the fluid, tumbling as they go.
+
+6.0 – 8.0 s — More follow, spreading apart from one another as they rise, until a loose drift of them fills the fluid above the green mass.
+
+LIGHTING — The amber underlight strengthens as the camera descends into the fluid, until by 6.0 s the whole frame is lit from below and the pale rising points are the coolest, brightest things in it.
+
+END FRAME — A drift of tiny pale blue-white points rising out of the dark green mass into the amber fluid above it, spreading slowly apart from one another. Clip 4 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the release. It must read as something &lt;strong&gt;coming out of&lt;/strong&gt; the green mass and rising — not as the mass dissolving, melting, exploding or disappearing. The green stays. One continuous transformation across the full eight seconds, never restarting.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 4 =====
+
+CLIP 4 OF 8 — WHERE WE ARE NOW → THE MOLECULE · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 4, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Hold, then push in, very large amplitude, accelerating from slow to moderate and easing off at the end — the camera holds on the whole figure, then travels forward into the abdomen, through the body wall, and ends in extreme macro on a single molecule adrift in fluid. One continuous move, no cut, no stop.
+
+0.0 – 2.0 s — The whole figure is held still in frame and the cyan-white glow in the abdomen pulses once, softly. Nothing else moves.
+
+2.0 – 4.0 s — The camera begins travelling forward. The figure grows until the torso fills the frame and the glow becomes the brightest part of the image.
+
+4.0 – 6.0 s — The camera passes through the body wall into dark fluid. Pale points stream past the lens, out of focus, at every scale.
+
+6.0 – 8.0 s — The stream thins until one is left: a single very small pale blue-white molecule at the centre of frame, in focus, turning slowly — noticeably smaller than everything else drifting past it.
+
+LIGHTING — The whole clip is cold. As the camera enters the body the cyan key falls away and the only light left is the faint blue-white glow the molecule carries itself, against a dark blue ambient.
+
+END FRAME — One tiny pale blue-white gas molecule alone at the centre of frame, far smaller than anything else drifting in the fluid around it, turning very slowly. Clip 5 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a single continuous forward travel from the whole body down to one molecule. No cut, no dissolve, no jump in scale, no rotation of the figure. The figure does not turn, move or gesture at any point.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 5 =====
+
+CLIP 5 OF 8 — THROUGH THE WALL · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 5, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Truck right, small amplitude, slow speed for the first six seconds, then push in, small amplitude, slow speed on one villus for the last two. Two linked moves in one continuous take — the sideways drift never stops, the push-in grows out of it. No shake, no rotation, no whip.
+
+0.0 – 2.0 s — The camera drifts steadily to the right past the field of villi, which sway very slightly in the moving fluid. Pale points drift down from above.
+
+2.0 – 4.0 s — The points reach the villus surfaces and pass through them without pausing.
+
+4.0 – 6.0 s — Inside the villi, the capillary network shows pale points travelling along it. The sideways drift slows.
+
+6.0 – 8.0 s — The camera pushes in on one villus until its capillary fills the frame, and ends inside the vessel with red cells and pale points flowing along together.
+
+LIGHTING — Warm pink key holds throughout. The capillaries brighten from within as the points enter them, so the last two seconds are slightly cooler and brighter inside the villus than the first two.
+
+END FRAME — Inside the capillary within a single villus: red blood cells and tiny pale blue-white points flowing along together, the vessel wall arcing around the frame. Clip 6 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the drift and the crossing. The villi sway gently and continuously in the current — they never whip, wave, snap or pulse in unison. Nothing bursts, splits or explodes.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 6 =====
+
+CLIP 6 OF 8 — INTO THE BLOOD · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 6, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Pull out, very large amplitude, one constant slow speed all the way — the camera retreats continuously from inside the capillary out through the tissue, out of the abdomen, and back until the whole standing figure and its entire vessel tree are in frame. One unbroken move, never stopping, never accelerating, no rotation, no shake.
+
+0.0 – 2.0 s — Red cells and tiny pale points stream past the lens as the camera begins to retreat along the vessel.
+
+2.0 – 4.0 s — The vessel widens and joins others, branching in every direction around the lens. Points drift outward toward the walls as they travel.
+
+4.0 – 6.0 s — The camera leaves the abdomen. The torso resolves, then the whole figure, its vessel tree lighting up as a fine red-and-blue network through translucent skin.
+
+6.0 – 8.0 s — The pull-out eases to a stop on the whole standing figure. The pale points are spread the length of the network, brightest right at the vessel walls rather than in the middle of the flow.
+
+LIGHTING — Starts deep red from inside the blood and cools steadily as the camera retreats, ending on the cool blue-and-red network of the whole figure against the dark background.
+
+END FRAME — The whole body seen at full length, its entire arterial and venous tree visible as a fine red-and-blue network, with pale points spread out along it and gathering at the vessel walls themselves. Clip 7 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a single continuous pull-out from inside a vessel to the whole body. No cut, no dissolve, no jump in scale. The figure does not move, turn or gesture when it appears.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 7 =====
+
+CLIP 7 OF 8 — THE VESSEL OPENS · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 7, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Static shot, with the faintest push in — under 5% across the whole eight seconds, so slow it is barely perceptible. No pan, no tilt, no truck, no rotation, no shake. This is deliberately the stillest shot in the video.
+
+0.0 – 2.0 s — Almost nothing moves. Blood runs through the narrow passage. Pale points sit gathered against the inner lining.
+
+2.0 – 4.0 s — The points pass through the lining into the muscle layer behind it. The muscle fibres there begin, very slowly, to lengthen.
+
+4.0 – 6.0 s — The ring of muscle eases. The wall thins slightly and the passage inside the vessel widens — slowly and smoothly, over seconds, not in a jump.
+
+6.0 – 8.0 s — The widening stops. Blood runs through the larger passage more freely and more evenly. Everything comes to rest.
+
+LIGHTING — Unchanged in colour, but the frame brightens very slightly as the passage widens and more blood moves through it. No flash, no pulse, no bloom at the moment the muscle relaxes.
+
+END FRAME — The vessel seen from inside with its muscular wall relaxed, the passage through it visibly wider than at the start of the shot, and blood moving through it more freely and evenly. Everything is still. Clip 8 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a slow, smooth widening. &lt;strong&gt;It must not snap open, pop, throb, pulse or dilate in a single frame&lt;/strong&gt; — the whole point is that this is gradual. Nothing else in the frame moves except the blood.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.
+
+
+===== VIDEO PROMPT 8 =====
+
+CLIP 8 OF 8 — A BODY HOLDING ITSELF OPEN · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 8, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Push in, very small amplitude — about 8% over the first six seconds, slowing to a complete stop at 6.0 s and holding perfectly still to the end. No rotation, no orbit, no shake. The figure never turns.
+
+0.0 – 2.0 s — The pale green-gold glow rises through the vessel network from the torso outward. The camera begins its very slow push in.
+
+2.0 – 4.0 s — The glow reaches the hands and the feet, and the fine vessels there fill and widen very slightly as it arrives.
+
+4.0 – 6.0 s — The whole network settles to a steady, even pale green-gold. The push-in eases to a stop.
+
+6.0 – 8.0 s — Nothing moves. The figure stands still, lit steady, held for the end card.
+
+LIGHTING — A single continuous warm-up: from a dim network at 0 s to full steady pale green-gold at 6 s, then held without flicker to the end. No pulsing, no strobing, no heartbeat rhythm.
+
+END FRAME — The whole figure standing still, its vessel network lit an even pale green-gold and visibly open along its whole length, the camera stopped — a clean frame to hold under the end card. This is the last frame of the video.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the glow rising and settling. The figure does not move, breathe visibly, turn, gesture or shift weight. No particles, no rays, no energy effects, no lens flare.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+    <pre id="styleblock" hidden>STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+
+    <div class="box stop">
+      <div class="bt">🛑 Three settings, or the video is ruined</div>
+      <p><b>1. Audio OFF on every generation.</b> Veo generates sound by default and it will fight the narration. <b>2. 9:16 natively</b> — never generate 16:9 and crop. <b>3. 8 seconds exactly</b>, which is Veo 3.1's native maximum, so every clip is one generation with nothing trimmed.</p>
+      <p style="margin-top:12px">The ban on text is already at the end of all sixteen prompts. It is there because generators render type as garbled pseudo-letters — <strong>every word on screen comes from the editor, never from the model.</strong></p>
+    </div>
+
+    <div class="box key">
+      <div class="bt">How each prompt is laid out, and why</div>
+      <p>Every image prompt runs in the same order: <b>SHOT</b> → <b>SCENE</b> → <b>CAMERA</b> → <b>SUBJECT</b> → <b>REAL ANATOMY</b> → <b>LIGHT</b> → <b>CONTINUITY</b> → <b>THE FIGURE</b> → <b>STYLE</b> → <b>REALISM</b> → <b>NO TEXT</b>. Every video prompt runs: <b>START FRAME</b> → <b>CAMERA</b> → <b>four timed beats</b> → <b>LIGHTING</b> → <b>END FRAME</b> → <b>CONSTRAINTS</b> → <b>REALISM IN MOTION</b> → <b>NO TEXT</b>.</p>
+      <p style="margin-top:12px">Each heading owns one question and answers it once. That matters more than the wording: when two parts of a prompt answer the same question differently — a camera line and a framing line both naming a distance, say — <strong>the model picks one and it is usually not the one you meant.</strong> That is also why STYLE and REALISM are separate blocks: STYLE owns the look, REALISM owns whether it looks real.</p>
+    </div>
+
+    <div class="box warn">
+      <div class="bt">⚠ These are long prompts, and length has a cost</div>
+      <p>The image prompts on this page run <b>685–794 words</b> each. That is deliberate — the detail is what fixes the continuity and the realism — but <strong>every rule you add makes every other rule weaker</strong>. If a generation ignores something that matters, do not fix it by adding another sentence.</p>
+      <p style="margin-top:12px">Cut instead, in this order: <b>1.</b> the SUBJECT paragraph if the scene already describes it, <b>2.</b> the CONTINUITY paragraph <em>once you are attaching the previous last frame as a reference image</em> — the picture is doing that job by then — <b>3.</b> the background sentence in STYLE. <strong>Never cut the REALISM block, the REAL ANATOMY line or the NO TEXT line.</strong> Those are the three that decide whether it looks like a body.</p>
+    </div>
+
+    <div class="clip" id="c1">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 1</span><span class="tc">0:00.000 → 0:08.000</span><span class="kf n">new still</span><span class="tc"><span class="sw" style="background:#6f9e5a"></span>warm flesh + deep green · close-up → macro</span></div>
+        <h4>It starts on the tongue <span class="where">Mouth → tongue surface · close-up → macro</span></h4>
+        <p class="vo">“When you eat spinach, the bacteria living on your tongue start changing the leaves immediately.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 1</span><button class="cbtn" type="button" data-target="ip1">Copy</button></div>
+<pre id="ip1">SHOT 1 OF 8 — IT STARTS ON THE TONGUE. A hyper-realistic anatomical human head in three-quarter profile with spinach leaves in the mouth.
+
+SCENE — An adult human head and shoulders turned three-quarters toward camera against a dark navy background. The skin is semi-transparent, so the skull, the jaw and cheek muscles, the tongue and the whole row of teeth read clearly through it — the look of a high-end medical visualisation figure. The face is calm and neutral, eyes open, no expression. The mouth is open and dark green spinach leaves are on the tongue, torn and folded, their surfaces wet and glossy, the pale ribs of the leaves catching the light. Below the jaw, through the neck, the throat and the top of the esophagus are visible as a pale ribbed tube running down behind the windpipe.
+
+CAMERA — Medium close-up: the frame runs from the top of the skull down to the collarbones. Camera at mouth height, level with the face, 50 mm equivalent lens, shallow depth of field with the lips, tongue and leaves razor sharp and the back of the head falling soft.
+
+SUBJECT — the spinach, stage 1 of 8 — Fresh spinach leaves: deep saturated green, slightly translucent where the light passes through them, with visible pale veins and a wet glossy surface. They must read instantly and unmistakably as leaves, not as any other green material.
+
+REAL ANATOMY — the papillae covering the surface of the tongue — the fine pointed ones over most of the surface and the larger round ones toward the back — the pink gum margin around each tooth, the wet mucosa of the inner cheek, the masseter and temporalis muscles under the skin, and the deep crevices between papillae where the tongue's own bacterial colonies live.
+
+LIGHT — One warm key light from the upper left catching every wet highlight on the teeth, the tongue and the leaf surfaces. A cool cyan rim light along the jawline and cheekbone separating the head from the background. Deep shadow behind the head.
+
+CONTINUITY — This is the opening shot and it locks the look for the whole video: this exact figure, this exact skin translucency, this exact deep green leaf material, this warm-key-plus-cyan-rim lighting and this dark navy background appear in all eight shots. Nothing about the look changes after this frame.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 1 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp1">Copy</button></div>
+<pre id="vp1">CLIP 1 OF 8 — IT STARTS ON THE TONGUE · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 1, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Push in, very large amplitude, accelerating from slow to moderate and easing off at the end — the camera travels straight in from the medium close-up on the head, past the lips, and down onto the surface of the tongue, ending in extreme macro among the papillae. One continuous move on a single axis, no cut, no stop, no rotation, no shake.
+
+0.0 – 2.0 s — The jaw closes once on the leaves and the leaves fold and tear between the teeth. The camera begins to travel forward.
+
+2.0 – 4.0 s — The camera passes the lips and the mouth fills the frame. The tongue surface resolves as texture rather than as a shape.
+
+4.0 – 6.0 s — Extreme macro: papillae stand up like a dense soft forest, with torn green leaf fragments pressed down among them.
+
+6.0 – 8.0 s — Colonies of bacteria come into focus in the crevices between the papillae, dense and alive, moving very slightly, already crowded onto the leaf fragments nearest them.
+
+LIGHTING — The warm key holds all the way in. As the camera reaches macro the light becomes softer and more enclosed, with a faint green bounce coming off the leaf fragments onto the papillae around them.
+
+END FRAME — Extreme macro on the surface of the tongue: papillae standing up like a dense soft forest, dark green leaf fragments pressed among them, and colonies of bacteria packed into the crevices between, already working on the leaf. Clip 2 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a single continuous travel in from the whole head to the surface of the tongue. No cut, no dissolve, no jump in scale. The head does not turn, nod, tilt or speak. The bacteria move very slightly — they never swarm, boil or stream.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · the cold open of the series</div>
+        <p class="cnote">This is the shot nobody expects and the reason this topic is worth making. It is also the only clip in the whole five-video run that <strong>travels from a whole head to a microscopic surface in one take</strong>, so it is the hardest single generation on this page — budget retries. The last second of it doubles as the video's opening hook.</p>
+      </div>
+    </div>
+    <div class="clip" id="c2">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 2</span><span class="tc">0:08.000 → 0:16.000</span><span class="kf r">reuse keyframe A</span><span class="tc"><span class="sw" style="background:#b9846f"></span>warm flesh + cyan rim · medium wide</span></div>
+        <h4>The swallow <span class="where">Throat → stomach · torso wide</span></h4>
+        <p class="vo">“You swallow, and your esophagus carries that changed compound down toward your stomach.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 2</span><button class="cbtn" type="button" data-target="ip2">Copy</button></div>
+<pre id="ip2">SHOT 2 OF 8 — THE SWALLOW. The same figure, one step wider: head, neck and upper chest, with the esophagus visible running down inside the body.
+
+SCENE — The same adult anatomical figure as shot 1, at the same three-quarter angle, now framed wider so the head, the whole neck and the upper chest are in view. Through the semi-transparent skin and the pale ribcage, the esophagus runs from the back of the throat down the centre of the chest, behind the heart, as a soft ribbed muscular tube. A dark green chewed mass sits at the very top of that tube, just entering it, with a faint pale glow spread through it where the tongue's bacteria have already changed it. The ring muscles of the esophagus read as evenly spaced bands along its length. A faint cool cyan glow runs down inside the tube ahead of the mass, showing the direction of travel as a soft travelling light.
+
+CAMERA — Medium wide: the frame runs from just above the head down to the bottom of the ribcage. Camera level, 35 mm equivalent lens, moderate depth of field with the esophagus and the mass sharp and the shoulders falling slightly soft.
+
+SUBJECT — the spinach, stage 2 of 8 — No longer whole leaves: a soft dark green bolus roughly the size of a walnut, wet and folded, carrying a faint pale glow through it — the same green material as shot 1 in a new shape, plus the first sign of the change that started in the mouth.
+
+REAL ANATOMY — the esophagus as a muscular tube lying behind the trachea and in front of the spine, its wall built from an inner circular and an outer longitudinal muscle layer, the aortic arch and the left main bronchus crossing in front of it, the diaphragm it passes through, and the lower esophageal sphincter where it opens into the stomach.
+
+LIGHT — Warm key from the upper left across the chest. Cool cyan rim down the left edge of the neck and shoulder. The esophagus glowing very faintly from within along its length, and the pale glow inside the bolus reading clearly against the dark green.
+
+CONTINUITY — PREVIOUS SHOT ENDED: Extreme macro on the surface of the tongue: papillae standing up like a dense soft forest, dark green leaf fragments pressed among them, and colonies of bacteria packed into the crevices between, already working on the leaf. This frame is that same figure, pulled back out to the body, with that same leaf material — and the change those bacteria started — now formed into a bolus at the top of the esophagus. Same skin, same light, same background, same green.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 2 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp2">Copy</button></div>
+<pre id="vp2">CLIP 2 OF 8 — THE SWALLOW · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 2, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Pull out, large amplitude, slow constant speed — the camera retreats and cranes down very slightly, so that by 8.0 s the frame holds the whole upper body from the top of the head to just below the stomach. One continuous move, never stopping, never speeding up. No shake, no rotation.
+
+0.0 – 2.0 s — The throat contracts once and drives the bolus into the top of the esophagus. The camera begins its pull-out.
+
+2.0 – 4.0 s — Rings of muscle contract in sequence from the top downward, squeezing the tube shut behind the bolus and pushing it about a third of the way down. The pull-out reveals the collarbones and the top of the ribcage.
+
+4.0 – 6.0 s — The wave continues down the tube. The bolus passes behind the heart, which beats steadily twice in this window. The pull-out reveals the whole ribcage and the lungs.
+
+6.0 – 8.0 s — The stomach comes into frame below the ribs, pink and empty. The bolus reaches the lower end of the esophagus and the ring of muscle at the stomach entrance opens in front of it.
+
+LIGHTING — The faint cyan glow inside the esophagus travels down the tube just ahead of the bolus, and fades out as the shot ends. The pale glow inside the bolus strengthens very slightly across the eight seconds. Key and rim unchanged.
+
+END FRAME — The whole upper body is in frame. The dark green mass has arrived at the lower end of the esophagus and the ring of muscle at the stomach entrance is opening in front of it. The stomach below is pink and empty. Clip 3 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the swallow, as a single continuous travelling squeeze that never stops or restarts. The figure does not move, turn or gesture; the only other movement in frame is the heartbeat.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · reuse keyframe A</div>
+        <p class="cnote">This is <strong>keyframe A</strong> from the egg video — the torso with the esophagus and stomach visible. Use the same approved still as the start frame; only the colour of the bolus and the pale glow inside it change. <strong>Re-run the motion prompt — never paste the egg video's rendered clip into this one.</strong></p>
+      </div>
+    </div>
+    <div class="clip" id="c3">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 3</span><span class="tc">0:16.000 → 0:24.000</span><span class="kf n">new still</span><span class="tc"><span class="sw" style="background:#c08f4a"></span>warm amber + green · close → macro</span></div>
+        <h4>The acid finishes it <span class="where">Stomach · cutaway → macro</span></h4>
+        <p class="vo">“Your stomach acid finishes the conversion your tongue started, in the warm fluid there.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 3</span><button class="cbtn" type="button" data-target="ip3">Copy</button></div>
+<pre id="ip3">SHOT 3 OF 8 — THE ACID FINISHES IT. The stomach, seen close inside the body, its near wall cut away so the inside is visible.
+
+SCENE — The same figure, now framed on the abdomen. The stomach fills most of the frame, sitting under the ribs, with the lower ribcage and the outline of the torso still visible around the edges of frame so it stays obvious that we are inside a human body. The near wall of the stomach is opened in a clean medical cutaway, revealing the interior: deep folded ridges of stomach lining in wet red-brown, a churning pool of warm amber gastric fluid, and the dark green spinach mass lying in it, softening and fraying at its edges. The pale glow the mass carried in is brightening, and the first tiny pale blue-white points are lifting off it into the fluid.
+
+CAMERA — Medium close-up on the stomach, slightly high angle looking down into the cutaway, 40 mm equivalent lens, shallow depth of field with the green mass sharp in the foreground and the folded stomach lining soft behind it.
+
+SUBJECT — the spinach, stage 3 of 8 — The green mass giving up what it was carrying: dark green and fraying, with pale blue-white points separating out of it and rising. The green stays green — it is not dissolving away, it is releasing something.
+
+REAL ANATOMY — the gastric rugae as thick irregular folds of pink-red mucosa, a glistening mucus layer lying over them, gastric pits reading as fine dark openings across the surface, the submucosal capillary network faintly visible through the lining, and the greater curvature of the stomach holding the pool.
+
+LIGHT — Strong warm amber light coming up through the gastric fluid from below, turning it to glowing honey. The green mass lit hard from the upper left so its wet folds catch a highlight and read clearly against the amber. Cyan rim light along the cut edge of the stomach wall, tying this shot to the two before it.
+
+CONTINUITY — PREVIOUS SHOT ENDED: The whole upper body is in frame. The dark green mass has arrived at the lower end of the esophagus and the ring of muscle at the stomach entrance is opening in front of it. The stomach below is pink and empty. This frame picks up from there: the same body, the camera now settled on the stomach the bolus was entering, with that same green mass lying in the acid. Same figure, same cyan rim, same background.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 3 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp3">Copy</button></div>
+<pre id="vp3">CLIP 3 OF 8 — THE ACID FINISHES IT · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 3, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Push in, large amplitude, slow steady speed — the camera moves from the medium shot of the stomach forward through the cutaway opening and into the fluid, ending in macro just above the surface of the green mass with the rising points filling the centre of frame. One straight continuous move on a single axis, constant speed, no shake, no rotation, no stopping.
+
+0.0 – 2.0 s — The stomach wall contracts once and the amber fluid swirls around the green mass, which rolls slightly and frays further at its edges. The camera begins pushing in.
+
+2.0 – 4.0 s — The push-in continues until the mass fills the lower half of frame. The pale glow inside it strengthens along the torn edges.
+
+4.0 – 6.0 s — The first tiny pale blue-white points lift off the surface and rise slowly into the fluid, tumbling as they go.
+
+6.0 – 8.0 s — More follow, spreading apart from one another as they rise, until a loose drift of them fills the fluid above the green mass.
+
+LIGHTING — The amber underlight strengthens as the camera descends into the fluid, until by 6.0 s the whole frame is lit from below and the pale rising points are the coolest, brightest things in it.
+
+END FRAME — A drift of tiny pale blue-white points rising out of the dark green mass into the amber fluid above it, spreading slowly apart from one another. Clip 4 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the release. It must read as something &lt;strong&gt;coming out of&lt;/strong&gt; the green mass and rising — not as the mass dissolving, melting, exploding or disappearing. The green stays. One continuous transformation across the full eight seconds, never restarting.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note</div>
+        <p class="cnote">The distinction that matters: <strong>the spinach is not being destroyed here, it is handing something over.</strong> If the generation dissolves the leaf mass away to nothing, the shot contradicts the sentence — re-roll it with the green holding its shape while the pale points leave it.</p>
+      </div>
+    </div>
+    <div class="clip" id="c4">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 4</span><span class="tc">0:24.000 → 0:32.000</span><span class="kf n">new still</span><span class="tc"><span class="sw" style="background:#5fc4e8"></span>cold blue — colour break · wide → macro</span></div>
+        <h4>Where we are now → the molecule <span class="where">Whole body → macro</span></h4>
+        <p class="vo">“A tiny gas molecule forms, one of the smallest signals your body uses.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 4</span><button class="cbtn" type="button" data-target="ip4">Copy</button></div>
+<pre id="ip4">SHOT 4 OF 8 — WHERE WE ARE NOW. The whole body seen at full length in cool blue, with the stomach and upper abdomen lit up inside it.
+
+SCENE — The same figure, now standing at full length facing camera in a dark navy void, rendered in cool blue X-ray tones: the skeleton, the organs and the outline of the muscles all visible through translucent blue skin. The stomach and the upper abdomen glow clear cyan-white and are the brightest part of the body. Everything else is cool and dim. The figure stands still, arms slightly away from the sides, feet together.
+
+CAMERA — Wide: the whole figure from above the head to below the feet, filling about four-fifths of the frame height. Camera level at chest height, 50 mm equivalent lens, the whole figure in focus, the void behind it clean and empty.
+
+SUBJECT — the spinach, stage 4 of 8 — Not visible as a leaf any more. Its position in the body is what is visible: the cyan-white glow in the abdomen is where it has reached.
+
+REAL ANATOMY — a correct skeleton — twelve pairs of ribs, the lumbar spine, the pelvis and the femoral heads — with the stomach high on the left under the diaphragm, the liver filling the space under the right ribs, and the coiled small intestine below them, all in true adult human proportion.
+
+LIGHT — Cold: a cyan key from the front left and a deeper blue rim on both edges of the body. The abdomen self-illuminated from within. No warm light anywhere in this frame.
+
+CONTINUITY — PREVIOUS SHOT ENDED: A drift of tiny pale blue-white points rising out of the dark green mass into the amber fluid above it, spreading slowly apart from one another. This is the one deliberate step back in the video — the same figure seen whole, so the viewer re-anchors and remembers this is happening inside a body. The glowing point in the abdomen is exactly where the previous shot just was, and the camera dives straight back into it.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 4 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp4">Copy</button></div>
+<pre id="vp4">CLIP 4 OF 8 — WHERE WE ARE NOW → THE MOLECULE · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 4, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Hold, then push in, very large amplitude, accelerating from slow to moderate and easing off at the end — the camera holds on the whole figure, then travels forward into the abdomen, through the body wall, and ends in extreme macro on a single molecule adrift in fluid. One continuous move, no cut, no stop.
+
+0.0 – 2.0 s — The whole figure is held still in frame and the cyan-white glow in the abdomen pulses once, softly. Nothing else moves.
+
+2.0 – 4.0 s — The camera begins travelling forward. The figure grows until the torso fills the frame and the glow becomes the brightest part of the image.
+
+4.0 – 6.0 s — The camera passes through the body wall into dark fluid. Pale points stream past the lens, out of focus, at every scale.
+
+6.0 – 8.0 s — The stream thins until one is left: a single very small pale blue-white molecule at the centre of frame, in focus, turning slowly — noticeably smaller than everything else drifting past it.
+
+LIGHTING — The whole clip is cold. As the camera enters the body the cyan key falls away and the only light left is the faint blue-white glow the molecule carries itself, against a dark blue ambient.
+
+END FRAME — One tiny pale blue-white gas molecule alone at the centre of frame, far smaller than anything else drifting in the fluid around it, turning very slowly. Clip 5 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a single continuous forward travel from the whole body down to one molecule. No cut, no dissolve, no jump in scale, no rotation of the figure. The figure does not turn, move or gesture at any point.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · the deliberate colour break, and one thing to check</div>
+        <p class="cnote">Shot 3 is hot amber and shot 4 opens ice blue, back to back on a hard cut. That jolt is doing retention work at the 24-second mark — <strong>do not soften it.</strong> The other thing to check in the render: <strong>the molecule must be visibly tiny</strong> next to everything else in the fluid. The sentence says “one of the smallest signals your body uses”, and scale is the only way the picture can say it.</p>
+      </div>
+    </div>
+    <div class="clip" id="c5">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 5</span><span class="tc">0:32.000 → 0:40.000</span><span class="kf r">reuse keyframe B</span><span class="tc"><span class="sw" style="background:#e8899d"></span>pink + pale blue · macro</span></div>
+        <h4>Through the wall <span class="where">Intestinal villi · macro</span></h4>
+        <p class="vo">“It crosses the wall of your small intestine, through the folds, into the vessels below.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 5</span><button class="cbtn" type="button" data-target="ip5">Copy</button></div>
+<pre id="ip5">SHOT 5 OF 8 — THROUGH THE WALL. Extreme macro on the lining of the small intestine, so close that individual villi fill the frame.
+
+SCENE — The inner surface of the small intestine at extreme magnification: hundreds of soft finger-shaped villi rising toward camera, wet coral and rose pink, each faintly translucent with a fine red capillary network glowing just beneath its surface. Tiny pale blue-white points drift down between them from the fluid above, reach the villus surfaces and pass straight through into the capillaries underneath, where they can be seen travelling away inside the vessel. They are small enough to cross without effort and the picture should show that — no gathering, no queueing, no pushing through.
+
+CAMERA — Macro, camera low among the villi looking very slightly up, 85 mm macro equivalent, very shallow depth of field: one band of villi razor sharp, the field in front of and behind it melting into soft pink bokeh.
+
+SUBJECT — the spinach, stage 5 of 8 — The same tiny pale blue-white points, crossing a living surface as if it were not there. Their smallness is the whole characteristic — they are the smallest thing in every frame they appear in.
+
+REAL ANATOMY — villi as finger-shaped projections of mucosa, each with a brush border of microvilli at its tip, a central lacteal running up its core, a capillary loop wrapped around that lacteal, goblet cells spaced between the absorptive cells, and the crypts sitting in the valleys at the base of each villus.
+
+LIGHT — Warm pink light raking across from the right, catching every wet villus tip. Cool cyan fill from the left keeping the shadow side from going flat. The capillaries inside the villi glowing faintly red from within, and the points carrying a cold pale light of their own.
+
+CONTINUITY — PREVIOUS SHOT ENDED: One tiny pale blue-white gas molecule alone at the centre of frame, far smaller than anything else drifting in the fluid around it, turning very slowly. This frame is that same molecule among many more like it, arriving at the lining. Same fluid, same pale blue light, same scale — the camera has simply arrived at the surface.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 5 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp5">Copy</button></div>
+<pre id="vp5">CLIP 5 OF 8 — THROUGH THE WALL · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 5, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Truck right, small amplitude, slow speed for the first six seconds, then push in, small amplitude, slow speed on one villus for the last two. Two linked moves in one continuous take — the sideways drift never stops, the push-in grows out of it. No shake, no rotation, no whip.
+
+0.0 – 2.0 s — The camera drifts steadily to the right past the field of villi, which sway very slightly in the moving fluid. Pale points drift down from above.
+
+2.0 – 4.0 s — The points reach the villus surfaces and pass through them without pausing.
+
+4.0 – 6.0 s — Inside the villi, the capillary network shows pale points travelling along it. The sideways drift slows.
+
+6.0 – 8.0 s — The camera pushes in on one villus until its capillary fills the frame, and ends inside the vessel with red cells and pale points flowing along together.
+
+LIGHTING — Warm pink key holds throughout. The capillaries brighten from within as the points enter them, so the last two seconds are slightly cooler and brighter inside the villus than the first two.
+
+END FRAME — Inside the capillary within a single villus: red blood cells and tiny pale blue-white points flowing along together, the vessel wall arcing around the frame. Clip 6 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the drift and the crossing. The villi sway gently and continuously in the current — they never whip, wave, snap or pulse in unison. Nothing bursts, splits or explodes.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · reuse keyframe B</div>
+        <p class="cnote">This is <strong>keyframe B</strong> from the egg video, and this is its fourth use — at which point the still has paid for itself several times over. Only the colour and size of what crosses changes: gold beads for the egg, pale blue-white for coffee, amber for oats, and here the smallest points in the series. Re-run the motion prompt.</p>
+      </div>
+    </div>
+    <div class="clip" id="c6">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 6</span><span class="tc">0:40.000 → 0:48.000</span><span class="kf r">reuse keyframe C</span><span class="tc"><span class="sw" style="background:#cf6f70"></span>red + blue → whole body · macro → wide</span></div>
+        <h4>Into the blood <span class="where">Capillary → whole body</span></h4>
+        <p class="vo">“Your blood carries it out through the whole network, all the way to your vessel walls.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 6</span><button class="cbtn" type="button" data-target="ip6">Copy</button></div>
+<pre id="ip6">SHOT 6 OF 8 — INTO THE BLOOD. Inside a blood vessel, with the branching vessel tree visible far beyond it.
+
+SCENE — Macro inside a blood vessel: glossy dark red biconcave red blood cells tumbling toward camera through translucent straw-coloured plasma, with tiny pale blue-white points travelling among them — much smaller than the cells and standing out cold against the red. The vessel wall arcs around the edges of frame in translucent pink, lit with a cold rim so the shape of the tube is readable. Some of the points are drifting toward that wall rather than staying in the middle of the flow. Far beyond the cells, out of focus, the vessel branches away into a fine network.
+
+CAMERA — Macro inside the vessel, camera in the centre of the flow facing along it, 50 mm equivalent lens, sharp focal plane through the middle of frame with the cells at the frame edges softened by motion blur.
+
+SUBJECT — the spinach, stage 6 of 8 — The same tiny pale points, now travelling in blood — and beginning to move outward toward the wall of the vessel, which is where the next shot happens.
+
+REAL ANATOMY — red blood cells with their true biconcave dimpled shape and no nucleus, an endothelial lining one cell thick with the cell junctions faintly visible, vessels branching by real bifurcation into narrower ones — and at the wide end, an arterial tree in red and a venous tree in blue following real vascular anatomy out to the hands and feet.
+
+LIGHT — Deep red ambient from the blood itself, a cold blue rim along the vessel wall, and the points carrying their own pale light. Strong red-and-blue contrast, warm centre and cool edges.
+
+CONTINUITY — PREVIOUS SHOT ENDED: Inside the capillary within a single villus: red blood cells and tiny pale blue-white points flowing along together, the vessel wall arcing around the frame. This frame is that same capillary, one moment later, with the camera now inside the flow. Same points, same pale blue light, same blood.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 6 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp6">Copy</button></div>
+<pre id="vp6">CLIP 6 OF 8 — INTO THE BLOOD · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 6, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Pull out, very large amplitude, one constant slow speed all the way — the camera retreats continuously from inside the capillary out through the tissue, out of the abdomen, and back until the whole standing figure and its entire vessel tree are in frame. One unbroken move, never stopping, never accelerating, no rotation, no shake.
+
+0.0 – 2.0 s — Red cells and tiny pale points stream past the lens as the camera begins to retreat along the vessel.
+
+2.0 – 4.0 s — The vessel widens and joins others, branching in every direction around the lens. Points drift outward toward the walls as they travel.
+
+4.0 – 6.0 s — The camera leaves the abdomen. The torso resolves, then the whole figure, its vessel tree lighting up as a fine red-and-blue network through translucent skin.
+
+6.0 – 8.0 s — The pull-out eases to a stop on the whole standing figure. The pale points are spread the length of the network, brightest right at the vessel walls rather than in the middle of the flow.
+
+LIGHTING — Starts deep red from inside the blood and cools steadily as the camera retreats, ending on the cool blue-and-red network of the whole figure against the dark background.
+
+END FRAME — The whole body seen at full length, its entire arterial and venous tree visible as a fine red-and-blue network, with pale points spread out along it and gathering at the vessel walls themselves. Clip 7 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a single continuous pull-out from inside a vessel to the whole body. No cut, no dissolve, no jump in scale. The figure does not move, turn or gesture when it appears.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · reuse keyframe C</div>
+        <p class="cnote">This is <strong>keyframe C</strong> from the egg video. The difference in the motion is small but it sets up the payoff: <strong>the points move to the vessel walls</strong> instead of spreading evenly to the tissues, because the wall is this video's destination. Same still, different motion.</p>
+      </div>
+    </div>
+    <div class="clip" id="c7">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 7</span><span class="tc">0:48.000 → 0:56.000</span><span class="kf n">new still</span><span class="tc"><span class="sw" style="background:#d06a7a"></span>deep red + pale blue · macro, near-still</span></div>
+        <h4>The vessel opens <span class="where">Artery wall · macro, near-still</span></h4>
+        <p class="vo">“The muscle in that vessel wall relaxes, and the passage through it opens wider.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 7</span><button class="cbtn" type="button" data-target="ip7">Copy</button></div>
+<pre id="ip7">SHOT 7 OF 8 — THE VESSEL OPENS. Extreme macro at the wall of an artery, cut so the layers of the wall are visible, with blood flowing through the passage inside.
+
+SCENE — Extreme macro inside the body at a small artery, cut open along its length so both the inside of the tube and the thickness of its wall are visible in one frame. The inner surface is a smooth glistening lining of flat cells, and behind it lies a thick band of muscle wrapped in rings around the tube, deep red and fibrous, with a looser outer sheath of pale connective tissue and fine nerves and vessels running through it. Blood moves through the passage — dark red cells in straw-coloured plasma — and tiny pale blue-white points are gathered at the inner lining, passing through it into the muscle layer behind. The muscle is tight at the start, and the passage through the tube is narrow. The outline of the limb it sits in is faintly visible at the very edge of frame.
+
+CAMERA — Extreme macro, camera close and level with the cut wall, 100 mm macro equivalent, very shallow depth of field: the lining, the muscle band and the pale points razor sharp, the far side of the vessel and the tissue beyond falling away soft.
+
+SUBJECT — the spinach, stage 7 of 8 — The last of the pale points, arriving at the tissue that responds to them. This is where everything the video has followed for fifty seconds actually does something.
+
+REAL ANATOMY — an artery wall in its three true layers: the intima, a single smooth layer of endothelial cells over an internal elastic lamina; the media, a thick band of smooth muscle wound circumferentially around the vessel with elastic fibres between the cells; and the adventitia outside it, loose connective tissue carrying fine nerves and its own tiny vessels — with red blood cells moving through the lumen inside.
+
+LIGHT — Deep red ambient from the blood, a warm key raking across the cut face of the wall from the upper left so the muscle fibres read as fibres, and a cool blue rim along the outer sheath. The pale points carrying their own cold light against all of it.
+
+CONTINUITY — PREVIOUS SHOT ENDED: The whole body seen at full length, its entire arterial and venous tree visible as a fine red-and-blue network, with pale points spread out along it and gathering at the vessel walls themselves. This frame is one of those walls, close up — the camera has followed the pale points out of the flow and to the wall they were gathering at. Same points, same pale blue light, same blood.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 7 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp7">Copy</button></div>
+<pre id="vp7">CLIP 7 OF 8 — THE VESSEL OPENS · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 7, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Static shot, with the faintest push in — under 5% across the whole eight seconds, so slow it is barely perceptible. No pan, no tilt, no truck, no rotation, no shake. This is deliberately the stillest shot in the video.
+
+0.0 – 2.0 s — Almost nothing moves. Blood runs through the narrow passage. Pale points sit gathered against the inner lining.
+
+2.0 – 4.0 s — The points pass through the lining into the muscle layer behind it. The muscle fibres there begin, very slowly, to lengthen.
+
+4.0 – 6.0 s — The ring of muscle eases. The wall thins slightly and the passage inside the vessel widens — slowly and smoothly, over seconds, not in a jump.
+
+6.0 – 8.0 s — The widening stops. Blood runs through the larger passage more freely and more evenly. Everything comes to rest.
+
+LIGHTING — Unchanged in colour, but the frame brightens very slightly as the passage widens and more blood moves through it. No flash, no pulse, no bloom at the moment the muscle relaxes.
+
+END FRAME — The vessel seen from inside with its muscular wall relaxed, the passage through it visibly wider than at the start of the shot, and blood moving through it more freely and evenly. Everything is still. Clip 8 begins from exactly this state.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: a slow, smooth widening. &lt;strong&gt;It must not snap open, pop, throb, pulse or dilate in a single frame&lt;/strong&gt; — the whole point is that this is gradual. Nothing else in the frame moves except the blood.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · the money shot, and the compliance line</div>
+        <p class="cnote">This is the payoff of the entire video and it is also the most dangerous shot on the page. The picture is about to make the viewer think of blood pressure, and <strong>the script must not say it</strong> — the sentence describes the muscle relaxing and the passage opening, and it stops. Let the picture do the rest. Keep the widening slow: a fast dilation reads as a drug working, which is exactly the wrong impression.</p>
+      </div>
+    </div>
+    <div class="clip" id="c8">
+      <div class="chead">
+        <div class="cmeta"><span class="cn">CLIP 8</span><span class="tc">0:56.000 → 1:04.000</span><span class="kf r">reuse keyframe D</span><span class="tc"><span class="sw" style="background:#86e0b0"></span>pale green-gold — colour break 2 · full body</span></div>
+        <h4>A body holding itself open <span class="where">Whole body · hero</span></h4>
+        <p class="vo">“Now blood moves easily through a body that is holding its own vessels open.”</p>
+      </div>
+      <div class="cbody">
+      <div class="pblock">
+        <div class="phead"><span class="plabel ">Image prompt 8</span><button class="cbtn" type="button" data-target="ip8">Copy</button></div>
+<pre id="ip8">SHOT 8 OF 8 — A BODY HOLDING ITSELF OPEN. The same figure at full length, its vessel network glowing an even pale green-gold from within.
+
+SCENE — The same adult anatomical figure standing at full length facing camera in a dark void, seen from the front. The body is translucent and smooth, the head without facial features and without hair. Its internal vessel network glows a soft pale green-gold from within, even from the torso out to the fingers and toes, and the vessels themselves read as open and full rather than thin and tight. A faint warm haze surrounds the figure. The background is the same dark navy falling to black as every other shot.
+
+CAMERA — Wide: the whole figure from above the head to below the feet, filling about two-thirds of the frame height, centred, camera level at chest height, 50 mm equivalent lens, the whole figure in sharp focus.
+
+SUBJECT — the spinach, stage 8 of 8 — No longer a separate object at all. It is the pale green-gold light in the vessel network — one plate of leaves, now readable only as the state of the whole system.
+
+REAL ANATOMY — a correct arterial and venous tree — the aorta arching out of the heart, the carotids up the neck, the subclavians into the arms, the femorals down the legs — branching to fine peripheral vessels over a correct skeleton, with true adult human proportion.
+
+LIGHT — Soft pale green-gold from inside the body, even throughout, with a faint warm ambient haze around it and a cool blue rim on both edges. Calm and open rather than bright and hot — this is the gentlest hero frame in the series.
+
+CONTINUITY — PREVIOUS SHOT ENDED: The vessel seen from inside with its muscular wall relaxed, the passage through it visibly wider than at the start of the shot, and blood moving through it more freely and evenly. Everything is still. This frame matches on that light and on that openness: the same pale glow and the same relaxed vessels, at the scale of the whole body. It reads as the camera stepping all the way back at the end of the journey. Same figure, same rim light, same background as shot 1.
+
+THE FIGURE — the same adult human anatomical figure appears in every shot of this video: skin rendered semi-transparent so the muscles, skeleton, vessels and organs read clearly through it, no body hair, a calm neutral face. Same figure, same build, same skin translucency, every time.
+
+STYLE — identical in all eight shots of this video. Hyper-realistic 3D medical animation still, rendered like a single frame from a broadcast medical documentary: photoreal subsurface scattering through living tissue, wet surfaces with true specular highlights, real optical depth of field, physically accurate light, anatomically accurate structures. Palette: warm flesh pink and deep red tissue, deep green spinach leaf, a tiny pale blue-white gas molecule, cool cyan-teal rim light, dark navy background falling to black, with two or three very soft out-of-focus blue holographic panels far behind the subject blurred into pure glow. Format: vertical 9:16, 1080 x 1920, subject centred in the upper two-thirds.
+
+REALISM — the most important instruction in this prompt. It must look real: actual footage captured inside a living human body, filmed on a surgical endoscope and a macro lens for a medical documentary — not an illustration of a body. Living tissue is wet, uneven and slightly asymmetric: fine irregular surface texture, colour varying from one area to the next, fine capillaries readable under translucent membranes, a thin moving film of fluid catching the light in small sharp highlights, soft natural motion blur where anything moves. Real camera behaviour: shallow natural depth of field, gentle falloff at the edges of frame, light bouncing between wet surfaces. NOT a diagram, NOT a textbook illustration, NOT a cartoon, NOT a neon sci-fi hologram, NOT clean glass or plastic shapes floating in empty space, NOT a video-game render, NOT symmetrical, NOT glossy or toy-like. If it looks designed, it is wrong — it has to look photographed.
+
+NO TEXT — no writing of any kind anywhere in the frame: no letters, no numbers, no captions, no labels, no arrows, no callout lines, no logos, no watermark, no readable interface.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="plabel v">Image-to-video prompt 8 · 8 s · audio off</span><button class="cbtn" type="button" data-target="vp8">Copy</button></div>
+<pre id="vp8">CLIP 8 OF 8 — A BODY HOLDING ITSELF OPEN · 8.000 seconds · 24 fps · vertical 9:16, 1080 x 1920 · AUDIO OFF (generate no sound).
+
+START FRAME — the approved still for shot 8, used unchanged as the first frame. Animate this exact image; do not redesign it, do not change the framing it starts on, do not restyle it.
+
+CAMERA — Push in, very small amplitude — about 8% over the first six seconds, slowing to a complete stop at 6.0 s and holding perfectly still to the end. No rotation, no orbit, no shake. The figure never turns.
+
+0.0 – 2.0 s — The pale green-gold glow rises through the vessel network from the torso outward. The camera begins its very slow push in.
+
+2.0 – 4.0 s — The glow reaches the hands and the feet, and the fine vessels there fill and widen very slightly as it arrives.
+
+4.0 – 6.0 s — The whole network settles to a steady, even pale green-gold. The push-in eases to a stop.
+
+6.0 – 8.0 s — Nothing moves. The figure stands still, lit steady, held for the end card.
+
+LIGHTING — A single continuous warm-up: from a dim network at 0 s to full steady pale green-gold at 6 s, then held without flicker to the end. No pulsing, no strobing, no heartbeat rhythm.
+
+END FRAME — The whole figure standing still, its vessel network lit an even pale green-gold and visibly open along its whole length, the camera stopped — a clean frame to hold under the end card. This is the last frame of the video.
+
+CONSTRAINTS — One single continuous shot, no cuts, no jump in time, no scene change. One motion: the glow rising and settling. The figure does not move, breathe visibly, turn, gesture or shift weight. No particles, no rays, no energy effects, no lens flare.
+
+REALISM IN MOTION — everything moves the way real tissue and real fluid move: soft, weighted, slightly irregular, with real inertia. Nothing snaps, pops, teleports, flickers or moves like a graphic. No particles added for decoration, no lens flares, no energy effects, no morphing. It must look like a camera recording something that is really happening.
+
+NO TEXT — no writing appears at any point in the eight seconds: no letters, no numbers, no captions, no labels, no arrows, no logos, no watermark.</pre>
+      </div>
+        <div class="plabel n">Note · reuse keyframe D</div>
+        <p class="cnote">This is <strong>keyframe D</strong> from the egg video with the colour shifted to a pale green-gold and the vessels rendered slightly wider than in the other four videos. That small difference — <strong>open vessels rather than bright ones</strong> — is the argument of this whole video made in a single frame. Specify <em>no facial features</em> again.</p>
+      </div>
+    </div>
+
+  </div></div>
+</section>
+
+<!-- ============ 08 ASSEMBLY ============ -->
+<section id="assembly">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">08 — Assembly</div>
+    <h2 class="sec">Putting it together</h2>
+    <p class="lead">Any editor will do this — the reference video was cut in Clipchamp, which is free and runs in a browser. The only settings that matter are the frame rate and the fact that the voice-over is one object, not eight.</p>
+
+    <ol class="steps">
+      <li><b>Set the project to 24 fps, 1080 × 1920.</b> Generated clips are 24 fps; a 30 fps timeline forces the editor to invent frames, which is the judder in the reference. Match the timeline to the source and nothing is invented.</li>
+      <li><b>Drop the eight clips in order</b> with no gaps and no transitions. They should land at 0, 8, 16, 24, 32, 40, 48 and 56 s on their own. <strong>Hard cuts only — no dissolves.</strong> The continuity is in the frames, not in a transition effect; a dissolve would blur the one thing that carries it.</li>
+      <li><b>Drop <code>vo-spinach-64s.mp3</code> on the audio track at 0:00</b> as a single object spanning the whole timeline. Never split it at the cuts. This is what lets a word carry across a cut, and it is the difference between one video and eight.</li>
+      <li><b>Add the hook.</b> Copy the first second of clip 1's ending — the tongue surface at extreme macro with the bacteria alive on it — to the very front of the timeline, then hard-cut back to the mouth. “This starts before you swallow” is the whole hook. The voice-over does not move: it still starts at 0:00.</li>
+      <li><b>Auto-generate the captions</b> (section 09), then the music bed (section 10), then export (section 11).</li>
+    </ol>
+
+    <div class="box warn">
+      <div class="bt">⚠ Never speed-adjust a clip to make it fit</div>
+      <p>If a clip comes back at 7.9 s or 8.1 s instead of 8.000, <strong>trim it, do not stretch it</strong>. Stretching is what produced the ≈22.3 fps content cadence measured in the reference. A 0.1 s trim is invisible; a speed change is visible in every frame that follows.</p>
+      <p style="margin-top:12px">Trim from the <em>front</em>, not the back — the last frame of each clip is the handoff to the next one, and cutting it is what breaks the chain.</p>
+    </div>
+
+    <div class="box key">
+      <div class="bt">On the hook, and what it costs</div>
+      <p>Adding a one-second hook makes the finished video ~65 s rather than 64, and the eight cuts no longer land on round multiples of eight. That is fine — nothing downstream depends on it. The 8-second grid is a <em>generation</em> constraint, not a delivery one.</p>
+      <p style="margin-top:12px">If you would rather keep the 64.000 s total, take the second off the end of clip 8 instead of adding it to the front. The last second of that shot is deliberately motionless, so it is the cheapest second in the video to lose.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 09 CAPTIONS ============ -->
+<section id="captions">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">09 — Captions</div>
+    <h2 class="sec">Zero prompts, ~97 cards, 94.5% of the runtime</h2>
+    <p class="lead">The captions in the reference are auto-generated from the voice-over — which means this entire layer costs nothing to make and nothing to write. Point the editor's auto-caption tool at the narration track and style the result.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Setting</th><th>Value measured in the reference</th></tr></thead>
+        <tbody>
+          <tr><td>Words per card</td><td>1–3, typically <b>2</b></td></tr>
+          <tr><td>Card duration</td><td>median <b>0.50 s</b></td></tr>
+          <tr><td>Coverage</td><td><b>94.5%</b> of the runtime carries a caption — the only blank runs are on the pauses</td></tr>
+          <tr><td>Colour</td><td>yellow <b>RGB(248, 252, 3)</b>, heavy italic, black outline</td></tr>
+          <tr><td>Position</td><td>median <b>77.5%</b> down the frame — below centre, clear of the platform's own UI</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two words per card at half a second each is fast, and it is deliberate: the constant motion is doing retention work of its own. Set the auto-caption tool to its shortest grouping, not its default sentence grouping.</p>
+
+    <div class="box warn">
+      <div class="bt">⚠ Check the captions against the script, once</div>
+      <p>Auto-captioning transcribes what it <em>hears</em>, so it will occasionally mishear a technical word — “esophagus”, “compound”, “villi” and “vessel” are the likely candidates in this script. Read the eight lines back against <a href="#fullscript">section 00</a> before exporting. It is a one-minute check that prevents a misspelling being burned into the frame permanently.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 10 MUSIC ============ -->
+<section id="music">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">10 — Music and levels</div>
+    <h2 class="sec">The bed the reference never had</h2>
+    <p class="lead">The reference has no music at all — its silent gaps measure between −51 and −60 dB, which is true digital silence. Three of those gaps run over a second. On a vertical feed, a second of silence is an exit.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Element</th><th>Target</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Music bed</td><td><b>28–30 dB under the voice</b>, ducked</td><td>fills the seven inter-sentence gaps, which run 2.2–3.4 s each in this build</td></tr>
+          <tr><td>Bed choice</td><td>ambient, no melody, no percussion, no builds</td><td>anything with a rhythm will fight the cuts, which land every 8 s</td></tr>
+          <tr><td>Final loudness</td><td><b>−14 LUFS integrated</b></td><td>platforms turn loud audio down but do not reliably turn quiet audio up</td></tr>
+          <tr><td>True peak</td><td><b>−1 dBTP</b></td><td>headroom for lossy transcoding on upload</td></tr>
+          <tr><td>Fade</td><td>bed fades in over 0.5 s, out over the last 1 s</td><td>the reference ends by cutting to 3 black frames, which reads as a mistake</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The voice-over file is already normalised on its own. Once a bed is added underneath, <strong>re-normalise the full mix</strong>, not the voice — otherwise the bed pushes the total over target. −14.0 exactly is unreachable on an uncompressed voice track, because true-peak headroom runs out first; a light compressor before normalising closes the last 0.8 LU.</p>
+  </div></div>
+</section>
+
+<!-- ============ 11 EXPORT ============ -->
+<section id="export">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">11 — Export</div>
+    <h2 class="sec">Settings</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Setting</th><th>Value</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Resolution</td><td class="num">1080 × 1920</td><td>generated natively at 9:16, never cropped from 16:9</td></tr>
+          <tr><td>Frame rate</td><td class="num">24 fps</td><td>matches the source clips exactly; nothing is interpolated</td></tr>
+          <tr><td>Codec</td><td class="num">H.264, CRF-based</td><td>—</td></tr>
+          <tr><td>Bitrate</td><td class="num">8–12 Mbps</td><td>the reference is 19.1 Mbps / 146 MB — roughly 3× what any platform keeps after its own re-encode</td></tr>
+          <tr><td>Audio</td><td class="num">AAC 192 kbps, 48 kHz</td><td>—</td></tr>
+          <tr><td>Loudness</td><td class="num">−14 LUFS, −1 dBTP</td><td>measured on the final mix, not the voice track</td></tr>
+          <tr><td>Ending</td><td class="num">hold the last frame 0.5 s</td><td>with the channel mark; the reference cuts to 3 black frames and stops</td></tr>
+          <tr><td>Watermark</td><td class="num">transparent PNG, 60–70%</td><td>the reference's logo sits on an opaque white square and is the brightest object in frame on the dark shots</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 12 CHECKLIST ============ -->
+<section id="checklist">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">12 — Before it goes up</div>
+    <h2 class="sec">The pre-upload check</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>#</th><th>Check</th><th>Fails if</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><b>Play the eight clips back to back with the sound off.</b> It has to read as one journey through one body</td><td>the figure, the skin or the light changes between shots — the chain broke somewhere</td></tr>
+          <tr><td class="num">2</td><td>The last frame of every clip matches the first frame of the next one</td><td>a cut reads as a new video rather than the next moment</td></tr>
+          <tr><td class="num">3</td><td>Shots 2, 4, 6 and 8 all clearly show a human body</td><td>the video drifts into abstraction and stops being about anyone</td></tr>
+          <tr><td class="num">4</td><td>Every interior shot still looks like wet living tissue, not a clean render</td><td>it reads as an illustration of a body instead of footage from inside one</td></tr>
+          <tr><td class="num">5</td><td>No text, letters or numbers rendered inside any of the eight clips</td><td>a generation slipped pseudo-writing into the frame</td></tr>
+          <tr><td class="num">6</td><td>Every clip is exactly 8.000 s and no clip has been speed-adjusted</td><td>judder, and a content cadence that does not match the container</td></tr>
+          <tr><td class="num">7</td><td>The voice-over is one unsplit object on the timeline</td><td>the cuts start to sound like eight separate videos</td></tr>
+          <tr><td class="num">8</td><td>Final mix measures −14 LUFS ±1, true peak ≤ −1 dBTP</td><td>it plays quieter than everything around it in the feed</td></tr>
+          <tr><td class="num">9</td><td>Captions match the script word for word</td><td>a misheard technical word is burned into the frame</td></tr>
+          <tr><td class="num">10</td><td>The first second is the tongue at macro, not the mouth</td><td>the video opens on its least interesting image</td></tr>
+          <tr><td class="num">11</td><td>No sentence promises an outcome</td><td>a physiology video has become a health claim</td></tr>
+          <tr><td class="num">12</td><td>Clip 8's figure has no face</td><td>uncanny, and it pulls attention off the glow</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box find">
+      <div class="bt">⭐ What you keep after this video</div>
+      <p>One new permanent asset — <strong>the vessel-wall still from clip 7</strong>, a cross-section of a real artery that any future circulation topic starts from — and the fifth and final use of keyframes A to D, which by this point have paid for themselves four times over.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 13 COST ============ -->
+<section id="cost">
+  <div class="wrap"><div class="narrow">
+    <div class="snum">13 — What it costs, what is still open</div>
+    <h2 class="sec">The numbers, and the two decisions left</h2>
+    <p>Eight clips × 8 s = <strong>64 output seconds</strong>. On the Gemini API that is roughly <strong>$5.12 on Veo 3.1 Lite, $7.68 on Fast, $25.60 on Standard</strong> at 1080p, before retries — and retries are the real cost, so budget for two or three attempts on clips 1, 4 and 7, which carry the hardest camera moves in this video. Start on Fast: slow, smooth anatomical motion is the easiest case there is. Everything else here — the script, the voice-over, the captions — is free.</p>
+
+    <div class="box key">
+      <div class="bt">Still needs your call</div>
+      <p><b>1. Flow subscription or Gemini API?</b> Flow bills in credits, the API bills per output second. It changes the cost model completely and it is the only thing standing between this page and a finished video.</p>
+      <p style="margin-top:12px"><b>2. The still-image generator.</b> The eight image prompts are written to be model-agnostic, but they need somewhere to run — and whatever runs them <strong>must accept a reference image</strong>, because that is what carries the chain from one shot to the next.</p>
+    </div>
+
+    <p style="color:var(--ink3);font-size:15.5px">Nothing has been generated. The voice-over is the only asset that exists, it was built here at no cost, and it is downloadable above.</p>
+  </div></div>
+</section>
+
+<footer>
+  <div class="wrap"><div class="narrow">
+    <div class="pagenav"><a href="../oats/">← Oats</a> · <a href="../#topics">all five videos</a></div>
+    <p style="margin:0 0 10px"><a href="../">← back to the format teardown</a></p>
+    <p style="margin:0">Health &amp; Fitness Shorts · What happens when you eat spinach · build blueprint · <span style="color:var(--ink3)">every timing figure on this page was measured from the rendered audio, not estimated</span></p>
+  </div></div>
+</footer>
+
+<script>
+(function () {
+  function flash(btn, text, cls) {
+    var old = btn.dataset.label || btn.textContent;
+    btn.dataset.label = old;
+    btn.textContent = text;
+    btn.classList.add(cls);
+    setTimeout(function () {
+      btn.textContent = btn.dataset.label;
+      btn.classList.remove(cls);
+    }, 1600);
+  }
+  function legacyCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.cbtn');
+    if (!btn) return;
+    var el = document.getElementById(btn.dataset.target);
+    if (!el) return;
+    var text = el.textContent;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () {
+        flash(btn, 'Copied ✓', 'done');
+      }).catch(function () {
+        flash(btn, legacyCopy(text) ? 'Copied ✓' : 'Press Ctrl+C', legacyCopy(text) ? 'done' : 'fail');
+      });
+    } else {
+      flash(btn, legacyCopy(text) ? 'Copied ✓' : 'Press Ctrl+C', 'done');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

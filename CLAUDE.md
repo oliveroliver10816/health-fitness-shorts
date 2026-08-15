@@ -3,8 +3,14 @@
 **What this is:** the "health and fitness chat for shorts" project. Bob sends short-form
 health/fitness videos; we tear them down and rebuild the format with his own tools (Veo 3).
 
-**Status 2026-08-10:** teardown DELIVERED + **5 topics chosen and mapped beat-by-beat (section 08)**.
-Nothing built, nothing generated, $0 spent.
+**Status 2026-08-15: ALL FIVE VIDEOS ARE NOW BUILT OUT IN FULL.** Each topic has its own page with the
+complete script as one paste-ready block, a **rendered voice-over MP3**, 8 image prompts, 8
+image-to-video prompts, the timeline and the checklist. Nothing generated on a video model, $0 spent.
+
+- egg · https://oliveroliver10816.github.io/health-fitness-shorts/egg/
+- coffee · .../coffee/ · water · .../water/ · oats · .../oats/ · spinach · .../spinach/
+- The main page now carries **a link button per topic** (a 5-tile grid in section 08, a button on every
+  topic card, links in the side-by-side table, and the footer index).
 
 - **LIVE deliverable:** https://oliveroliver10816.github.io/health-fitness-shorts/
 - **Repo:** `oliveroliver10816/health-fitness-shorts` (public, Pages from `/docs`, page is `noindex`)
@@ -219,3 +225,91 @@ clip 8 = **no facial features** (and it doubles as the 1 s hook at the front).
   real cuts only separate cleanly at **0.35+**.
 - md5-hashing frames to find duplicates **fails**: codec noise makes every frame byte-unique.
   Use **perceptual mean-absolute-difference** (or mpdecimate), not hashes.
+
+
+## 2026-08-15 — THE OTHER FOUR TOPICS BUILT, AND THE IMAGE PROMPTS MADE MORE REAL
+
+Bob's three asks, all delivered: **(1)** refine the image prompts so they look like the realistic
+internal structure of a body, **and keep that for future use**; **(2)** the same complete work for the
+other four topics — prompts, script, audio, everything; **(3)** the full script at the top of each page
+so the audio can be made in any other tool; **(4)** link buttons from the topic list to each page.
+
+### The build is now one machine, not one page
+`build-egg-page.py` held the egg's data *and* its template. That does not scale to five, so:
+
+| file | what it holds |
+|---|---|
+| `topics/<slug>.py` | one topic: meta, 8 clips, prompts, the continuity chain, measured timings |
+| `pagegen.py` | the shared template, prompt assembly, the self-check |
+| `build_pages.py` | the builder — writes `docs/<slug>/index.html` + `build-vo.sh`, verifies everything |
+| `qa.py` | browser QA over all six pages |
+| `build-egg-page.py` | **now a shim** that calls `build_pages.py egg`, so the old command still works and can no longer overwrite the page with the weaker prompt set |
+
+### ⭐ How the realism was actually increased (this is the transferable part)
+Not by adding adjectives. Two structural blocks, and the reason each exists:
+
+1. **A dedicated `REALISM` block, separate from `STYLE`.** STYLE owned both the look and the realism
+   before, and **when two paragraphs answer the same question the model picks one**. STYLE now owns
+   palette and format only; REALISM owns *is it real* — endoscope reference, wet uneven asymmetric
+   tissue, capillaries under translucent membrane, real lens behaviour, and an explicit **NOT** list
+   (diagram, textbook illustration, cartoon, neon hologram, floating glass shapes, game render,
+   glossy toy). Ends: *"If it looks designed, it is wrong — it has to look photographed."*
+2. **A per-shot `REAL ANATOMY` line naming the structures that must be correct in that shot** — rugae
+   and gastric pits, villi with a brush border and a central lacteal, sarcomere cross-banding,
+   endothelium with tight junctions, the nephron, the three layers of an artery wall. This is what
+   turns "looks realistic" from a wish into something checkable, and it caught a real trap:
+   **the colon has no villi**, and a generator that has learned "intestine" will add them
+   (`topics/oats.py`, clip 7 states it explicitly).
+   Video prompts gained the matching **`REALISM IN MOTION`** block — real inertia, nothing snaps,
+   pops, teleports or moves like a graphic.
+
+⚠ Cost of this: image prompts went from **461–559 words to 647–794**. That is real dilution, so the
+page states the cut order if a generation ignores something — SUBJECT first, then CONTINUITY once a
+reference image is attached, then the STYLE background sentence — and that **REALISM, REAL ANATOMY and
+NO TEXT are never the ones cut**.
+
+### The four new scripts
+Written second-person with an everyday opener, then **rendered and measured** — not estimated.
+`docs/<slug>/vo-<slug>-64s.mp3`, all 64.03 s, −14.9/−15.0 LUFS, TP −1.7, onsets exact at
+7.90/15.90/…/55.90. Tightest headroom per video: coffee 1.21 s · water 1.95 s · oats 2.18 s ·
+spinach 2.17 s (egg 1.20 s).
+
+⭐ **Every one was verified by an independent transcription** (Groq whisper-large-v3) against its own
+script: **136/130/124/120/114 words, word-for-word**, the only differences being the transcriber's
+US spelling (fiber/fibre, traveling/travelling). Byte size is identical across all five MP3s — that is
+CBR at the same duration, not a copy; the md5s differ.
+
+### What the build now proves before it will pass
+`build_pages.py` fails if any of these is false, and **each check was verified capable of failing**:
+- the page's per-sentence timings match the MP3 it links to (probed with ffprobe/silencedetect)
+- each sentence is audible at exactly `8(N−1) − 0.10 s` (clip 1 at 0.00)
+- every handoff sentence appears **twice** in the rendered HTML — once on the clip card, once in the
+  bulk copy-all block. ⚠ The first version of this check only asked for "at least once", and a
+  deliberately damaged page still passed, because the second copy covered for it.
+- REAL ANATOMY present in both copies too; realism line, style block, NO TEXT, AUDIO OFF, 4 beats
+- no banned claim in any sentence (list in `pagegen.BANNED`)
+
+⚠ **A headroom bug this found:** headroom was computed as `8.10 − spoken` for every clip, but **clip 1
+starts at 0.00, not −0.10**, so its headroom was overstated by 0.10 s on every page. Now
+`8n − (start + spoken)`.
+
+### QA (browser, Playwright — `qa.py`)
+6 pages · **115 copy buttons, each verified by reading the clipboard back and comparing it to its own
+`<pre>`** · contrast swept with alpha compositing · no horizontal overflow desktop or phone · 0 console
+errors · all five tiles clicked and confirmed to land on the right page.
+⚠ One real failure caught and fixed: water's clip-7 swatch `#b0674f` gave **4.41:1** under the dark
+timeline numeral — now `#b97159` (5.01).
+
+### Section 00 — the full script, first
+Every page opens with the narration as one plain block with a copy button, so the audio can be made
+anywhere, plus a second block with the timings, plus the four rules that keep an outside recording in
+sync (one sentence per clip · under 8 s each · one continuous take · start 0.10 s early, never late).
+
+### Per-topic compliance lines (unchanged, restated in each page's section 04)
+egg "builds muscle/burns fat" · coffee "boosts metabolism"/mg/cups-per-day · water
+**"flushes toxins"/"detox"** · oats **"lowers cholesterol"** · spinach **"lowers blood pressure"**.
+
+### Still open — unchanged, and still the only blocker
+1. Flow subscription or Gemini API. 2. Which still-image generator (it **must accept a reference
+image** or the chain cannot run). 3. Confirm topic order — recommended egg first, because it mints
+keyframes A–D that the other four reuse.
