@@ -309,6 +309,37 @@ sync (one sentence per clip · under 8 s each · one continuous take · start 0.
 egg "builds muscle/burns fat" · coffee "boosts metabolism"/mg/cups-per-day · water
 **"flushes toxins"/"detox"** · oats **"lowers cholesterol"** · spinach **"lowers blood pressure"**.
 
+### ⚠ Caught by the independent verifier, and fixed the same day
+It checked the live pages and confirmed 40/40 image prompts carry REALISM + REAL ANATOMY, 35/35
+handoffs quoted verbatim, 0/40 banned claims, all five MP3s aligned — and then found the thing the
+build checks could not see: **the four shared-keyframe clips had near-identical MOTION prompts across
+topics.** `egg` vp2 vs `oats` vp2 measured **99.74% identical** — one noun apart in ~460 words.
+
+That is exactly the failure in memory [[write-each-clip-not-a-template]], and it quietly broke the
+series' own rule: the still is shared on purpose, but if the shot order is shared too, re-rendering
+produces the same clip and the reuse becomes repetition. **Fixed by giving clips 2, 5, 6 and 8 a
+different camera move in every video** (`differentiate_motion.py`, kept in the repo as the record):
+
+| clip | egg | coffee | water | oats | spinach |
+|---|---|---|---|---|---|
+| 2 swallow | constant pull-out | front-loaded pull-out, then holds | **locked off, no move at all** | push IN, tightening | holds 3 s, then pulls out |
+| 5 villi | truck right → push in | straight push in | **cranes up** | **descends through the gel** | trucks left, decelerates to a stop |
+| 6 blood | constant pull-out | pull-out + tilt up to the head | pull-out, decelerating, holds | holds 2 s, then one fixed rate | pull-out with a slow arc to three-quarter |
+| 8 hero | push in, stops at 6 s | **tilt up** to the head | **completely static** | push in, stops at 4 s, holds 4 s | **pulls back**, opening space |
+
+Worst cross-topic similarity on those four clips went **0.997 → 0.734**. Clip 4's dive was
+differentiated too (spinach descends from above, oats decelerates as it enters the gel). The most
+similar pair left is **0.857, egg/oats clip 1** — both are a mouth chewing, which is genuinely the
+same action, and their image prompts differ.
+
+⚠ Two other verifier findings, judged and **not** changed, with the reason:
+- egg clip 4's beats run `0.0–1.5 / 1.5–4.0 / 4.0–6.0 / 6.0–8.0` instead of the 2-second grid every
+  other clip uses. That is the hold-then-dive shot and the uneven split is the shot, not a slip.
+- It flagged egg sentence 7 (*"use them as the raw material to rebuild their own structure"*) as
+  “builds muscle” restated. It is not: **describing what a nutrient is used for is physiology;
+  promising the viewer an outcome is the claim.** That exact wording is the line this project already
+  set, and it stays.
+
 ### Still open — unchanged, and still the only blocker
 1. Flow subscription or Gemini API. 2. Which still-image generator (it **must accept a reference
 image** or the chain cannot run). 3. Confirm topic order — recommended egg first, because it mints
